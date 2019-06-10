@@ -1,0 +1,39 @@
+{
+  "name": "pm-alpestre",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "repository": "",
+  "author": {
+    "name": "Daniel",
+    "email": "daniel@ows.com.br"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.4.3",
+    "browser-sync": "^2.26.5",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cache": "^1.1.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-file-include": "^2.0.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  },
+  "scripts": {
+    "start project": "gulp",
+    "build project": "gulp build"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
