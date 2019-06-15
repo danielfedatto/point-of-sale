@@ -18,7 +18,7 @@ Rodar os comandos abaixo para instalação:
 npm install yarn -g
 npm install gulp -g
 npm install gulp-cli -g
-git clone https://github.com/DanielFedatto/ebi.git
+git clone https://github.com/DanielFedatto/poin-of-sale.git
 cd ebi
 yarn
 ```
