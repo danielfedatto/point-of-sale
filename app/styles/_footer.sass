@@ -1,0 +1,68 @@
+footer
+    background-color: #1a386a
+    color: white
+    a
+        color: white
+.footerInformation
+    li
+        min-height: 40px
+        line-height: 20px
+        margin-bottom: .5rem
+.icon
+    margin-right: 1rem
+    width: 30px
+    height: 30px
+    fill: $white
+.footer-copyright
+    background-color: #7F7F7F
+    p
+        margin: 0
+.copyright-content
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 40px
+    p
+        color: #BDBEBF
+        font-size: .7rem
+    ul
+        display: flex
+        justify-content: center
+        font-size: .8rem
+        margin: 0
+        li
+            position: relative
+            display: flex
+            align-items: center
+            margin: 0 .5rem
+            &:after
+                position: relative
+                width: 2px
+                height: 2px
+                background: fade($white, 20%)
+                right: -.5rem
+                top: .1rem
+                content: ''
+            &:last-child
+                &:after
+                    display: none
+            a
+                color: #BDBEBF
+    .right
+        display: flex
+        justify-content: center
+.logo_ows
+    width: 30px
+    height: 30px
+    fill: $white
+    transition: all 0.3s
+    --o: #BDBEBF !important
+    --w: #BDBEBF !important
+    --s: #BDBEBF !important
+    --r: #BDBEBF !important
+    &:hover
+      -moz-transform: scale(1.3)
+      -webkit-transform: scale(1.3)
+      transform: scale
+.grecaptcha-badge
+    display: none

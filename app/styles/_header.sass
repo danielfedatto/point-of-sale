@@ -1,0 +1,135 @@
+.svg-icon_ui-lib
+    display: none
+.logo-desk
+  width: 100%
+header
+  position: sticky
+  top: -64px
+  z-index: 180
+  @media screen and(max-width: 420px)
+    position: inherit
+.sm-nav
+  background: white
+#desk-nav
+    width: 100%
+    height: 165px
+    background-color: white
+    transition: all .3s linear
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2)
+    @media screen and(max-width: 768px)
+        display: none
+    @media screen and(max-width: 420px)
+        display: none
+.social-nav
+    width: 100%
+    height: 65px
+    background-color: inherit !important
+    box-shadow: none
+    display: flex
+    justify-content: flex-end
+    padding: 0 .75rem
+    .big-phone
+        color: $color1
+        font-size: 1.5rem
+        font-weight: bold
+    .small-phone
+        color: $color1
+        font-size: 1.1rem
+        margin-right: .5rem
+    i
+        color: $color1
+    ul
+        margin: 0
+        height: 65px
+        padding: 0 1rem
+        display: flex
+        align-items: center
+    li 
+        height: 65px
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 0 .3rem
+        &:last-child
+            padding: 0
+        a
+            display: flex
+            align-items: center
+            justify-content: center
+            background-color: none !important
+    .icon
+        width: 45px
+        height: 45px
+        fill: $color1
+        margin: 0
+nav
+    ul
+        a
+            background: none !important
+.no-margin
+    margin: 0
+#slider-home
+    padding-top: 165px
+.carousel .indicators .indicator-item
+    height: 15px !important
+    width: 15px !important
+.carousel-slider
+    legend
+        position: absolute
+.desk-nav
+  height: 100px
+  background-color: transparent
+  box-shadow: none
+  display: flex
+  align-items: center
+.desk-menu
+    width: 100%
+    display: flex
+    justify-content: space-around
+    a
+        &:hover
+            background-color: none
+    li
+        width: 100%
+        display: flex
+        justify-content: flex-end
+        line-height: 1rem
+        padding: 0 1rem
+        i
+            color: $color1
+        a
+            padding: 0
+            color: $color1
+            text-shadow: 0 0 1px rgba(111, 116, 134, 0.3)
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            text-align: right
+.cl-effect-16 a
+    color: #6f7486
+    text-shadow: 0 0 1px rgba(111, 116, 134, 0.3)
+.cl-effect-16 a::before
+    color: #00ACE9
+    content: attr(data-hover)
+    position: absolute
+    opacity: 0
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.3)
+    -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg)
+    -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg)
+    transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg)
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s
+    transition: transform 0.3s, opacity 0.3s
+    pointer-events: none
+.cl-effect-16 a:hover::before, .cl-effect-16 a:focus::before
+    -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg)
+    -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg)
+    transform: scale(1) translateX(0px) translateY(0px) rotate(0deg)
+    opacity: 1
+.logo-desk
+    transition: all .3s
+.logo-mob
+    width: 200px
+.sidenav-trigger
+    i
+        color: $color1

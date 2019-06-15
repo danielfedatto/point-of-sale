@@ -1,0 +1,61 @@
+// News Interna
+.news-int
+    padding: 2rem 0
+    span
+        color: #7F7F7F
+    h5
+        color: #7F7F7F
+        font-weight: bold
+    figure
+        margin: 2rem 0
+// Contato
+.contact
+    padding: 2rem 0
+.contact-nmb
+    li
+        margin-bottom: 2rem
+        display: flex
+        align-items: center
+        i
+            margin-right: 1rem
+    .inf-content
+        font-weight: bold
+    p
+        display: flex
+        align-items: center
+    .icon
+        margin-right: .5rem
+    .icon-whatsapp
+        --color1: #25d366
+    .skype
+        color: #00aff0
+    .whatsapp
+        color: #25d366
+.send-wrap
+  display: flex
+  justify-content: space-between
+// Empresa
+.company-int
+    h5
+        color: $color1
+        font-weight: lighter
+        text-align: center
+        margin: 0
+        padding: 2rem 0
+        position: relative
+        display: flex
+        justify-content: center
+        &:before
+            content: ''
+            border-bottom: solid 1px fade($color1, 35%)
+            width: 30%
+            position: absolute
+            bottom: 1rem
+// Listagem de notícias
+.news-ttl-a
+    color: #7F7F7F !important
+.pagination
+    display: flex
+    justify-content: center
+    .active
+        background: $color1 !important
