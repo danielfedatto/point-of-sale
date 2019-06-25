@@ -1,3 +1,10 @@
 extends _includes/template.pug
 block content
-    
+    section.homeSlider
+        .slider
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .headerContainer
+                    .bannerContent
+                        figure
+                            img(src="img/wellcome_mensage.png", alt="")

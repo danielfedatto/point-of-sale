@@ -1,0 +1,120 @@
+.slick-list
+    .slick-loading &
+        // background: #fff slick-image-url("loader.gif") center center no-repeat
+.slick-slide
+    &:focus
+        outline: 0
+.slick-dots
+    position: absolute
+    display: block
+    width: 100%
+    padding: 0
+    margin: 2rem 0
+    list-style: none
+    text-align: center
+    bottom: 0
+.slick-dots li
+    position: relative
+    display: inline-block
+    width: 15px
+    height: 15px
+    margin: 0 5px
+    padding: 0
+    cursor: pointer
+.slick-dots li button
+    font-size: 0
+    line-height: 0
+    display: block
+    width: 15px
+    height: 15px
+    padding: 5px
+    cursor: pointer
+    color: transparent
+    border: 0
+    outline: none
+    background: fade(white, 25)
+    border-radius: 100%
+.slick-dots li button:hover,
+.slick-dots li button:focus
+    outline: none
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+    opacity: 1
+    background: $color1
+    transition: all .3s
+.slick-dots li button:before
+    line-height: 8px
+    position: absolute
+    top: 0
+    left: 0
+    width: 15px
+    height: 15px
+    text-align: center
+    opacity: .25
+    content: ''
+    background: white
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    border-radius: 100%
+.slick-dots li.slick-active button:before
+    opacity: 1
+    background: $color1
+.slick-prev, .slick-next
+    line-height: 0
+    position: absolute
+    font-family: 'Icons'
+    top: 50%
+    display: block
+    padding: 0
+    -webkit-transform: translate(0, -50%)
+    -ms-transform: translate(0, -50%)
+    transform: translate(0, -50%)
+    cursor: pointer
+    color: transparent
+    border: none
+    outline: none
+    background: transparent
+    z-index: 99
+    letter-spacing: normal
+    text-transform: none
+    transition: all .3s
+    &:before
+        font-size: 20px
+        line-height: 1
+        opacity: .75
+        color: $white
+        -webkit-font-smoothing: antialiased
+        -moz-osx-font-smoothing: grayscale
+    &:hover
+        outline: none
+        background: transparent
+        transition: all .3s
+        &:before
+            opacity: 1
+            color: $color1
+    &:focus
+        background: none
+        transition: all .3s
+        &:before
+            opacity: 1
+            color: $color1
+    .slick-disabled
+        transition: all .3s
+        opacity: .25
+        &:before
+            opacity: .25
+.slick-prev
+    left: 3.45%
+    @media only screen and (max-width: 420px)
+        left: 5%
+    &:before
+        font-size: 6rem
+        content: '\EA01'
+.slick-next
+    right: 4.6%
+
+    @media only screen and (max-width: 420px)
+        right: 5%
+    &:before
+        font-size: 6rem
+        content: '\EA02'
