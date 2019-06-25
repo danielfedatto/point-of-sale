@@ -16,7 +16,9 @@ const
 	del 			= 	require('del')
 	concat 			= 	require('gulp-concat')
 	sourcemaps		=	require('gulp-sourcemaps')
-
+	iconfont		=	require('gulp-iconfont')
+var
+	runTimestamp = Math.round(Date.now()/1000)
 // Compila o PUG
 function templates() {
 	return src('app/pug/*.pug')
@@ -42,6 +44,22 @@ function styles() {
 		.pipe(rename({suffix: '.min'}))
 		.pipe(dest('app/css'))
 		.pipe(browserSync.reload({stream: true}));
+}
+// Transforma as imagens (svg) em fontes
+function icons() {
+	return src('app/img/icons/*.svg')
+		.pipe(iconfont({
+			fontName: 'Icons', // required,
+			normalize: true,
+			prependUnicode: true, // recommended option
+			formats: ['ttf', 'eot', 'woff'], // default, 'woff2' and 'svg' are available
+			timestamp: runTimestamp, // recommended to get consistent builds when watching files
+		}))
+		.on('glyphs', function(glyphs, options) {
+			// CSS templating, e.g.
+			console.log(glyphs, options);
+		})
+		.pipe(dest('app/fonts/'));
 }
 // Minifica a aplica o Uglify no JS
 function scripts() {
@@ -105,10 +123,11 @@ exports.scripts = scripts
 exports.styles = styles
 exports.templates = templates
 exports.server = server
-exports.default = parallel(templates, styles, scripts)
+exports.default = parallel(templates, styles, scripts, icons)
 exports.build = parallel(clean, bImages, bStyles, bTemplates, bFonts, bScripts)
 
 watch('app/styles/**/*.sass', styles)
 watch('app/styles/**/*.scss', styles)
 watch('app/pug/**/*.pug', templates)
 watch('app/scripts/**/*.js', scripts)
+watch('app/img/icons/*.svg', icons)
