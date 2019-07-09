@@ -30,23 +30,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <link rel="stylesheet" href="<?php echo url::base(); ?>dist/css/skins/skin-blue.min.css">
         <link rel="stylesheet" href="<?php echo url::base(); ?>css/custom.css">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="<?php echo url::base(); ?>images/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="<?php echo url::base(); ?>images/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="<?php echo url::base(); ?>images/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="<?php echo url::base(); ?>images/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="<?php echo url::base(); ?>images/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="<?php echo url::base(); ?>images/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="<?php echo url::base(); ?>images/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="<?php echo url::base(); ?>images/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo url::base(); ?>images/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo url::base(); ?>images/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo url::base(); ?>images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="<?php echo url::base(); ?>images/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo url::base(); ?>images/favicon-16x16.png">
-        <link rel="manifest" href="<?php echo url::base(); ?>manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="<?php echo url::base(); ?>images/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="msapplication-TileImage" content="<?php echo url::base(); ?>images/mstile-144x144.png">
+        <meta name="msapplication-square70x70logo" content="<?php echo url::base(); ?>images/mstile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="<?php echo url::base(); ?>images/mstile-150x150.png">
+        <meta name="msapplication-wide310x150logo" content="<?php echo url::base(); ?>images/mstile-310x150.png">
+        <meta name="msapplication-square310x310logo" content="<?php echo url::base(); ?>images/mstile-310x310.png">
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo url::base(); ?>images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href=".<?php echo url::base(); ?>images/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo url::base(); ?>images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo url::base(); ?>images/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo url::base(); ?>images/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo url::base(); ?>images/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo url::base(); ?>images/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo url::base(); ?>images/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="<?php echo url::base(); ?>images/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="<?php echo url::base(); ?>images/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="<?php echo url::base(); ?>images/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="<?php echo url::base(); ?>images/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="<?php echo url::base(); ?>images/favicon-128x128.png" sizes="128x128">
         
         <script type="text/javascript">
             var URLBASE = "<?php echo url::base() ?>";
@@ -93,9 +94,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Logo -->
                 <a href="<?php echo url::base(); ?>index" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="<?php echo url::base(); ?>images/favicon.png" style="height: 25px;"/></span>
+                    <span class="logo-mini"><img src="<?php echo url::base(); ?>images/logo-main.svg" style="height: 25px;"/></span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="<?php echo url::base(); ?>images/logo_costaframe_h.png" style="width: 200px;"/></span>
+                    <span class="logo-lg"><img src="<?php echo url::base(); ?>images/logo-main.svg" style="width: 200px;"/></span>
                 </a>
 
                 <!-- Header Navbar -->
