@@ -7,14 +7,5 @@ return array(
         "min_length" => "Empresa deve ter pelo menos 3 caracteres.",
         "max_length" => "Empresa deve ter no máximo 250 caracteres."
     ),
-    "CON_KEYWORDS" => array(
-        "not_empty" => "Keywords não pode ser vazio.",
-    ),
-    "CON_DESCRIPTION" => array(
-        "not_empty" => "Description não pode ser vazio.",
-    ),
-    "CON_GOOGLE_ANALYTICS" => array(
-        "not_empty" => "Google Analytics não pode ser vazio.",
-    ),
 );
 ?>                

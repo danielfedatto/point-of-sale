@@ -8,6 +8,7 @@
     
     <!--INCLUIR E PESQUISA-->
     <div class="operacoes">
+        <!-- <a href="<?php echo url::base() ?>configuracoes/edit" class="btn-inserir">Novo</a> -->
         <form id="formBusca" name="formBusca" method="get" action="<?php echo url::base() ?>configuracoes/pesquisa" class="pesquisa">
             <label for="chave">Pesquise um registro:</label>
             <input type="search" id="chave" name="chave" placeholder="Busca" />
@@ -57,7 +58,7 @@
                       else {
                           ?>
                           <tr>
-                              <td colspan="3" class="naoEncontrado">Nenhum Configuração encontrado</td>
+                              <td colspan="3" class="naoEncontrado">Nenhum Configurações encontrado</td>
                           </tr>
                           <?php
                       }

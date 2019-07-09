@@ -78,33 +78,29 @@ class Controller_Configuracoes extends Controller_Index {
                 "CON_KEYWORDS" => $configuracoes->CON_KEYWORDS,
                 "CON_DESCRIPTION" => $configuracoes->CON_DESCRIPTION,
                 "CON_GOOGLE_ANALYTICS" => $configuracoes->CON_GOOGLE_ANALYTICS,
+                "CON_FACEBOOK" => $configuracoes->CON_FACEBOOK,
+                "CON_INSTAGRAM" => $configuracoes->CON_INSTAGRAM,
+                "CON_PINTREST" => $configuracoes->CON_PINTREST,
+                "CON_BEHANCE" => $configuracoes->CON_BEHANCE,
+                "CON_ENDERECO" => $configuracoes->CON_ENDERECO,
+                "CON_EMAIL" => $configuracoes->CON_EMAIL,
+                "CON_TELEFONE" => $configuracoes->CON_TELEFONE,
+                "CON_HORARIO_ATENDIMENTO" => $configuracoes->CON_HORARIO_ATENDIMENTO,
             );
             
             $view->configuracoes = $arr;
                     
-            //BUSCA A LOGO, SE HOUVER
-            $logo = glob("upload/configuracoes/thumb_" . $configuracoes->CON_ID . ".*");
+            //BUSCA O LOGO, SE HOUVER
+            $logo = glob("upload/configuracoes/logo_" . $configuracoes->CON_ID . ".*");
             if ($logo) {
                 $view->logo = "<div class='form-group'>
                         <label class='col-sm-2 control-label'>Excluir Logo</label>
                         <input type='checkbox' id='excluirLogo' name='excluirLogo'>
-                        <img src='" . url::base() . $logo[0] . "'>
+                        Arquivo Cadastrado!!
                     </div>";
             }
             else {
                 $view->logo = false;
-            }
-            //BUSCA A LOGO FIXA, SE HOUVER
-            $logofixo = glob("upload/configuracoes/thumb_fixo_" . $configuracoes->CON_ID . ".*");
-            if ($logofixo) {
-                $view->logofixo = "<div class='form-group'>
-                        <label class='col-sm-2 control-label'>Excluir Logo Fixo</label>
-                        <input type='checkbox' id='excluirLogofixo' name='excluirLogofixo'>
-                        <img src='" . url::base() . $logofixo[0] . "'>
-                    </div>";
-            }
-            else {
-                $view->logofixo = false;
             }
         }else{
             //SENAO, SETA COMO VAZIO
@@ -114,11 +110,18 @@ class Controller_Configuracoes extends Controller_Index {
                 "CON_KEYWORDS" => "",
                 "CON_DESCRIPTION" => "",
                 "CON_GOOGLE_ANALYTICS" => "",
+                "CON_FACEBOOK" => "",
+                "CON_INSTAGRAM" => "",
+                "CON_PINTREST" => "",
+                "CON_BEHANCE" => "",
+                "CON_ENDERECO" => "",
+                "COM_EMAIL" => "",
+                "CON_TELEFONE" => "",
+                "CON_HORARIO_ATENDIMENTO" => "",
             );
             
             $view->configuracoes = $arr;
             $view->logo = false;
-            $view->logofixo = false;
         }
         
         $this->template->bt_voltar = true;
@@ -139,82 +142,23 @@ class Controller_Configuracoes extends Controller_Index {
             
             //INSERE
             foreach($this->request->post() as $campo => $value){
-                if ($campo == "logo" or $campo == "logoBlob" or $campo == "logox1" or $campo == "logoy1" or $campo == "logow" or $campo == "logoh" or
-                    $campo == "logofixo" or $campo == "logofixoBlob" or $campo == "logofixox1" or $campo == "logofixoy1" or $campo == "logofixow" or $campo == "logofixoh") {
-                    //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
-                }else{ 
-                    $configuracoes->$campo = $value;
-                }
+                $configuracoes->$campo = $value;
             }
             
             //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
             try{
                 $query = $configuracoes->save();
                 $mensagem = "Registro inserido com sucesso!";
+                            
+                //INSERE O ARQUIVO, SE EXISTIR
+                if ($_FILES["logo"]["name"] != "") {
 
-                //INSERE A LOGO, SE EXISTIR
-                if ($this->request->post("logoBlob") != "") {
-                    $imgBlob = $this->request->post("logoBlob");
+                    $ext = explode(".", $_FILES["logo"]["name"]);
+                    $arqName = "logo_".$configuracoes->pk() . "." . $ext[count($ext) - 1];
 
-                    if(strpos($this->request->post("logoBlob"), "image/jpg") or strpos($this->request->post("logoBlob"), "image/jpeg")){
-                        //JPEG
-                        $imgBlob = str_replace("data:image/jpeg;base64,", "", $imgBlob);
-                        $ext = "jpg";
-                    }else if(strpos($this->request->post("logoBlob"), "image/png")){
-                        //PNG
-                        $imgBlob = str_replace("data:image/png;base64,", "", $imgBlob);
-                        $ext = "png";
+                    if($ext[count($ext) - 1] == "doc" or $ext[count($ext) - 1] == "docx" or $ext[count($ext) - 1] == "pdf"){
+                        copy($_FILES["logo"]["tmp_name"], DOCROOT."upload/configuracoes/".$arqName);
                     }
-
-                    $imgBlob = str_replace(" ", "+", $imgBlob);
-                    $data = base64_decode($imgBlob);
-
-                    //imagem tamanho normal
-                    $imgName = "".$configuracoes->pk() . ".".$ext;
-                    file_put_contents(DOCROOT."upload/configuracoes/".$imgName, $data);
-
-                    //CROP
-                    if($this->request->post("logow") != "" and $this->request->post("logow") > 0){
-                        $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                        $img = $img->crop($this->request->post("logow"), $this->request->post("logoh"), $this->request->post("logox1"), $this->request->post("logoy1"))->save(DOCROOT."upload/configuracoes/".$imgName);
-                    }
-
-                    //thumb
-                    $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                    $imgName = "thumb_" . $configuracoes->pk() . ".".$ext;
-                    $img->resize(200)->save(DOCROOT."upload/configuracoes/".$imgName);
-                }
-
-                if ($this->request->post("logofixoBlob") != "") {
-                    $imgBlob = $this->request->post("logofixoBlob");
-
-                    if(strpos($this->request->post("logofixoBlob"), "image/jpg") or strpos($this->request->post("logofixoBlob"), "image/jpeg")){
-                        //JPEG
-                        $imgBlob = str_replace("data:image/jpeg;base64,", "", $imgBlob);
-                        $ext = "jpg";
-                    }else if(strpos($this->request->post("logofixoBlob"), "image/png")){
-                        //PNG
-                        $imgBlob = str_replace("data:image/png;base64,", "", $imgBlob);
-                        $ext = "png";
-                    }
-
-                    $imgBlob = str_replace(" ", "+", $imgBlob);
-                    $data = base64_decode($imgBlob);
-
-                    //imagem tamanho normal
-                    $imgName = "fixo_".$configuracoes->pk() . ".".$ext;
-                    file_put_contents(DOCROOT."upload/configuracoes/".$imgName, $data);
-
-                    //CROP
-                    if($this->request->post("logofixow") != "" and $this->request->post("logofixow") > 0){
-                        $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                        $img = $img->crop($this->request->post("logofixow"), $this->request->post("logofixoh"), $this->request->post("logofixox1"), $this->request->post("logofixoy1"))->save(DOCROOT."upload/configuracoes/".$imgName);
-                    }
-
-                    //thumb
-                    $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                    $imgName = "thumb_fixo_" . $configuracoes->pk() . ".".$ext;
-                    $img->resize(200)->save(DOCROOT."upload/configuracoes/".$imgName);
                 }
             } catch (ORM_Validation_Exception $e){
                 $query = false;
@@ -228,11 +172,8 @@ class Controller_Configuracoes extends Controller_Index {
             if ($configuracoes->loaded()){
                 //ALTERA
                 foreach($this->request->post() as $campo => $value){
-                    if ($campo == "excluirLogofixo") {
+                    if ($campo == "excluirLogo") {
                         $excluiLogo = str_replace("'", "", $value);
-                    }else if ($campo == "logo" or $campo == "logoBlob" or $campo == "logox1" or $campo == "logoy1" or $campo == "logow" or $campo == "logoh" or
-                                $campo == "logofixo" or $campo == "logofixoBlob" or $campo == "logofixox1" or $campo == "logofixoy1" or $campo == "logofixow" or $campo == "logofixoh") {
-                        //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
                     }else{ 
                         $configuracoes->$campo = $value;
                     }
@@ -241,106 +182,26 @@ class Controller_Configuracoes extends Controller_Index {
                 //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
                 try{
                     $query = $configuracoes->save();
-                            
-                    //SE EXCLUIR LOGO ESTIVER MARCADO, EXCLUI A LOGO
-                    if($excluiLogo == "on" or $this->request->post("logoBlob") != ""){
-                        $imgsT = glob("upload/configuracoes/thumb_" . $configuracoes->pk() . ".*");
-                        $imgs = glob("upload/configuracoes/" . $configuracoes->pk() . ".*");
+                    //SE EXCLUIR LOGO ESTIVER MARCADO, EXCLUI O LOGO
+                    if($excluiLogo == "on" or $_FILES["logo"]["name"] != ""){
+                        $arq = glob("upload/configuracoes/logo_" . str_replace("'", "", $configuracoes->pk()) . ".*");
 
-                        if($imgs){
-                            foreach($imgs as $im){
-                                unlink($im);
-                            }
-                        }
-
-                        if($imgsT){
-                            foreach($imgsT as $imT){
-                                unlink($imT);
+                        if($arq){
+                            foreach($arq as $ar){
+                                unlink($ar);
                             }
                         }
                     }
 
-                    //INSERE A IMAGEM, SE EXISTIR
-                    if ($this->request->post("logoBlob") != "") {
-                        $imgBlob = $this->request->post("logoBlob");
+                    //INSERE O LOGO, SE EXISTIR
+                    if ($_FILES["logo"]["name"] != "") {
 
-                        if(strpos($this->request->post("logoBlob"), "image/jpg") or strpos($this->request->post("logoBlob"), "image/jpeg")){
-                            //JPEG
-                            $imgBlob = str_replace("data:image/jpeg;base64,", "", $imgBlob);
-                            $ext = "jpg";
-                        }else if(strpos($this->request->post("logoBlob"), "image/png")){
-                            //PNG
-                            $imgBlob = str_replace("data:image/png;base64,", "", $imgBlob);
-                            $ext = "png";
+                        $ext = explode(".", $_FILES["logo"]["name"]);
+                        $arqName = "logo_".str_replace("'", "", $configuracoes->pk()) . "." . $ext[count($ext) - 1];
+
+                        if($ext[count($ext) - 1] == "doc" or $ext[count($ext) - 1] == "docx" or $ext[count($ext) - 1] == "pdf"){
+                            copy($_FILES["logo"]["tmp_name"], DOCROOT."upload/configuracoes/".$arqName);
                         }
-
-                        $imgBlob = str_replace(" ", "+", $imgBlob);
-                        $data = base64_decode($imgBlob);
-
-                        //imagem tamanho normal
-                        $imgName = "".$configuracoes->pk() . ".".$ext;
-                        file_put_contents(DOCROOT."upload/configuracoes/".$imgName, $data);
-
-                        //CROP
-                        if($this->request->post("logow") != "" and $this->request->post("logow") > 0){
-                            $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                            $img = $img->crop($this->request->post("logow"), $this->request->post("logoh"), $this->request->post("logox1"), $this->request->post("logoy1"))->save(DOCROOT."upload/configuracoes/".$imgName);
-                        }
-
-                        //thumb
-                        $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                        $imgName = "thumb_" . $configuracoes->pk() . ".".$ext;
-                        $img->resize(200)->save(DOCROOT."upload/configuracoes/".$imgName);
-                    }
-
-                    //SE EXCLUIR LOGO ESTIVER MARCADO, EXCLUI A LOGO
-                    if($excluiLogo == "on" or $this->request->post("logofixoBlob") != ""){
-                        $imgsT = glob("upload/configuracoes/thumb_fixo_" . $configuracoes->pk() . ".*");
-                        $imgs = glob("upload/configuracoes/fixo_" . $configuracoes->pk() . ".*");
-
-                        if($imgs){
-                            foreach($imgs as $im){
-                                unlink($im);
-                            }
-                        }
-
-                        if($imgsT){
-                            foreach($imgsT as $imT){
-                                unlink($imT);
-                            }
-                        }
-                    }
-
-                    if ($this->request->post("logofixoBlob") != "") {
-                        $imgBlob = $this->request->post("logofixoBlob");
-    
-                        if(strpos($this->request->post("logofixoBlob"), "image/jpg") or strpos($this->request->post("logofixoBlob"), "image/jpeg")){
-                            //JPEG
-                            $imgBlob = str_replace("data:image/jpeg;base64,", "", $imgBlob);
-                            $ext = "jpg";
-                        }else if(strpos($this->request->post("logofixoBlob"), "image/png")){
-                            //PNG
-                            $imgBlob = str_replace("data:image/png;base64,", "", $imgBlob);
-                            $ext = "png";
-                        }
-    
-                        $imgBlob = str_replace(" ", "+", $imgBlob);
-                        $data = base64_decode($imgBlob);
-    
-                        //imagem tamanho normal
-                        $imgName = "fixo_".$configuracoes->pk() . ".".$ext;
-                        file_put_contents(DOCROOT."upload/configuracoes/".$imgName, $data);
-    
-                        //CROP
-                        if($this->request->post("logofixow") != "" and $this->request->post("logofixow") > 0){
-                            $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                            $img = $img->crop($this->request->post("logofixow"), $this->request->post("logofixoh"), $this->request->post("logofixox1"), $this->request->post("logofixoy1"))->save(DOCROOT."upload/configuracoes/".$imgName);
-                        }
-    
-                        //thumb
-                        $img = Image::factory(DOCROOT."upload/configuracoes/".$imgName);
-                        $imgName = "thumb_fixo_" . $configuracoes->pk() . ".".$ext;
-                        $img->resize(200)->save(DOCROOT."upload/configuracoes/".$imgName);
                     }
                 } catch (ORM_Validation_Exception $e){
                     $query = false;
@@ -362,13 +223,75 @@ class Controller_Configuracoes extends Controller_Index {
         }
         
         //SE FUNCIONOU, VOLTA PRA LISTAGEM COM MENSAGEM DE OK
-        if($query or $this->request->post("logoBlob") != "" or $excluiLogo){
+        if($query or $_FILES["logo"]["name"] != "" or $excluiLogo){
             $this->action_index("<p class='res-alert sucess'>".$mensagem."</p>", false);
         }else{
             //SENAO, VOLTA COM MENSAGEM DE ERRO
             $this->action_index("<p class='res-alert warning'>".$mensagem."</p>", true);
+        }}
+    
+    //EXCLUI REGISTRO
+    public function action_excluir(){
+        //EXCLUI LOGO
+        $arq = glob("upload/configuracoes/logo_" . $this->request->param("id") . ".*");
+
+        if($arq){
+            foreach($arq as $ar){
+                unlink($ar);
+            }
+        }
+        $configuracoes = ORM::factory("configuracoes", $this->request->param("id"));
+            
+        //SE CARREGOU O MÓDULO, DELETA. SENÃO, NÃO FAZ NADA
+        if ($configuracoes->loaded()){
+            //DELETA
+            $query = $configuracoes->delete();
+        }else{
+            $query = false;
+        }
+        
+        //SE FUNCIONOU, VOLTA PRA LISTAGEM COM MENSAGEM DE OK
+        if($query){
+            $this->action_index("<p class='res-alert trash'>Registro excluído com sucesso!</p>", false);
+        }else{
+            //SENAO, VOLTA COM MENSAGEM DE ERRO
+            $this->action_index("<p class='res-alert warning'>Houve um problema!</p>", true);
         }
     }
+    
+    //EXCLUI TODOS REGISTROS MARCADOS
+    public function action_excluirTodos() {$query = false;
+        
+        foreach ($this->request->post() as $value) {
+            foreach($value as $val){
+                //EXCLUI LOGO
+                $arq = glob("upload/configuracoes/logo_" . $val . ".*");
+
+                if($arq){
+                    foreach($arq as $ar){
+                        unlink($ar);
+                    }
+                }
+                $configuracoes = ORM::factory("configuracoes", $val);
+            
+                //SE CARREGOU O MÓDULO, DELETA. SENÃO, NÃO FAZ NADA
+                if ($configuracoes->loaded()){
+                    //DELETA
+                    $query = $configuracoes->delete();
+                }else{
+                    $query = false;
+                }
+            }
+        }
+        
+        //SE FUNCIONOU, VOLTA PRA LISTAGEM COM MENSAGEM DE OK
+        if ($query) {
+            $this->action_index("<p class='res-alert trash'>Registros excluídos com sucesso!</p>", false);
+        }
+        else {
+            //SENAO, VOLTA COM MENSAGEM DE ERRO
+            $this->action_index("<p class='res-alert warning'>Houve um problema! Nenhum registro selecionado!</p>", true);
+        }}
     
     //FUNCAO DE PESQUISA
     public function action_pesquisa(){
