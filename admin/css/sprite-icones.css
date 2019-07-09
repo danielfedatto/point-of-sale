@@ -1,0 +1,770 @@
+@charset "utf-8";
+.oitoball {
+  background: url(../images/sprite-icones.png) 0px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.address-book-2 {
+  background: url(../images/sprite-icones.png) -34px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.adress-book {
+  background: url(../images/sprite-icones.png) 0px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.alarm {
+  background: url(../images/sprite-icones.png) -34px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.alert {
+  background: url(../images/sprite-icones.png) -68px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.anchor {
+  background: url(../images/sprite-icones.png) -68px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.app {
+  background: url(../images/sprite-icones.png) 0px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.apple-green {
+  background: url(../images/sprite-icones.png) -34px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.apple-red {
+  background: url(../images/sprite-icones.png) -68px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.bag {
+  background: url(../images/sprite-icones.png) -102px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.basketball {
+  background: url(../images/sprite-icones.png) -102px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.bell {
+  background: url(../images/sprite-icones.png) -102px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.block {
+  background: url(../images/sprite-icones.png) 0px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.broom {
+  background: url(../images/sprite-icones.png) -34px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.burger {
+  background: url(../images/sprite-icones.png) -68px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.burn {
+  background: url(../images/sprite-icones.png) -102px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.calc {
+  background: url(../images/sprite-icones.png) -136px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.cd {
+  background: url(../images/sprite-icones.png) -136px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.cd-copy {
+  background: url(../images/sprite-icones.png) -136px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.chat {
+  background: url(../images/sprite-icones.png) -136px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.clipboard {
+  background: url(../images/sprite-icones.png) 0px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.clock {
+  background: url(../images/sprite-icones.png) -34px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.coke {
+  background: url(../images/sprite-icones.png) -68px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.color-palette {
+  background: url(../images/sprite-icones.png) -102px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.comic-book {
+  background: url(../images/sprite-icones.png) -136px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.compass {
+  background: url(../images/sprite-icones.png) -170px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.credit-card {
+  background: url(../images/sprite-icones.png) -170px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.date {
+  background: url(../images/sprite-icones.png) -170px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.disk {
+  background: url(../images/sprite-icones.png) -170px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.display {
+  background: url(../images/sprite-icones.png) -170px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.display2 {
+  background: url(../images/sprite-icones.png) 0px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.doc {
+  background: url(../images/sprite-icones.png) -34px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.download {
+  background: url(../images/sprite-icones.png) -102px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.download (2) {
+  background: url(../images/sprite-icones.png) -68px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.dvd {
+  background: url(../images/sprite-icones.png) -170px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.dvd-copy {
+  background: url(../images/sprite-icones.png) -136px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.earth {
+  background: url(../images/sprite-icones.png) -204px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.edit {
+  background: url(../images/sprite-icones.png) -204px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.envelope {
+  background: url(../images/sprite-icones.png) -204px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.finder {
+  background: url(../images/sprite-icones.png) -204px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.flag {
+  background: url(../images/sprite-icones.png) -204px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.flower {
+  background: url(../images/sprite-icones.png) -204px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.folder {
+  background: url(../images/sprite-icones.png) -34px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.folder-open {
+  background: url(../images/sprite-icones.png) 0px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.gift {
+  background: url(../images/sprite-icones.png) -68px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.hdd {
+  background: url(../images/sprite-icones.png) -102px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.headphone {
+  background: url(../images/sprite-icones.png) -136px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.help {
+  background: url(../images/sprite-icones.png) -170px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.home {
+  background: url(../images/sprite-icones.png) -204px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.id-card {
+  background: url(../images/sprite-icones.png) -238px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.lamp {
+  background: url(../images/sprite-icones.png) -238px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.lens {
+  background: url(../images/sprite-icones.png) -238px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.library {
+  background: url(../images/sprite-icones.png) -238px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.license {
+  background: url(../images/sprite-icones.png) -238px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.link {
+  background: url(../images/sprite-icones.png) -238px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.lock {
+  background: url(../images/sprite-icones.png) -238px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.magnet {
+  background: url(../images/sprite-icones.png) 0px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.mail {
+  background: url(../images/sprite-icones.png) -34px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.map {
+  background: url(../images/sprite-icones.png) -68px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.medal {
+  background: url(../images/sprite-icones.png) -102px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.memory {
+  background: url(../images/sprite-icones.png) -136px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.movie {
+  background: url(../images/sprite-icones.png) -170px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.mug {
+  background: url(../images/sprite-icones.png) -204px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.music-1 {
+  background: url(../images/sprite-icones.png) -238px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.music-2 {
+  background: url(../images/sprite-icones.png) -272px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.music-3 {
+  background: url(../images/sprite-icones.png) -272px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.music-cd {
+  background: url(../images/sprite-icones.png) -272px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.newspaper {
+  background: url(../images/sprite-icones.png) -272px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.note {
+  background: url(../images/sprite-icones.png) -272px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.note-2 {
+  background: url(../images/sprite-icones.png) -272px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.pack-1 {
+  background: url(../images/sprite-icones.png) -272px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.pack-2 {
+  background: url(../images/sprite-icones.png) -272px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.pdf {
+  background: url(../images/sprite-icones.png) 0px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.pen {
+  background: url(../images/sprite-icones.png) -34px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.pencil-2 {
+  background: url(../images/sprite-icones.png) -68px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.photo {
+  background: url(../images/sprite-icones.png) -102px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.photos {
+  background: url(../images/sprite-icones.png) -136px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.poo {
+  background: url(../images/sprite-icones.png) -170px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.print {
+  background: url(../images/sprite-icones.png) -204px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.processor {
+  background: url(../images/sprite-icones.png) -238px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.radios {
+  background: url(../images/sprite-icones.png) -272px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.recycle {
+  background: url(../images/sprite-icones.png) -306px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.ruler {
+  background: url(../images/sprite-icones.png) -306px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.search {
+  background: url(../images/sprite-icones.png) -306px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.security {
+  background: url(../images/sprite-icones.png) -306px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.settings {
+  background: url(../images/sprite-icones.png) -306px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.shop {
+  background: url(../images/sprite-icones.png) -306px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.skull {
+  background: url(../images/sprite-icones.png) -306px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.smartphone {
+  background: url(../images/sprite-icones.png) -306px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.soccer-ball {
+  background: url(../images/sprite-icones.png) -306px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.sofa {
+  background: url(../images/sprite-icones.png) 0px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.t-shirt {
+  background: url(../images/sprite-icones.png) -34px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.target {
+  background: url(../images/sprite-icones.png) -68px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.tennis-ball {
+  background: url(../images/sprite-icones.png) -102px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.text {
+  background: url(../images/sprite-icones.png) -136px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.toilet-paper {
+  background: url(../images/sprite-icones.png) -170px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.toy {
+  background: url(../images/sprite-icones.png) -238px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.toy-2 {
+  background: url(../images/sprite-icones.png) -204px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.tree {
+  background: url(../images/sprite-icones.png) -272px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.twitter {
+  background: url(../images/sprite-icones.png) -306px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.under-construction {
+  background: url(../images/sprite-icones.png) -340px 0px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.unlock {
+  background: url(../images/sprite-icones.png) -340px -34px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.upload {
+  background: url(../images/sprite-icones.png) -340px -68px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.usb {
+  background: url(../images/sprite-icones.png) -340px -102px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.user-1 {
+  background: url(../images/sprite-icones.png) -340px -136px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.user-2 {
+  background: url(../images/sprite-icones.png) -340px -170px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.wallet {
+  background: url(../images/sprite-icones.png) -340px -204px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.wallpapers {
+  background: url(../images/sprite-icones.png) -340px -238px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.wireless {
+  background: url(../images/sprite-icones.png) -340px -272px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.xls {
+  background: url(../images/sprite-icones.png) -340px -306px no-repeat;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}

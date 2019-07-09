@@ -1,0 +1,153 @@
+.fotos {
+    /* style para galeria de fotos */
+    *zoom: 1;
+    margin: 5px auto;
+    width: 110%;
+    height: auto;
+    overflow: auto;
+  }
+  .fotos:before,
+  .fotos:after {
+    display: table;
+    content: "";
+  }
+  .fotos:after {
+    clear: both;
+  }
+  .fotos li {
+    float: left;
+    margin: 0 35px 20px 0;
+    position: relative;
+    width: 200px;
+  }
+  .fotos a {
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+  .fotos a:hover:before {
+    cursor: pointer;
+    margin: 0 1px;
+    vertical-align: -3px;
+    background: url(../images/sprite.png) no-repeat -75px -75px;
+    background: url(../images/res-sprite.png) no-repeat -75px -75px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .fotos .item-form {
+    margin-bottom: 6px !important;
+  }
+  .fotos input {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    font-size: 16px!important;
+    font-weight: normal!important;
+    line-height: 16px!important;
+    height: 27px!important;
+  }
+  form.galeria {
+    margin: 0 0 20px;
+    width: 100%;
+  }
+  form.galeria label {
+    width: 50px !important;
+  }
+  form.galeria input {
+    width: 60% !important;
+  }
+  .valor,
+  .int {
+    text-align: right;
+    width: 150px !important;
+  }
+  #lista-icones {
+    *zoom: 1;
+    overflow: auto;
+  }
+  #lista-icones:before,
+  #lista-icones:after {
+    display: table;
+    content: "";
+  }
+  #lista-icones:after {
+    clear: both;
+  }
+  #lista-icones li {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #f5f5f5;
+    border: 1px solid #d4d4d4;
+    cursor: pointer;
+    float: left;
+    margin: 0 15px 15px 0;
+    padding: 10px;
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+  #lista-icones li:hover {
+    background: #ededed;
+  }
+  #lista-icones .checked {
+    background: #7a4fb8;
+    border-color: #76688a;
+  }
+  #lista-icones .checked:after {
+    background: url(../images/sprite.png) no-repeat -100px -100px;
+    background: url(../images/res-sprite.png) no-repeat -100px -100px;
+    width: 20px;
+    height: 20px;
+    content: '';
+    display: block;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+  }
+  #lista-icones .checked:hover {
+    background: #7a4fb8;
+  }
+  #lista-icones input {
+    display: none;
+  }
+  /* ARRASTAR ARQUIVOS */
+  #holder {
+    background: url(../images/upload.jpg) no-repeat center;
+    border: 5px dashed #d4d4d4;
+    margin: 20px auto;
+    width: 600px;
+    min-height: 300px;
+  }
+  #holder:hover {
+    border-color: #76688a;
+  }
+  #holder img {
+    display: block;
+    margin: 10px auto;
+  }
+  #holder p {
+    font-size: 14px;
+    margin: 10px;
+  }
+  progress {
+    margin-bottom: 25px;
+    width: 100%;
+  }
+  progress:after {
+    content: '%';
+  }
+  .fail {
+    background: #c00;
+    padding: 2px;
+    color: #fff;
+  }
+  .hidden {
+    display: none !important;
+  }
+  /* FIM UPLOAD */
