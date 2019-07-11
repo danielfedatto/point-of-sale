@@ -1,5 +1,5 @@
 <section id="lista">
-    <h1>A gente faz</h1>
+    <h1>Cases</h1>
     
     <!--MENSAGEM DE INCLUSAO, ALTERACAO OU EXCLUSAO-->
     <?php if($mensagem != ""){ ?>
@@ -7,7 +7,7 @@
     <?php } ?>
     
     <!--INCLUIR E PESQUISA-->
-    <div class="operacoes"><a href="<?php echo url::base() ?>servicos/edit" class="btn-inserir">Novo</a><form id="formBusca" name="formBusca" method="get" action="<?php echo url::base() ?>servicos/pesquisa" class="pesquisa">
+    <div class="operacoes"><a href="<?php echo url::base() ?>cases/edit" class="btn-inserir">Novo</a><form id="formBusca" name="formBusca" method="get" action="<?php echo url::base() ?>cases/pesquisa" class="pesquisa">
             <label for="chave">Pesquise um registro:</label>
             <input type="search" id="chave" name="chave" placeholder="Busca" />
             
@@ -28,34 +28,29 @@
 
                       <tr>
                             <th style="width: 70px">#
-                              <span><a href="#" onclick="ordenar('SER_ID', 'asc')" class="seta-acima"></a>
-                                  <a href="#" onclick="ordenar('SER_ID', 'desc')" class="seta-abaixo"></a></span>
+                              <span><a href="#" onclick="ordenar('CAS_ID', 'asc')" class="seta-acima"></a>
+                                  <a href="#" onclick="ordenar('CAS_ID', 'desc')" class="seta-abaixo"></a></span>
                           </th>
                           <th>Título
-                              <span><a href="#" onclick="ordenar('SER_TITULO', 'asc')" class="seta-acima"></a>
-                                  <a href="#" onclick="ordenar('SER_TITULO', 'desc')" class="seta-abaixo"></a></span>
-                          </th>
-                          <th>Ordem
-                              <span><a href="#" onclick="ordenar('SER_ORDEM', 'asc')" class="seta-acima"></a>
-                                  <a href="#" onclick="ordenar('SER_ORDEM', 'desc')" class="seta-abaixo"></a></span>
+                              <span><a href="#" onclick="ordenar('CAS_TITULO', 'asc')" class="seta-acima"></a>
+                                  <a href="#" onclick="ordenar('CAS_TITULO', 'desc')" class="seta-abaixo"></a></span>
                           </th>
                           <th style="width: 100px"></th>
                       </tr>
 
                       <?php
                       //SE TEM CADASTRADO, MOSTRA. SENÃO, MOSTRA O AVISO
-                      if (count($servicos) > 0) {
-                          foreach($servicos as $ser){
+                      if (count($cases) > 0) {
+                          foreach($cases as $cas){
                               ?>
-                              <tr><td><?php echo $ser->SER_ID; ?></td>
-                                  <td><?php echo $ser->SER_TITULO; ?></td>
-                                  <td><?php echo $ser->SER_ORDEM; ?></td>
+                              <tr><td><?php echo $cas->CAS_ID; ?></td>
+                                  <td><?php echo $cas->CAS_TITULO; ?></td>
                                   <td>
-                                      <a href="<?php echo url::base() ?>servicos/edit/<?php echo $ser->SER_ID; ?>" 
+                                      <a href="<?php echo url::base() ?>cases/edit/<?php echo $cas->CAS_ID; ?>" 
                                           class="btn-app-list fa fa-edit"></a>
                                           <a onclick="if (window.confirm('Deseja realmente excluir o registro?')) {
-                                              location.href = '<?php echo url::base() ?>servicos/excluir/<?php echo 
-                                                  $ser->SER_ID; ?>';
+                                              location.href = '<?php echo url::base() ?>cases/excluir/<?php echo 
+                                                  $cas->CAS_ID; ?>';
                                           }    
                                          " class="btn-app-list fa fa-trash"></a>
                                   </td>
@@ -66,7 +61,7 @@
                       else {
                           ?>
                           <tr>
-                              <td colspan="4" class="naoEncontrado">Nenhum Serviço encontrado</td>
+                              <td colspan="3" class="naoEncontrado">Nenhum Cases encontrado</td>
                           </tr>
                           <?php
                       }

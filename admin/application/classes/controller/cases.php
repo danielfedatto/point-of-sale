@@ -2,12 +2,12 @@
 
 defined("SYSPATH") or die("No direct script access.");
 
-class Controller_Clientes extends Controller_Index {
+class Controller_Cases extends Controller_Index {
 
     public function before() {
         parent::before();
         $this->_name = $this->request->controller();
-        $this->template->titulo .= " - Clientes";
+        $this->template->titulo .= " - Cases";
         
         if ($this->request->is_ajax()) {
             $this->auto_render = FALSE;
@@ -17,34 +17,34 @@ class Controller_Clientes extends Controller_Index {
     public function action_index($mensagem = "", $erro = false) {
 
         //INSTANCIA A VIEW DE LISTAGEM POR DEFAULT
-        $view = View::Factory("clientes/list");
+        $view = View::Factory("cases/list");
         
-        $ordem = "CLI_ID";
+        $ordem = "CAS_ID";
         $sentido = "desc";
 
         //BUSCA OS REGISTROS        
-        $clientes = ORM::factory("clientes");
+        $cases = ORM::factory("cases");
                 
         //SETA AS COLUNAS QUE VAI BUSCAR
-        $clientes->setColumns(array("CLI_ID"=>"CLI_ID", "CLI_TITULO"=>"CLI_TITULO"));
+        $cases->setColumns(array("CAS_ID"=>"CAS_ID", "CAS_TITULO"=>"CAS_TITULO"));
         
         //TESTA SE TEM PESQUISA
         if(isset($_GET["chave"])){
-            $clientes = $clientes->where("CLI_TITULO", "like", "%".$this->sane($_GET["chave"])."%");
+            $cases = $cases->where("CAS_TITULO", "like", "%".$this->sane($_GET["chave"])."%");
         }
         
         /* ORDENAÇÃO */
         if (isset($_GET["ordem"])) {
             if ($_GET["ordem"] != "") {
-                $clientes->order_by($this->sane($_GET["ordem"]), $this->sane($_GET["sentido"]));
+                $cases->order_by($this->sane($_GET["ordem"]), $this->sane($_GET["sentido"]));
                 $ordem = $this->sane($_GET["ordem"]);
                 $sentido = $this->sane($_GET["sentido"]);
             }
         }
         
         //PAGINAÇÃO
-        $paginas = $this->action_page($clientes, $this->qtdPagina);
-        $view->clientes = $paginas["data"];
+        $paginas = $this->action_page($cases, $this->qtdPagina);
+        $view->cases = $paginas["data"];
         $view->pagination = $paginas["pagination"];
         
         $view->ordem = $ordem;
@@ -62,46 +62,48 @@ class Controller_Clientes extends Controller_Index {
     //FORMULARIO DE CADASTRO
     public function action_edit(){
         //INSTANCIA A VIEW DE EDICAO
-        $view = View::Factory("clientes/edit");
+        $view = View::Factory("cases/edit");
         
         $id = $this->request->param("id");
         
         //SE EXISTIR O ID, BUSCA O REGISTRO
         if($id){
             //BUSCA O REGISTRO E PREENCHE OS CAMPOS
-            $clientes = ORM::factory("clientes");
-            $clientes = $clientes->where($clientes->primary_key(), "=", $this->sane($id))->find();
+            $cases = ORM::factory("cases");
+            $cases = $cases->where($cases->primary_key(), "=", $this->sane($id))->find();
             
             $arr = array(
-                "CLI_ID" => $clientes->CLI_ID,
-                "CLI_TITULO" => $clientes->CLI_TITULO,
-                "CLI_LINK" => $clientes->CLI_LINK,
+                "CAS_ID" => $cases->CAS_ID,
+                "CAS_TITULO" => $cases->CAS_TITULO,
+                "CAS_TEXTO" => $cases->CAS_TEXTO,
+                "CAS_HOME" => $cases->CAS_HOME,
             );
             
-            $view->clientes = $arr;
+            $view->cases = $arr;
                     
-            //BUSCA A LOGO, SE HOUVER
-            $logo = glob("upload/clientes/thumb_" . $clientes->CLI_ID . ".*");
-            if ($logo) {
-                $view->logo = "<div class='form-group'>
-                        <label class='col-sm-2 control-label'>Excluir Logo</label>
-                        <input type='checkbox' id='excluirLogo' name='excluirLogo'>
-                        <img src='" . url::base() . $logo[0] . "'>
+            //BUSCA A IMAGEM, SE HOUVER
+            $imagem = glob("upload/cases/thumb_" . $cases->CAS_ID . ".*");
+            if ($imagem) {
+                $view->imagem = "<div class='form-group'>
+                        <label class='col-sm-2 control-label'>Excluir Imagem</label>
+                        <input type='checkbox' id='excluirImagem' name='excluirImagem'>
+                        <img src='" . url::base() . $imagem[0] . "'>
                     </div>";
             }
             else {
-                $view->logo = false;
+                $view->imagem = false;
             }
         }else{
             //SENAO, SETA COMO VAZIO
             $arr = array( 
-                "CLI_ID" => "0",
-                "CLI_TITULO" => "",
-                "CLI_LINK" => "",
+                "CAS_ID" => "0",
+                "CAS_TITULO" => "",
+                "CAS_TEXTO" => "",
+                "CAS_HOME" => "S",
             );
             
-            $view->clientes = $arr;
-            $view->logo = false;
+            $view->cases = $arr;
+            $view->imagem = false;
         }
         
         $this->template->bt_voltar = true;
@@ -113,36 +115,36 @@ class Controller_Clientes extends Controller_Index {
     public function action_save(){ //MENSAGEM DE OK, OU ERRO
         $mensagem = "Registro alterado com sucesso!";
 
-        $excluiLogo = false;
+        $excluiImagem = false;
                 
         //SE O ID ESTIVER ZERADO, INSERT
-        if($this->request->post("CLI_ID") == "0" ){ 
+        if($this->request->post("CAS_ID") == "0" ){ 
             
-            $clientes = ORM::factory("clientes");
+            $cases = ORM::factory("cases");
             
             //INSERE
             foreach($this->request->post() as $campo => $value){
-                if ($campo == "logo" or $campo == "logoBlob" or $campo == "logox1" or $campo == "logoy1" or $campo == "logow" or $campo == "logoh") {
+                if ($campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
                     //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
                 }else{ 
-                    $clientes->$campo = $value;
+                    $cases->$campo = $value;
                 }
             }
             
             //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
             try{
-                $query = $clientes->save();
+                $query = $cases->save();
                 $mensagem = "Registro inserido com sucesso!";
 
-                //INSERE A LOGO, SE EXISTIR
-                if ($this->request->post("logoBlob") != "") {
-                    $imgBlob = $this->request->post("logoBlob");
+                //INSERE A IMAGEM, SE EXISTIR
+                if ($this->request->post("imagemBlob") != "") {
+                    $imgBlob = $this->request->post("imagemBlob");
 
-                    if(strpos($this->request->post("logoBlob"), "image/jpg") or strpos($this->request->post("logoBlob"), "image/jpeg")){
+                    if(strpos($this->request->post("imagemBlob"), "image/jpg") or strpos($this->request->post("imagemBlob"), "image/jpeg")){
                         //JPEG
                         $imgBlob = str_replace("data:image/jpeg;base64,", "", $imgBlob);
                         $ext = "jpg";
-                    }else if(strpos($this->request->post("logoBlob"), "image/png")){
+                    }else if(strpos($this->request->post("imagemBlob"), "image/png")){
                         //PNG
                         $imgBlob = str_replace("data:image/png;base64,", "", $imgBlob);
                         $ext = "png";
@@ -152,19 +154,19 @@ class Controller_Clientes extends Controller_Index {
                     $data = base64_decode($imgBlob);
 
                     //imagem tamanho normal
-                    $imgName = "".$clientes->pk() . ".".$ext;
-                    file_put_contents(DOCROOT."upload/clientes/".$imgName, $data);
+                    $imgName = "".$cases->pk() . ".".$ext;
+                    file_put_contents(DOCROOT."upload/cases/".$imgName, $data);
 
                     //CROP
-                    if($this->request->post("logow") != "" and $this->request->post("logow") > 0){
-                        $img = Image::factory(DOCROOT."upload/clientes/".$imgName);
-                        $img = $img->crop($this->request->post("logow"), $this->request->post("logoh"), $this->request->post("logox1"), $this->request->post("logoy1"))->save(DOCROOT."upload/clientes/".$imgName);
+                    if($this->request->post("imagemw") != "" and $this->request->post("imagemw") > 0){
+                        $img = Image::factory(DOCROOT."upload/cases/".$imgName);
+                        $img = $img->crop($this->request->post("imagemw"), $this->request->post("imagemh"), $this->request->post("imagemx1"), $this->request->post("imagemy1"))->save(DOCROOT."upload/cases/".$imgName);
                     }
 
                     //thumb
-                    $img = Image::factory(DOCROOT."upload/clientes/".$imgName);
-                    $imgName = "thumb_" . $clientes->pk() . ".".$ext;
-                    $img->resize(200)->save(DOCROOT."upload/clientes/".$imgName);
+                    $img = Image::factory(DOCROOT."upload/cases/".$imgName);
+                    $imgName = "thumb_" . $cases->pk() . ".".$ext;
+                    $img->resize(200)->save(DOCROOT."upload/cases/".$imgName);
                 }
             } catch (ORM_Validation_Exception $e){
                 $query = false;
@@ -172,29 +174,29 @@ class Controller_Clientes extends Controller_Index {
             }
         }else{
             //SENAO, UPDATE
-            $clientes = ORM::factory("clientes", $this->request->post("CLI_ID"));
+            $cases = ORM::factory("cases", $this->request->post("CAS_ID"));
             
             //SE CARREGOU O MÓDULO, FAZ O UPDATE. SENÃO, NÃO FAZ NADA
-            if ($clientes->loaded()){
+            if ($cases->loaded()){
                 //ALTERA
                 foreach($this->request->post() as $campo => $value){
-                    if ($campo == "excluirLogo") {
-                        $excluiLogo = str_replace("'", "", $value);
-                    }else if ($campo == "logo" or $campo == "logoBlob" or $campo == "logox1" or $campo == "logoy1" or $campo == "logow" or $campo == "logoh") {
+                    if ($campo == "excluirImagem") {
+                        $excluiImagem = str_replace("'", "", $value);
+                    }else if ($campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
                         //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
                     }else{ 
-                        $clientes->$campo = $value;
+                        $cases->$campo = $value;
                     }
                 }
                 
                 //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
                 try{
-                    $query = $clientes->save();
+                    $query = $cases->save();
                             
-                    //SE EXCLUIR LOGO ESTIVER MARCADO, EXCLUI A LOGO
-                    if($excluiLogo == "on" or $this->request->post("logoBlob") != ""){
-                        $imgsT = glob("upload/clientes/thumb_" . $clientes->pk() . ".*");
-                        $imgs = glob("upload/clientes/" . $clientes->pk() . ".*");
+                    //SE EXCLUIR IMAGEM ESTIVER MARCADO, EXCLUI A IMAGEM
+                    if($excluiImagem == "on" or $this->request->post("imagemBlob") != ""){
+                        $imgsT = glob("upload/cases/thumb_" . $cases->pk() . ".*");
+                        $imgs = glob("upload/cases/" . $cases->pk() . ".*");
 
                         if($imgs){
                             foreach($imgs as $im){
@@ -210,14 +212,14 @@ class Controller_Clientes extends Controller_Index {
                     }
 
                     //INSERE A IMAGEM, SE EXISTIR
-                    if ($this->request->post("logoBlob") != "") {
-                        $imgBlob = $this->request->post("logoBlob");
+                    if ($this->request->post("imagemBlob") != "") {
+                        $imgBlob = $this->request->post("imagemBlob");
 
-                        if(strpos($this->request->post("logoBlob"), "image/jpg") or strpos($this->request->post("logoBlob"), "image/jpeg")){
+                        if(strpos($this->request->post("imagemBlob"), "image/jpg") or strpos($this->request->post("imagemBlob"), "image/jpeg")){
                             //JPEG
                             $imgBlob = str_replace("data:image/jpeg;base64,", "", $imgBlob);
                             $ext = "jpg";
-                        }else if(strpos($this->request->post("logoBlob"), "image/png")){
+                        }else if(strpos($this->request->post("imagemBlob"), "image/png")){
                             //PNG
                             $imgBlob = str_replace("data:image/png;base64,", "", $imgBlob);
                             $ext = "png";
@@ -227,19 +229,19 @@ class Controller_Clientes extends Controller_Index {
                         $data = base64_decode($imgBlob);
 
                         //imagem tamanho normal
-                        $imgName = "".$clientes->pk() . ".".$ext;
-                        file_put_contents(DOCROOT."upload/clientes/".$imgName, $data);
+                        $imgName = "".$cases->pk() . ".".$ext;
+                        file_put_contents(DOCROOT."upload/cases/".$imgName, $data);
 
                         //CROP
-                        if($this->request->post("logow") != "" and $this->request->post("logow") > 0){
-                            $img = Image::factory(DOCROOT."upload/clientes/".$imgName);
-                            $img = $img->crop($this->request->post("logow"), $this->request->post("logoh"), $this->request->post("logox1"), $this->request->post("logoy1"))->save(DOCROOT."upload/clientes/".$imgName);
+                        if($this->request->post("imagemw") != "" and $this->request->post("imagemw") > 0){
+                            $img = Image::factory(DOCROOT."upload/cases/".$imgName);
+                            $img = $img->crop($this->request->post("imagemw"), $this->request->post("imagemh"), $this->request->post("imagemx1"), $this->request->post("imagemy1"))->save(DOCROOT."upload/cases/".$imgName);
                         }
 
                         //thumb
-                        $img = Image::factory(DOCROOT."upload/clientes/".$imgName);
-                        $imgName = "thumb_" . $clientes->pk() . ".".$ext;
-                        $img->resize(200)->save(DOCROOT."upload/clientes/".$imgName);
+                        $img = Image::factory(DOCROOT."upload/cases/".$imgName);
+                        $imgName = "thumb_" . $cases->pk() . ".".$ext;
+                        $img->resize(200)->save(DOCROOT."upload/cases/".$imgName);
                     }
                 } catch (ORM_Validation_Exception $e){
                     $query = false;
@@ -261,7 +263,7 @@ class Controller_Clientes extends Controller_Index {
         }
         
         //SE FUNCIONOU, VOLTA PRA LISTAGEM COM MENSAGEM DE OK
-        if($query or $this->request->post("logoBlob") != "" or $excluiLogo){
+        if($query or $this->request->post("imagemBlob") != "" or $excluiImagem){
             $this->action_index("<p class='res-alert sucess'>".$mensagem."</p>", false);
         }else{
             //SENAO, VOLTA COM MENSAGEM DE ERRO
@@ -270,9 +272,9 @@ class Controller_Clientes extends Controller_Index {
     
     //EXCLUI REGISTRO
     public function action_excluir(){
-        //EXCLUI LOGO
-        $imgsT = glob("upload/clientes/thumb_" . $this->request->param("id") . ".*");
-        $imgs = glob("upload/clientes/" . $this->request->param("id") . ".*");
+        //EXCLUI IMAGEM
+        $imgsT = glob("upload/cases/thumb_" . $this->request->param("id") . ".*");
+        $imgs = glob("upload/cases/" . $this->request->param("id") . ".*");
 
         if($imgs){
             foreach($imgs as $im){
@@ -285,12 +287,12 @@ class Controller_Clientes extends Controller_Index {
                 unlink($imT);
             }
         }
-        $clientes = ORM::factory("clientes", $this->request->param("id"));
+        $cases = ORM::factory("cases", $this->request->param("id"));
             
         //SE CARREGOU O MÓDULO, DELETA. SENÃO, NÃO FAZ NADA
-        if ($clientes->loaded()){
+        if ($cases->loaded()){
             //DELETA
-            $query = $clientes->delete();
+            $query = $cases->delete();
         }else{
             $query = false;
         }
@@ -309,9 +311,9 @@ class Controller_Clientes extends Controller_Index {
         
         foreach ($this->request->post() as $value) {
             foreach($value as $val){
-                //EXCLUI LOGO
-                $imgsT = glob("upload/clientes/thumb_" . $val . ".*");
-                $imgs = glob("upload/clientes/" . $val . ".*");
+                //EXCLUI IMAGEM
+                $imgsT = glob("upload/cases/thumb_" . $val . ".*");
+                $imgs = glob("upload/cases/" . $val . ".*");
 
                 if($imgs){
                     foreach($imgs as $im){
@@ -324,12 +326,12 @@ class Controller_Clientes extends Controller_Index {
                         unlink($imT);
                     }
                 }
-                $clientes = ORM::factory("clientes", $val);
+                $cases = ORM::factory("cases", $val);
             
                 //SE CARREGOU O MÓDULO, DELETA. SENÃO, NÃO FAZ NADA
-                if ($clientes->loaded()){
+                if ($cases->loaded()){
                     //DELETA
-                    $query = $clientes->delete();
+                    $query = $cases->delete();
                 }else{
                     $query = false;
                 }
@@ -352,4 +354,4 @@ class Controller_Clientes extends Controller_Index {
 
 }
 
-// End Clientes
+// End Cases

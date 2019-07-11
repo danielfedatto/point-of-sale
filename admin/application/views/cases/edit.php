@@ -1,82 +1,65 @@
 <section id="formulario">
     <div class="infos">
-        <h1>A gente faz</h1>
+        <h1>Cases</h1>
     </div>
     
     <div class="col-md-12">
         <div class="box box-info">
-            <form action="<?php echo url::base() ?>servicos/save" class="form-horizontal" id="formEdit" name="formEdit" method="post" enctype="multipart/form-data" >
+            <form action="<?php echo url::base() ?>cases/save" class="form-horizontal" id="formEdit" name="formEdit" method="post" enctype="multipart/form-data" >
                 
             <div class="box-body">
 	
         <!--SE NECESSÁRIO, EXPLICAÇÃO-->
         <!--<p></p>-->
         <!--FORMULARIO COM INFORMACOES-->
-                <input type="hidden" id="SER_ID" readonly name="SER_ID" value="<?php echo $servicos["SER_ID"] ?>">
+                <input type="hidden" id="CAS_ID" readonly name="CAS_ID" value="<?php echo $cases["CAS_ID"] ?>">
     
         <div class="form-group">
-            <label for="SER_TITULO" class="col-sm-2 control-label">Título *</label>
+            <label for="CAS_TITULO" class="col-sm-2 control-label">Título *</label>
             <div class="col-sm-10">
                 
-                <input type="text" validar="texto"  class="form-control  " placeholder="Título" value="<?php if($servicos) echo $servicos["SER_TITULO"] ?>" id="SER_TITULO" name="SER_TITULO" >
+                <input type="text" validar="texto"  class="form-control  " placeholder="Título" value="<?php if($cases) echo $cases["CAS_TITULO"] ?>" id="CAS_TITULO" name="CAS_TITULO" >
             </div>
         </div>
                             
         <div class="form-group">
-            <label for="SER_ORDEM" class="col-sm-2 control-label">Ordem*</label>
+            <label for="CAS_TEXTO" class="col-sm-2 control-label">Texto *</label>
             <div class="col-sm-10">
-                <input type="text" validar="int"  class="form-control pequeno" placeholder="Ordem" value="<?php if($servicos) echo $servicos["SER_ORDEM"] ?>" id="SER_ORDEM" name="SER_ORDEM">
-            </div>
-        </div>
-                                        
-        <div class="form-group">
-            <label for="SER_TEXTO" class="col-sm-2 control-label">Texto*</label>
-            <div class="col-sm-10">
-                <textarea  class="form-control ckeditor" placeholder="Texto" id="SER_TEXTO" name="SER_TEXTO">
-                    <?php if($servicos) echo $servicos["SER_TEXTO"] ?>
+                <textarea  class="form-control ckeditor" placeholder="Texto" id="CAS_TEXTO" name="CAS_TEXTO">
+                    <?php if($cases) echo $cases["CAS_TEXTO"] ?>
                 </textarea>
             </div>
         </div>
                                         
-        <div class="form-group">
-            <label for="imagem_home" class="col-sm-2 control-label">Imagem Home</label>
+        <div class="form-group multiplo" label="Home">
+            <label for="CAS_HOME" class="col-sm-2 control-label">Home *</label>
             <div class="col-sm-10">
-                <input type="file" id="imagem_home" name="imagem_home" onchange="return ShowImagePreview(this, 0, 'imagem_home');">
+            <input type="radio" name="CAS_HOME" <?php if ($cases["CAS_HOME"] == "S") echo "checked"; ?> id="HOMESim" value="S" validar="radio"> Sim &nbsp;&nbsp;&nbsp;
+            <!--<label for="HOMESim" class="col-sm-2 control-label">Sim</label>-->
+            <input type="radio" name="CAS_HOME" <?php if ($cases["CAS_HOME"] == "N") echo "checked"; ?> id="HOMENão" value="N" validar="radio"> Não &nbsp;&nbsp;&nbsp;
+            <!--<label for="HOMENão" class="col-sm-2 control-label">Não</label>-->
+            </div>
+        </div>
+                                        
+        <div class="form-group">
+            <label for="imagem" class="col-sm-2 control-label">Imagem</label>
+            <div class="col-sm-10">
+                <input type="file" id="imagem" name="imagem" onchange="return ShowImagePreview(this, 0, 'imagem');">
             </div>
         </div>
         
         <!--SE FOR PARA MOSTRAR PREVIEW, RETIRAR O DISPLAY NONE-->
-        <div class="form-group" id="divimagem_homeCanvas" >
+        <div class="form-group" id="divimagemCanvas" >
             <!--<label class="col-sm-2 control-label">Preview</label>-->
             <!--PREVIEW DA IMAGEM-->
-            <canvas id="imagem_homeCanvas" class="previewcanvas" width="0" height="0"> ></canvas>
+            <canvas id="imagemCanvas" class="previewcanvas" width="0" height="0"> ></canvas>
             <!--CAMPO HIDDEN PARA COLOCAR A IMAGEM JÁ REDIMENSIONADA-->
-            <input type="hidden" id="imagem_homeBlob" name="imagem_homeBlob" />
-            <input type="text" name="imagem_homex1" id="imagem_homex1" style="display: none;">
-            <input type="text" name="imagem_homey1" id="imagem_homey1" style="display: none;">
-            <input type="text" name="imagem_homew" id="imagem_homew" style="width: 50px; display: none;">
-            <input type="text" name="imagem_homeh" id="imagem_homeh" style="width: 50px; display: none;">
-        </div><?php if($imagem_home) echo $imagem_home; ?>
-                                    
-        <div class="form-group">
-            <label for="imagem_interna" class="col-sm-2 control-label">Imagem Interna</label>
-            <div class="col-sm-10">
-                <input type="file" id="imagem_interna" name="imagem_interna" onchange="return ShowImagePreview(this, 0, 'imagem_interna');">
-            </div>
-        </div>
-        
-        <!--SE FOR PARA MOSTRAR PREVIEW, RETIRAR O DISPLAY NONE-->
-        <div class="form-group" id="divimagem_internaCanvas" >
-            <!--<label class="col-sm-2 control-label">Preview</label>-->
-            <!--PREVIEW DA IMAGEM-->
-            <canvas id="imagem_internaCanvas" class="previewcanvas" width="0" height="0"> ></canvas>
-            <!--CAMPO HIDDEN PARA COLOCAR A IMAGEM JÁ REDIMENSIONADA-->
-            <input type="hidden" id="imagem_internaBlob" name="imagem_internaBlob" />
-            <input type="text" name="imagem_internax1" id="imagem_internax1" style="display: none;">
-            <input type="text" name="imagem_internay1" id="imagem_internay1" style="display: none;">
-            <input type="text" name="imagem_internaw" id="imagem_internaw" style="width: 50px; display: none;">
-            <input type="text" name="imagem_internah" id="imagem_internah" style="width: 50px; display: none;">
-        </div><?php if($imagem_interna) echo $imagem_interna; ?>
+            <input type="hidden" id="imagemBlob" name="imagemBlob" />
+            <input type="text" name="imagemx1" id="imagemx1" style="display: none;">
+            <input type="text" name="imagemy1" id="imagemy1" style="display: none;">
+            <input type="text" name="imagemw" id="imagemw" style="width: 50px; display: none;">
+            <input type="text" name="imagemh" id="imagemh" style="width: 50px; display: none;">
+        </div><?php if($imagem) echo $imagem; ?>
                                     
                 </div>
 
@@ -112,8 +95,8 @@ if ( typeof CKEDITOR == "undefined" ){
 
 }else{
 
-    var editorSER_TEXTO = CKEDITOR.replace( "SER_TEXTO" );
-    CKFinder.setupCKEditor( editorSER_TEXTO, "<?php echo url::base()?>js/ckfinder/" ) ;
+    var editorCAS_TEXTO = CKEDITOR.replace( "CAS_TEXTO" );
+    CKFinder.setupCKEditor( editorCAS_TEXTO, "<?php echo url::base()?>js/ckfinder/" ) ;
 }
 // ]]>
 </script>
@@ -251,12 +234,8 @@ if ( typeof CKEDITOR == "undefined" ){
         //BGCOLOR: BLACK - DEIXA FUNDO PRETO QUANDO EDITA
         //BGCOLOR: TRANSPARENT: PERMITE SALVAR PNG COM FUNDO TRANSPARENT
         
-        if(id === "imagem_home"){
-            var funcao = showCoordsimagem_home;
-        }
-        else
-        if(id === "imagem_interna"){
-            var funcao = showCoordsimagem_interna;
+        if(id === "imagem"){
+            var funcao = showCoordsimagem;
         }
         
         $(canvas).Jcrop({
@@ -265,20 +244,12 @@ if ( typeof CKEDITOR == "undefined" ){
             onSelect: funcao
         });
     }
-    function showCoordsimagem_home(c) {
+    function showCoordsimagem(c) {
         // variables can be accessed here as
         // c.x, c.y, c.x2, c.y2, c.w, c.h
-        $("#imagem_homex1").val(c.x);
-        $("#imagem_homey1").val(c.y);
-        $("#imagem_homew").val(c.w);
-        $("#imagem_homeh").val(c.h);
-    }
-    function showCoordsimagem_interna(c) {
-        // variables can be accessed here as
-        // c.x, c.y, c.x2, c.y2, c.w, c.h
-        $("#imagem_internax1").val(c.x);
-        $("#imagem_internay1").val(c.y);
-        $("#imagem_internaw").val(c.w);
-        $("#imagem_internah").val(c.h);
+        $("#imagemx1").val(c.x);
+        $("#imagemy1").val(c.y);
+        $("#imagemw").val(c.w);
+        $("#imagemh").val(c.h);
     }
 </script>
