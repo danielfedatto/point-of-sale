@@ -22,15 +22,15 @@ class Controller_Galeria extends Controller_Index {
 
         //MONTA AS VARIAVEIS DE ACORDO COM O MODULO PASSADO
         switch ($this->request->param("id")) {
-            case "projetos":
+            case "cases":
                 $array_informacoes = array();
-                $array_informacoes["diretorio"] = 'upload/fotos_projetos/';
-                $qryTitulo = ORM::factory("projetos");
-                $qryTitulo->setColumns(array("PRO_ID"=>"PRO_ID", "PRO_NOME"=>"PRO_NOME"));
-                $qryTitulo->where("PRO_ID", "=", $this->request->param("titulo"))->find();
-                $array_informacoes["modulo"] = 'projetos';
-                $array_informacoes["titulo"] = 'Projeto - ' . $qryTitulo->PRO_NOME;
-                $array_informacoes["id_item"] = $qryTitulo->PRO_ID;
+                $array_informacoes["diretorio"] = 'upload/fotos_cases/';
+                $qryTitulo = ORM::factory("cases");
+                $qryTitulo->setColumns(array("CAS_ID"=>"CAS_ID", "CAS_TITULO"=>"CAS_TITULO"));
+                $qryTitulo->where("CAS_ID", "=", $this->request->param("titulo"))->find();
+                $array_informacoes["modulo"] = 'cases';
+                $array_informacoes["titulo"] = 'Cases - ' . $qryTitulo->CAS_TITULO;
+                $array_informacoes["id_item"] = $qryTitulo->CAS_ID;
                 break;
             default:
                 $this->request->redirect($this->request->param("id"));
