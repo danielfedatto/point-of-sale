@@ -32,6 +32,16 @@ class Controller_Galeria extends Controller_Index {
                 $array_informacoes["titulo"] = 'Cases - ' . $qryTitulo->CAS_TITULO;
                 $array_informacoes["id_item"] = $qryTitulo->CAS_ID;
                 break;
+            case "blog":
+                $array_informacoes = array();
+                $array_informacoes["diretorio"] = 'upload/fotos_blog/';
+                $qryTitulo = ORM::factory("blog");
+                $qryTitulo->setColumns(array("BLO_ID"=>"BLO_ID", "BLO_TITULO"=>"BLO_TITULO"));
+                $qryTitulo->where("BLO_ID", "=", $this->request->param("titulo"))->find();
+                $array_informacoes["modulo"] = 'blog';
+                $array_informacoes["titulo"] = 'Blog - ' . $qryTitulo->BLO_TITULO;
+                $array_informacoes["id_item"] = $qryTitulo->BLO_ID;
+                break;
             default:
                 $this->request->redirect($this->request->param("id"));
                 break;

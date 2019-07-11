@@ -35,15 +35,15 @@
                               <span><a href="#" onclick="ordenar('BLO_TITULO', 'asc')" class="seta-acima"></a>
                                   <a href="#" onclick="ordenar('BLO_TITULO', 'desc')" class="seta-abaixo"></a></span>
                           </th>
-                          <th>Data E Hora
+                          <th>Data/Hora
                               <span><a href="#" onclick="ordenar('BLO_DATA_E_HORA', 'asc')" class="seta-acima"></a>
                                   <a href="#" onclick="ordenar('BLO_DATA_E_HORA', 'desc')" class="seta-abaixo"></a></span>
                           </th>
-                          <th>Usuários
+                          <th>Usuário
                               <span><a href="#" onclick="ordenar('USU_NOME', 'asc')" class="seta-acima"></a>
                                   <a href="#" onclick="ordenar('USU_NOME', 'desc')" class="seta-abaixo"></a></span>
                           </th>
-                          <th style="width: 100px"></th>
+                          <th style="width: 130px"></th>
                       </tr>
 
                       <?php
@@ -56,6 +56,8 @@
                                   <td><?php echo $blo->BLO_DATA_E_HORA; ?></td>
                                   <td><?php echo $blo->usuarios->USU_NOME; ?></td>
                                   <td>
+                                    <a href="<?php echo url::base() ?>galeria/index/blog/<?php echo $blo->BLO_ID; ?>" 
+                                          class="btn-app-list fa fa-photo"></a>
                                       <a href="<?php echo url::base() ?>blog/edit/<?php echo $blo->BLO_ID; ?>" 
                                           class="btn-app-list fa fa-edit"></a>
                                           <a onclick="if (window.confirm('Deseja realmente excluir o registro?')) {
