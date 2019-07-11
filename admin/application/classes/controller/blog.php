@@ -151,6 +151,7 @@ class Controller_Blog extends Controller_Index {
                             $blogcategorias = ORM::factory('blogcategorias');
                             $blogcategorias->CAT_ID = $post['CAT_ID'][$i];
                             $blogcategorias->BLO_ID = $blog->BLO_ID;
+                            $blogcategorias->save();
                             $i++;
                         }
                     }
@@ -230,6 +231,7 @@ class Controller_Blog extends Controller_Index {
                                 $blogcategorias = ORM::factory('blogcategorias');
                                 $blogcategorias->CAT_ID = $post['CAT_ID'][$i];
                                 $blogcategorias->BLO_ID = $blog->BLO_ID;
+                                $blogcategorias->save();
                                 $i++;
                             }
                         }

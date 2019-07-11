@@ -53,7 +53,12 @@
                               ?>
                               <tr><td><?php echo $blo->BLO_ID; ?></td>
                                   <td><?php echo $blo->BLO_TITULO; ?></td>
-                                  <td><?php echo $blo->BLO_DATA_E_HORA; ?></td>
+                                  <td>
+                                    <?php 
+                                    $dataHora = explode(' ', $blo->BLO_DATA_E_HORA);
+                                    echo Controller_Index::aaaammdd_ddmmaaaa($dataHora[0]).' às '.substr($dataHora[1],0,5);
+                                    ?>
+                                  </td>
                                   <td><?php echo $blo->usuarios->USU_NOME; ?></td>
                                   <td>
                                     <a href="<?php echo url::base() ?>galeria/index/blog/<?php echo $blo->BLO_ID; ?>" 
