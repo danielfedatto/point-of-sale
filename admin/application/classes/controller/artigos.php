@@ -7,7 +7,7 @@ class Controller_Artigos extends Controller_Index {
     public function before() {
         parent::before();
         $this->_name = $this->request->controller();
-        $this->template->titulo .= " - Artigos";
+        $this->template->titulo .= " - A gente fala";
         
         if ($this->request->is_ajax()) {
             $this->auto_render = FALSE;

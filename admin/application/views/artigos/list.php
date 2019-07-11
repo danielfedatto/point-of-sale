@@ -1,5 +1,5 @@
 <section id="lista">
-    <h1>Artigos</h1>
+    <h1>A Gente Fala</h1>
     
     <!--MENSAGEM DE INCLUSAO, ALTERACAO OU EXCLUSAO-->
     <?php if($mensagem != ""){ ?>

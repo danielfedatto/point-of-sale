@@ -1,6 +1,6 @@
 <section id="formulario">
     <div class="infos">
-        <h1>Artigos</h1>
+        <h1>A Gente Fala</h1>
     </div>
     
     <div class="col-md-12">
