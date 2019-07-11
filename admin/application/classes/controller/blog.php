@@ -65,6 +65,9 @@ class Controller_Blog extends Controller_Index {
         $view = View::Factory("blog/edit");
         
         $id = $this->request->param("id");
+
+        //BUSCA CATEGORIAS
+        $view->categorias = ORM::factory("categorias")->find_all();
         
         //BUSCA USUARIOS
         $view->usuarios = ORM::factory("usuarios")->find_all();
@@ -118,6 +121,8 @@ class Controller_Blog extends Controller_Index {
     public function action_save(){ //MENSAGEM DE OK, OU ERRO
         $mensagem = "Registro alterado com sucesso!";
 
+        $post = $this->request->post();
+
         $excluiImagem = false;
                 
         //SE O ID ESTIVER ZERADO, INSERT
@@ -127,7 +132,7 @@ class Controller_Blog extends Controller_Index {
             
             //INSERE
             foreach($this->request->post() as $campo => $value){
-                if ($campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
+                if ($campo == "CAT_ID" or $campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
                     //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
                 }else{ 
                     $blog->$campo = $value;
@@ -138,6 +143,18 @@ class Controller_Blog extends Controller_Index {
             try{
                 $query = $blog->save();
                 $mensagem = "Registro inserido com sucesso!";
+
+                $i = 0;
+                if(isset($post['CAT_ID'])){
+                    if(is_array($post['CAT_ID'])){
+                        foreach($post['CAT_ID'] as $lele){
+                            $blogcategorias = ORM::factory('blogcategorias');
+                            $blogcategorias->CAT_ID = $post['CAT_ID'][$i];
+                            $blogcategorias->BLO_ID = $blog->BLO_ID;
+                            $i++;
+                        }
+                    }
+                }
 
                 //INSERE A IMAGEM, SE EXISTIR
                 if ($this->request->post("imagemBlob") != "") {
@@ -185,7 +202,7 @@ class Controller_Blog extends Controller_Index {
                 foreach($this->request->post() as $campo => $value){
                     if ($campo == "excluirImagem") {
                         $excluiImagem = str_replace("'", "", $value);
-                    }else if ($campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
+                    }else if ($campo == "CAT_ID" or $campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
                         //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
                     }else{ 
                         $blog->$campo = $value;
@@ -195,6 +212,28 @@ class Controller_Blog extends Controller_Index {
                 //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
                 try{
                     $query = $blog->save();
+
+                    //apaga os antigos
+                    $blogcategorias = ORM::factory('blogcategorias')->where('BLO_ID', '=', $this->request->post("BLO_ID"))->find_all();
+                    foreach($blogcategorias as $blc){
+                        $apagablogcategoria = ORM::factory('blogcategorias', $blc->BLC_ID);
+                        if ($apagablogcategoria->loaded()){
+                            //DELETA
+                            $apagablogcategoria->delete();
+                        }
+                    }
+
+                    $i = 0;
+                    if(isset($post['CAT_ID'])){
+                        if(is_array($post['CAT_ID'])){
+                            foreach($post['CAT_ID'] as $lele){
+                                $blogcategorias = ORM::factory('blogcategorias');
+                                $blogcategorias->CAT_ID = $post['CAT_ID'][$i];
+                                $blogcategorias->BLO_ID = $blog->BLO_ID;
+                                $i++;
+                            }
+                        }
+                    }
                             
                     //SE EXCLUIR IMAGEM ESTIVER MARCADO, EXCLUI A IMAGEM
                     if($excluiImagem == "on" or $this->request->post("imagemBlob") != ""){

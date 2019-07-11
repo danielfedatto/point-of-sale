@@ -30,6 +30,15 @@
                 </textarea>
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="CAT_ID" class="col-sm-2 control-label">Categorias *</label>
+            <div class="col-sm-10">
+                <?php foreach($categorias as $cat){ ?>
+                    <input type="checkbox" value="<?php echo $cat->CAT_ID ?>" id="CAT_ID_<?php echo $cat->CAT_ID ?>" name="CAT_ID[]"> <?php echo $cat->CAT_TITULO ?> &nbsp;&nbsp;&nbsp;
+                <?php } ?>
+            </div>
+        </div>
                                         
         <div class="form-group">
             <label for="imagem" class="col-sm-2 control-label">Imagem</label>
