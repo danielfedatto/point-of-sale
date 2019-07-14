@@ -1,7 +1,5 @@
 .homeSlider
-    position: absolute
-    top: 0
-    left: 0
+    position: relative
     width: 100%
 .slider
     position: relative
@@ -17,9 +15,105 @@
         background-size: 100% auto
 .bannerContent
     height: 1300px
+.figureSlide
+    height: 1132px
+    display: flex
+    align-items: center
     figure
         width: 1183px
         max-width: 1183px
         img
             max-width: 100%
             height: auto
+.bannerButton
+    text-align: center
+.btnType1
+    border: solid $color1
+    padding: 1rem 1rem
+    color: $white
+    font-weight: $regular
+    font-family: $arista
+    font-size: 1.5em
+    border-radius: 15px
+    transition: all .3s
+    &:hover
+        background: white
+        color: $color1
+.btnType2
+    color: white
+    background: $color1
+    padding: .25rem 1.5rem
+    border-radius: 5rem
+    font-size: 1.4em
+    font-family: $arista
+    transition: all .3s
+    &:hover
+        color: $color1
+        background: white
+.nosFazemos
+    background: $color1
+    padding: 4rem
+    h3
+        color: white
+        text-align: center
+        font-family: $arista
+        font-weight: $extra-bold
+    p
+        text-align: center
+        color: white
+        font-family: $arista
+        span
+            font-size: 1.5em,
+    .content
+        margin-top: 4rem
+        display: flex
+        justify-content: space-between
+        figure
+            float: left
+            display: inline-block
+            margin-left: auto
+            left: auto
+            right: auto
+            margin: 0
+.indexCases
+    display: flex
+    flex-wrap: wrap
+    figure
+        width: 33.3%
+        height: 412px
+        max-height: 412px
+        min-height: 412px
+        overflow: hidden
+        margin: 0
+        position: relative
+        &:hover
+            figcaption
+                transform: translate(0)
+        figcaption
+            width: 100%
+            height: 412px
+            position: absolute
+            top: 0
+            left: 0
+            transform: translateY(100%)
+            background: transparentize($black, 0.2)
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-flow: column
+            transition: ease-in .2s
+            h3, span
+                color: white
+                font-family: $arista
+                margin: 0
+            span
+                font-size: 1.3em
+        img
+            min-width: 100%
+            min-height: 412px
+        .btnType2
+            margin-top: 1rem
+// Section customers slider
+.indexCustomers
+    padding: 2rem 0
+    background: #b7b7b7

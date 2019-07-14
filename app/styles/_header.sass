@@ -1,8 +1,10 @@
 // Header styles
 header
-    position: relative
+    position: absolute
     z-index: 999
     transition: all 400ms ease-in
+    height: 318px
+    width: 100%
     @media screen and(max-width: 767px)
         display: none
     .headerContainer
@@ -59,6 +61,7 @@ header
 .is-sticky
     header
         background: white
+        height: 100px
         .headerLinksWrap
             padding: 1rem 0
         .headerLinks
@@ -73,3 +76,6 @@ header
                     padding: 0
                     &:before
                         display: none
+.container
+    width: 90%
+    margin: 0 auto

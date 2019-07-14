@@ -4,7 +4,78 @@ block content
         .slider
             //- Trocar a imagem do banner no url(img/banner_1.jpg)
             div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
-                .headerContainer
+                .containerFluid
                     .bannerContent
-                        figure
-                            img(src="img/wellcome_mensage.png", alt="")
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+    section.nosFazemos
+        .containerFluid
+            h3 A GENTE FAZ:
+            p
+                span Somos especialistas em Varejo.
+            .content
+                figure
+                    img(src="img/faz_01.png", alt="")
+                figure
+                    img(src="img/faz_02.png", alt="")
+                figure
+                    img(src="img/faz_03.png", alt="")
+                figure
+                    img(src="img/faz_04.png", alt="")
+                figure
+                    img(src="img/faz_05.png", alt="")
+    //- Limitar em 06
+    section.indexCases
+        figure
+            img(src="img/index-case_01.jpg", alt="")
+            figcaption
+                h3 Claro
+                span Passo Fundo Shopping
+                a(href="cases.html").btnType2 Saiba mais
+        figure
+            img(src="img/index-case_02.jpg", alt="")
+            figcaption
+                h3 Claro
+                span Passo Fundo Shopping
+                a(href="cases.html").btnType2 Saiba mais
+        figure
+            img(src="img/index-case_03.jpg", alt="")
+            figcaption
+                h3 Claro
+                span Passo Fundo Shopping
+                a(href="cases.html").btnType2 Saiba mais
+        figure
+            img(src="img/index-case_02.jpg", alt="")
+            figcaption
+                h3 Claro
+                span Passo Fundo Shopping
+                a(href="cases.html").btnType2 Saiba mais
+        figure
+            img(src="img/index-case_01.jpg", alt="")
+            figcaption
+                h3 Claro
+                span Passo Fundo Shopping
+                a(href="cases.html").btnType2 Saiba mais
+        figure
+            img(src="img/index-case_03.jpg", alt="")
+            figcaption
+                h3 Claro
+                span Passo Fundo Shopping
+                a(href="cases.html").btnType2 Saiba mais
+    //- Nesse aqui não precisa limitar, o slider vai fazer tudo sozinho ;)
+    //- Logo com fundo transparente e cor branca
+    section.indexCustomers#clientes
+        figure
+            img(src="img/customer_01.png", alt="")
