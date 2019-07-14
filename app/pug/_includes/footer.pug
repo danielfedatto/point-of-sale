@@ -1,4 +1,32 @@
 footer
-    p Testando suas habilidades HTML, CSS e JS.
-    p Linx Impulse
-    p 2019
+    .container
+        .footerBoxController
+            .footerBoxLeft
+                figure
+                    img(src="img/logo-main.svg", alt="")
+                ul.socialMedia
+                    li
+                        a(href="https://facebook.com.br", target="_blank", title="Facebook") 
+                            svg.icon.icon-facebook
+                                use(xlink:href="#icon-facebook")
+                    li
+                        a(href="https://instagram.com.br", target="_blank", title="Instagram") 
+                            svg.icon.icon-instagram
+                                use(xlink:href="#icon-instagram")
+                    li
+                        a(href="https://pinterest.com.br", target="_blank", title="Pinterest") 
+                            svg.icon.icon-pinterest
+                                use(xlink:href="#icon-pinterest")
+                    li
+                        a(href="https://behance.com.br", target="_blank", title="Behance") 
+                            svg.icon.icon-behance
+                                use(xlink:href="#icon-behance")
+            .footerBoxRight
+                form(action="#")#newsLetter.newsLetter
+                    h5 NEWSLETTER
+                    p Quer receber nossos conteúdos e ficar por dentro das novidades? Então cadastre-se!
+                    .inputControll
+                        svg.icon.icon-newsletter
+                            use(xlink:href="#icon-newsletter")
+                        input(type="text", placeholder="Digite seu e-mail")
+                        button(type="button").btnType3 Inscrever

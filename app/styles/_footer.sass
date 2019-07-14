@@ -1,7 +1,55 @@
 footer
-    background: $color2
+    background: #454545
     padding: 70px 0
     p
         color: white
         text-align: center
         font-size: 12px
+    .icon
+        width: 32px
+        height: 32px
+.footerBoxController
+    display: flex
+.footerBoxLeft
+    width: 50%
+    display: flex
+    flex-flow: column
+    figure
+        width: 370px
+        margin: 2rem 0 
+.footerBoxRight
+    width: 50%
+    display: flex
+    justify-content: flex-end
+.socialMedia
+    display: flex
+    width: 270px
+    margin: 0 50px
+    padding: 0
+    justify-content: space-between
+    li
+        margin: 0 1rem 0 0
+        display: block
+        height: 32px
+        a
+            display: block
+.newsLetter
+    width: 470px
+    h5
+        color: white
+        font-family: $comfortaa
+        font-weight: bolder
+    p
+        font-size: 1.3em
+        text-align: left
+        font-family: $comfortaa
+        font-weight: $bold
+    .inputControll
+        display: flex
+        input
+            width: calc(100% - 132px)
+            border: 0
+            padding: 0 1rem
+            border-radius: 5px 0 0 5px
+            &:focus
+                outline: none
