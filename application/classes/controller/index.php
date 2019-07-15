@@ -10,7 +10,7 @@ class Controller_Index extends Controller_Template {
     public $gravar_logs = TRUE;
 
     //NOME DA EMPRESA
-    public $empresa = "Costa Frame - Engenharia e Arquitetura";
+    public $empresa = "Point of Sale";
     
     //CORES EMAIL
     public $coresEmail = array(
@@ -20,13 +20,13 @@ class Controller_Index extends Controller_Template {
     );
     
     //DOMÍNIO
-    public $dominio = "http://costaframe.com/";
+    public $dominio = "http://localhost/point-of-sale";
     //E-MAIL DE AUTENTICAÇÃO
-    public $emailEmpresa = "mail@costaframe.com";
+    public $emailEmpresa = "";
     //SENHA DO E-MAIL DE AUTENTICAÇÃO
-    public $senhaEmail = "autentica@2019";
+    public $senhaEmail = "";
     //HOST DO E-MAIL DE AUTENTICAÇÃO
-    public $host = "a2plcpnl0193.prod.iad2.secureserver.net";
+    public $host = "";
     //VARIÁVEL DE SESSÕES
     protected $sessao;
     //QUANTIDADE DE ITENS POR PAGINA NA LISTAGEM

@@ -6,7 +6,7 @@ class Controller_Error extends Controller_Template {
 
     public $template = 'error';
     public $gravar_logs = TRUE;
-    public $empresa = "Business Connection";
+    public $empresa = "Point of Sale";
 
     public function before() {
         parent::before();
