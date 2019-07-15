@@ -1,0 +1,66 @@
+extends _includes/template.pug
+block content
+    section.homeSlider
+        .slider
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+    section.weDescription
+        .container
+            h3 O varejo é feito de experiências.
+            h5 Por isso, nos dedicamos diariamente a projetar experiências de compra incríveis, conciliando todos os pontos de contato da marca e encantando os clientes.
+    section.weOffer
+        .containerFluid
+            .weOfferBoxController
+                .weOfferBox
+                    figure
+                        img(src="img/offer_01.png", alt="")
+                    //- Acho que a descrição da pra trazer de um jeito apenas e eles adicionam o negrito no ckeditoer só que teria que ser o novo :)
+                    .offerDesc!= '<strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.'
+                .weOfferBox
+                    figure
+                        img(src="img/offer_02.png", alt="")
+                    //- Acho que a descrição da pra trazer de um jeito apenas e eles adicionam o negrito no ckeditoer só que teria que ser o novo :)
+                    .offerDesc!= '<strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.'
+                .weOfferBox
+                    figure
+                        img(src="img/offer_03.png", alt="")
+                    //- Acho que a descrição da pra trazer de um jeito apenas e eles adicionam o negrito no ckeditoer só que teria que ser o novo :)
+                    .offerDesc!= '<strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.'
+                .weOfferBox
+                    figure
+                        img(src="img/offer_04.png", alt="")
+                    //- Acho que a descrição da pra trazer de um jeito apenas e eles adicionam o negrito no ckeditoer só que teria que ser o novo :)
+                    .offerDesc!= '<strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.'
+                .weOfferBox
+                    figure
+                        img(src="img/offer_05.png", alt="")
+                    //- Acho que a descrição da pra trazer de um jeito apenas e eles adicionam o negrito no ckeditoer só que teria que ser o novo :)
+                    .offerDesc!= '<strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.'
+    section.teamWork
+        .containerFluid
+            h3!= 'As <span>Mentes</span> Criativas'
+            h6 Quem faz a magia acontecer
+            .teamWorkBoxController
+                figure
+                    img(src="img/team_01.png", alt="")
+                figure
+                    img(src="img/team_02.png", alt="")
+                figure
+                    img(src="img/team_03.png", alt="")
+                
