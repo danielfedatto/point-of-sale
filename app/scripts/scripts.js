@@ -36,3 +36,23 @@ $(document).ready(function(){
         ]
     });
 });
+var burgerBtn = document.getElementById('burgerBtn');
+var body = document.body
+burgerBtn.addEventListener('click', function() {
+    mobile.classList.toggle('navigation');
+    body.classList.toggle('overflow');
+}, false);
+function testAnim(x) {
+    $('.download.meterial-icons').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass();
+    });
+};
+document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+        const scroller = new SweetScroll({
+        /* some options */
+        });
+    },
+    false,
+);
