@@ -51,18 +51,7 @@ class Controller_Index extends Controller_Template {
     public function action_index() {
         $view = View::Factory('index');
 
-        $view->banners = ORM::factory("projetos")->where("PRO_BANNER", "=", "S")->order_by("PRO_ID", "DESC")->find_all();
-        $view->numeros = ORM::factory("numeros")->find();
-        $view->servicos = ORM::factory("servicos")->where("SER_MOSTRAR", "=", "S")->find_all();
-        $view->projeto1 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "1")->find();
-        $view->projeto2 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "2")->find();
-        $view->projeto3 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "3")->find();
-        $view->projeto4 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "4")->find();
-        $view->projeto5 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "5")->find();
-        $view->projeto6 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "6")->find();
-        $view->projeto7 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "7")->find();
-        $view->projeto8 = ORM::factory("projetos")->where("PRO_POSICAO", "=", "8")->find();
-        $view->numeros = ORM::factory("numeros")->find();
+        $view->servicos = ORM::factory("servicos")->find_all();
         $view->clientes = ORM::factory("clientes")->order_by(DB::expr('RAND()'))->find_all();
 
         $this->template->conteudo = $view;
