@@ -1,0 +1,31 @@
+# Turn on URL rewriting
+RewriteEngine On
+
+# Put your installation directory here:
+# If your URL is www.example.com/kohana/, use /kohana/
+# If your URL is www.example.com/, use /
+RewriteBase /costaframe/
+
+# Protect application and system files from being viewed
+RewriteCond $1 ^(application|system|modules)
+
+# Rewrite to index.php/access_denied/URL
+RewriteRule ^(.*)$ index/access_denied/$1 [PT,L]
+
+# Allow these directories and files to be displayed directly:
+# - index.php (DO NOT FORGET THIS!)
+# - robots.txt
+# - favicon.ico
+# - Any file inside of the images/, js/, or css/ directories
+RewriteCond $1 ^(index\.php|dist|app|robots\.txt|admin|phpMailer)
+
+#php_value max_execution_time "200"
+
+# No rewriting
+RewriteRule ^(.*)$ - [PT,L]
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule ^(.*)$ index.php/$1 [PT,L]
+
+#PAGINA DE ERRO - PROIBIDO
+ErrorDocument 403 /costaframe/error/
