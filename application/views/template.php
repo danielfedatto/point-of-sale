@@ -81,22 +81,22 @@
     <section class="homeSlider">
       <div class="slider">
 
-        <div class="slide_1" style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;">
+        <div class="slide_1" style="background-image: url(<?php echo url::base(); ?>dist/img/banner_1.jpg);backgroudn-position: center left;">
           <div class="containerFluid">
             <div class="bannerContent">
               <div class="figureSlide">
-                <figure><img src="img/wellcome_mensage.png" alt=""></figure>
+                <figure><img src="<?php echo url::base(); ?>dist/img/wellcome_mensage.png" alt=""></figure>
               </div>
               <div class="bannerButton"><a class="btnType1" href="<?php echo url::base(); ?>contato">Fala com a gente!</a></div>
             </div>
           </div>
 		</div>
 		
-        <div class="slide_1" style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;">
+        <div class="slide_1" style="background-image: url(<?php echo url::base(); ?>dist/img/banner_1.jpg);backgroudn-position: center left;">
           <div class="containerFluid">
             <div class="bannerContent">
               <div class="figureSlide">
-                <figure><img src="img/wellcome_mensage.png" alt=""></figure>
+                <figure><img src="<?php echo url::base(); ?>dist/img/wellcome_mensage.png" alt=""></figure>
               </div>
               <div class="bannerButton"><a class="btnType1" href="<?php echo url::base(); ?>contato">Fala com a gente!</a></div>
             </div>

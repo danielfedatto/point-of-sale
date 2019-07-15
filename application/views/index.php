@@ -15,32 +15,32 @@
 	</div>
 </section>
 <section class="indexCases">
-	<figure><img src="img/index-case_01.jpg" alt="">
+	<figure><img src="<?php echo url::base(); ?>dist/img/index-case_01.jpg" alt="">
 	<figcaption>
 		<h3>Claro</h3><span>Passo Fundo Shopping</span><a class="btnType2" href="cases.html">Saiba mais</a>
 	</figcaption>
 	</figure>
-	<figure><img src="img/index-case_02.jpg" alt="">
+	<figure><img src="<?php echo url::base(); ?>dist/img/index-case_02.jpg" alt="">
 	<figcaption>
 		<h3>Claro</h3><span>Passo Fundo Shopping</span><a class="btnType2" href="cases.html">Saiba mais</a>
 	</figcaption>
 	</figure>
-	<figure><img src="img/index-case_03.jpg" alt="">
+	<figure><img src="<?php echo url::base(); ?>dist/img/index-case_03.jpg" alt="">
 	<figcaption>
 		<h3>Claro</h3><span>Passo Fundo Shopping</span><a class="btnType2" href="cases.html">Saiba mais</a>
 	</figcaption>
 	</figure>
-	<figure><img src="img/index-case_02.jpg" alt="">
+	<figure><img src="<?php echo url::base(); ?>dist/img/index-case_02.jpg" alt="">
 	<figcaption>
 		<h3>Claro</h3><span>Passo Fundo Shopping</span><a class="btnType2" href="cases.html">Saiba mais</a>
 	</figcaption>
 	</figure>
-	<figure><img src="img/index-case_01.jpg" alt="">
+	<figure><img src="<?php echo url::base(); ?>dist/img/index-case_01.jpg" alt="">
 	<figcaption>
 		<h3>Claro</h3><span>Passo Fundo Shopping</span><a class="btnType2" href="cases.html">Saiba mais</a>
 	</figcaption>
 	</figure>
-	<figure><img src="img/index-case_03.jpg" alt="">
+	<figure><img src="<?php echo url::base(); ?>dist/img/index-case_03.jpg" alt="">
 	<figcaption>
 		<h3>Claro</h3><span>Passo Fundo Shopping</span><a class="btnType2" href="cases.html">Saiba mais</a>
 	</figcaption>
@@ -49,12 +49,12 @@
 <section class="indexCustomers">
 	<div class="container">
 	<div id="clientes">
-		<figure><img src="img/customer_01.png" alt=""></figure>
-		<figure><img src="img/customer_01.png" alt=""></figure>
-		<figure><img src="img/customer_01.png" alt=""></figure>
-		<figure><img src="img/customer_01.png" alt=""></figure>
-		<figure><img src="img/customer_01.png" alt=""></figure>
-		<figure><img src="img/customer_01.png" alt=""></figure>
+		<figure><img src="<?php echo url::base(); ?>dist/img/customer_01.png" alt=""></figure>
+		<figure><img src="<?php echo url::base(); ?>dist/img/customer_01.png" alt=""></figure>
+		<figure><img src="<?php echo url::base(); ?>dist/img/customer_01.png" alt=""></figure>
+		<figure><img src="<?php echo url::base(); ?>dist/img/customer_01.png" alt=""></figure>
+		<figure><img src="<?php echo url::base(); ?>dist/img/customer_01.png" alt=""></figure>
+		<figure><img src="<?php echo url::base(); ?>dist/img/customer_01.png" alt=""></figure>
 	</div>
 	</div>
 </section>
@@ -63,7 +63,7 @@
 	<div class="container">
 	<div class="articleWrap">
 		<article>
-		<figure><img src="img/article_01.jpg" alt=""></figure><a href="artigo.html" title="Título do artigo">
+		<figure><img src="<?php echo url::base(); ?>dist/img/article_01.jpg" alt=""></figure><a href="artigo.html" title="Título do artigo">
 			<h5>Enim labore exercitation sint</h5></a><a href="artigo.html" title="Descrição do artigo">
 			<p>Lorem do sunt labore ipsum aliquip quis consequat est labore est.</p></a>
 		<div class="articleFooter"><span>JUL 12, 2016</span><span class="comments">25
@@ -72,7 +72,7 @@
 			</svg></span></div>
 		</article>
 		<article>
-		<figure><img src="img/article_02.jpg" alt=""></figure><a href="artigo.html" title="Título do artigo">
+		<figure><img src="<?php echo url::base(); ?>dist/img/article_02.jpg" alt=""></figure><a href="artigo.html" title="Título do artigo">
 			<h5>Enim labore exercitation sint</h5></a><a href="artigo.html" title="Descrição do artigo">
 			<p>Lorem do sunt labore ipsum aliquip quis consequat est labore est.</p></a>
 		<div class="articleFooter"><span>JUL 12, 2016</span><span class="comments">25
@@ -81,7 +81,7 @@
 			</svg></span></div>
 		</article>
 		<article>
-		<figure><img src="img/article_03.jpg" alt=""></figure><a href="artigo.html" title="Título do artigo">
+		<figure><img src="<?php echo url::base(); ?>dist/img/article_03.jpg" alt=""></figure><a href="artigo.html" title="Título do artigo">
 			<h5>Enim labore exercitation sint</h5></a><a href="artigo.html" title="Descrição do artigo">
 			<p>Lorem do sunt labore ipsum aliquip quis consequat est labore est.</p></a>
 		<div class="articleFooter"><span>JUL 12, 2016</span><span class="comments">25
