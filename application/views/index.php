@@ -3,11 +3,14 @@
 	<h3>A GENTE FAZ:</h3>
 	<p><span>Somos especialistas em Varejo.</span></p>
 	<div class="content">
-		<figure><img src="img/faz_01.png" alt=""></figure>
-		<figure><img src="img/faz_02.png" alt=""></figure>
-		<figure><img src="img/faz_03.png" alt=""></figure>
-		<figure><img src="img/faz_04.png" alt=""></figure>
-		<figure><img src="img/faz_05.png" alt=""></figure>
+		<?php
+		foreach($servicos as $ser){ 
+			$imgServico = glob('admin/upload/servicos/'.$ser->SER_ID.'.*');
+			if($imgServico){ ?>
+				<figure><img src="<?php echo url::base().$imgServico[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>"></figure>
+			<?php
+			}
+		} ?>
 	</div>
 	</div>
 </section>
