@@ -10,20 +10,27 @@ footer
         height: 32px
 .footerBoxController
     display: flex
+    @media screen and(max-width: 767px)
+        flex-flow: column
 .footerBoxLeft
     width: 50%
     display: flex
     flex-flow: column
+    @media screen and(max-width: 767px)
+        width: 100%
     figure
-        width: 370px
+        width: 320px
         margin: 2rem 0 
 .footerBoxRight
     width: 50%
     display: flex
     justify-content: flex-end
+    @media screen and(max-width: 767px)
+        padding-top: 2rem
+        width: 100%
 .socialMedia
     display: flex
-    width: 270px
+    width: 250px
     margin: 0 50px
     padding: 0
     justify-content: space-between
