@@ -3,28 +3,31 @@
     width: 100%
 .slider
     position: relative
+    .slick-dots
+        bottom: 0
     figure
         margin: 0
         position: relative
 .slide_1, .slide_2, .slide_3
-    height: 1330px
+    height: 100vh
     display: flex
     align-items: center
     @media screen and(max-width: 767px)
         height: 250px
         background-size: 100% auto
 .bannerContent
-    height: 1300px
+    height: 100vh
+    position: relative
     @media screen and(max-width: 767px)
         height: 250px
 .figureSlide
-    height: 1132px
+    height: 100vh
     display: flex
     align-items: center
     @media screen and(max-width: 767px)
         height: 150px
     figure
-        width: 1183px
+        width: 800px
         max-width: 1183px
         @media screen and(max-width: 767px)
             width: 250px
@@ -33,15 +36,25 @@
             height: auto
 .bannerButton
     text-align: center
+    position: absolute
+    left: 0
+    bottom: 160px
+    width: 100%
+    @media screen and(max-width: 767px)
+        bottom: 70px
 .btnType1
     border: solid $color1
     padding: 1rem 1rem
     color: $white
     font-weight: $regular
     font-family: $arista
-    font-size: 1.5em
+    font-size: 2.5em
     border-radius: 15px
     transition: all .3s
+    @media screen and(max-width: 767px)
+        font-size: 1em
+    &:focus
+        outline: none
     &:hover
         background: white
         color: $color1
