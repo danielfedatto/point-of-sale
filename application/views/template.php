@@ -64,6 +64,22 @@
         </symbol>
       </svg>
     </div>
+    <div id="mobile">
+      <div class="stickerMob">
+        <div id="burgerBtn"></div>
+      </div>
+      <div id="nav">
+        <ul>
+          <li><a href="index.html" title="Home Page">HOME</a></li>
+          <li><a href="empresa.html" title="Quem somos">QUEM SOMOS</a></li>
+          <li><a href="advogados.html" title="Nossa Equipe">NOSSA EQUIPE</a></li>
+          <li><a href="areaatuacao.html" title="Área de Atuação">ÁREA DE ATUAÇÃO</a></li>
+          <li><a href="artigos.html" title="Artigos e Publicações">ARTIGOS E PUBLICAÇÕES</a></li>
+          <li><a href="noticias.html" title="Notícias">NOTÍCIAS</a></li>
+          <li><a href="contato.html" title="Contato">CONTATO</a></li>
+        </ul>
+      </div>
+    </div>
     <header>
       <div class="headerContainer">
         <div class="headerLinksWrap">
