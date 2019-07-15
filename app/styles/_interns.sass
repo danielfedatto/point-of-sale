@@ -19,13 +19,23 @@
     width: 33.3%
     align-items: center
     margin-top: 4rem
+    @media screen and(max-width: 767px)
+        width: 100%
+        flex-flow: column
+        margin-top: 2rem
     figure
         margin: 0 1rem 0 0
+        @media screen and(max-width: 767px)
+            margin: 0
 .offerDesc
     font-family: $comfortaa
     color: #b2b2b2
     font-size: 1.3em
     padding-right: 2em
+    @media screen and(max-width: 767px)
+        text-align: center
+        margin-top: 1rem
+        padding: 0
     strong
         display: block
         font-weight: $extra-bold
@@ -43,7 +53,11 @@
     display: flex
     justify-content: space-between
     flex-wrap: wrap
+    @media screen and(max-width: 767px)
+        flex-flow: column
     figure
         text-align: center
         width: 33.3%
         margin: 2rem 0 0 0
+        @media screen and(max-width: 767px)
+            width: 100%
