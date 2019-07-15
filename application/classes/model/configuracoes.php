@@ -38,9 +38,17 @@ Class Model_Configuracoes extends ORM {
         Database::instance()->query(Database::INSERT, "CREATE TABLE IF NOT EXISTS CONFIGURACOES (
             CON_ID INT (11) unsigned NOT NULL auto_increment,
             CON_EMPRESA VARCHAR (250) NOT NULL ,
-            CON_KEYWORDS TEXT  NOT NULL ,
-            CON_DESCRIPTION TEXT  NOT NULL ,
-            CON_GOOGLE_ANALYTICS TEXT  NOT NULL ,
+            CON_KEYWORDS TEXT  NULL ,
+            CON_DESCRIPTION TEXT  NULL ,
+            CON_GOOGLE_ANALYTICS TEXT  NULL ,
+            CON_FACEBOOK VARCHAR (250) NULL ,
+            CON_INSTAGRAM VARCHAR (250) NULL ,
+            CON_PINTREST VARCHAR (250) NULL ,
+            CON_BEHANCE VARCHAR (250) NULL ,
+            CON_ENDERECO TEXT  NULL ,
+            CON_EMAIL VARCHAR (250) NOT NULL ,
+            CON_TELEFONE VARCHAR (250) NULL ,
+            CON_HORARIO_ATENDIMENTO TEXT  NULL ,
             PRIMARY KEY  (CON_ID)
         )ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;");
         
