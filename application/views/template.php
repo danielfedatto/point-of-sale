@@ -96,54 +96,63 @@
     </header>
     <section class="homeSlider">
       <div class="slider">
-
-        <div class="slide_1" style="background-image: url(<?php echo url::base(); ?>dist/img/banner_1.jpg);backgroudn-position: center left;">
-          <div class="containerFluid">
-            <div class="bannerContent">
-              <div class="figureSlide">
-                <figure><img src="<?php echo url::base(); ?>dist/img/wellcome_mensage.png" alt=""></figure>
+        <?php 
+        foreach($banners as $ban){ 
+          $imgBan = glob('admin/upload/banners/'.$ban->BAN_ID.'.*');
+          if($imgBan){ ?>
+            <div class="slide_<?php echo $ban->BAN_ID; ?>" style="background-image: url(<?php echo url::base().$imgBan[0]; ?>); backgroudn-position: center left;">
+              <div class="containerFluid">
+                <div class="bannerContent">
+                  <?php
+                  $imgBan2 = glob('admin/upload/banners/imagem_texto_'.$ban->BAN_ID.'.*');
+                  if($imgBan2){ ?>
+                    <div class="figureSlide">
+                      <figure><img src="<?php echo url::base().$imgBan2[0]; ?>" alt="<?php echo $ban->BAN_TITULO; ?>"></figure>
+                    </div>
+                  <?php
+                  } ?>
+                  <div class="bannerButton"><a class="btnType1" href="<?php echo url::base(); ?>contato">Fala com a gente!</a></div>
+                </div>
               </div>
-              <div class="bannerButton"><a class="btnType1" href="<?php echo url::base(); ?>contato">Fala com a gente!</a></div>
             </div>
-          </div>
-		</div>
-		
-        <div class="slide_1" style="background-image: url(<?php echo url::base(); ?>dist/img/banner_1.jpg);backgroudn-position: center left;">
-          <div class="containerFluid">
-            <div class="bannerContent">
-              <div class="figureSlide">
-                <figure><img src="<?php echo url::base(); ?>dist/img/wellcome_mensage.png" alt=""></figure>
-              </div>
-              <div class="bannerButton"><a class="btnType1" href="<?php echo url::base(); ?>contato">Fala com a gente!</a></div>
-            </div>
-          </div>
-		</div>
-		
+          <?php 
+          }
+        } ?>
       </div>
     </section>
+
     <?php echo $conteudo; ?>
+    
     <footer>
       <div class="container">
         <div class="footerBoxController">
           <div class="footerBoxLeft">
             <figure><img src="<?php echo url::base(); ?>dist/img/logo-main.svg" alt=""></figure>
             <ul class="socialMedia">
-              <li><a href="https://facebook.com.br" target="_blank" title="Facebook"> 
+              <?php if($facebook != ''){ ?>
+              <li><a href="<?php echo $facebook; ?>" target="_blank" title="Facebook"> 
                   <svg class="icon icon-facebook">
                     <use xlink:href="#icon-facebook"></use>
                   </svg></a></li>
-              <li><a href="https://instagram.com.br" target="_blank" title="Instagram"> 
+              <?php } ?>
+              <?php if($instagram != ''){ ?>
+              <li><a href="<?php echo $instagram; ?>" target="_blank" title="Instagram"> 
                   <svg class="icon icon-instagram">
                     <use xlink:href="#icon-instagram"></use>
                   </svg></a></li>
-              <li><a href="https://pinterest.com.br" target="_blank" title="Pinterest"> 
+              <?php } ?>
+              <?php if($pinterest != ''){ ?>
+              <li><a href="<?php echo $pinterest; ?>" target="_blank" title="Pinterest"> 
                   <svg class="icon icon-pinterest">
                     <use xlink:href="#icon-pinterest"></use>
                   </svg></a></li>
-              <li><a href="https://behance.com.br" target="_blank" title="Behance"> 
+              <?php } ?>
+              <?php if($behance != ''){ ?>
+              <li><a href="<?php echo $behance; ?>" target="_blank" title="Behance"> 
                   <svg class="icon icon-behance">
                     <use xlink:href="#icon-behance"></use>
                   </svg></a></li>
+              <?php } ?>
             </ul>
           </div>
           <div class="footerBoxRight">

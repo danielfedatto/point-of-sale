@@ -45,14 +45,26 @@ class Controller_Index extends Controller_Template {
         $this->template->keywords = $configuracoes->CON_KEYWORDS;
         $this->template->description = $configuracoes->CON_DESCRIPTION;
         $this->template->analytics = $configuracoes->CON_GOOGLE_ANALYTICS;
+        $this->template->facebook = $configuracoes->CON_FACEBOOK;
+        $this->template->instagram = $configuracoes->CON_INSTAGRAM;
+        $this->template->pinterest = $configuracoes->CON_PINTREST;
+        $this->template->behance = $configuracoes->CON_BEHANCE;
+        $this->template->endereco = $configuracoes->CON_ENDERECO;
+        $this->template->email = $configuracoes->CON_EMAIL;
+        $this->template->telefone = $configuracoes->CON_TELEFONE;
+        $this->template->atendimento = $configuracoes->CON_HORARIO_ATENDIMENTO;
         $this->template->id_logo = $configuracoes->CON_ID;
+
+        $this->template->banners = ORM::factory("banners")->where('BAN_INICIO', '<=', date('Y-m-d'))->where('BAN_FIM', '>=', date('Y-m-d'))->find_all();
     }
 
     public function action_index() {
         $view = View::Factory('index');
 
         $view->servicos = ORM::factory("servicos")->find_all();
+        $view->cases = ORM::factory("cases")->where("CAS_HOME", "=", "S")->limit(6)->order_by(DB::expr('RAND()'))->find_all();
         $view->clientes = ORM::factory("clientes")->order_by(DB::expr('RAND()'))->find_all();
+        $view->artigos = ORM::factory("artigos")->limit(3)->find_all();
 
         $this->template->conteudo = $view;
     }
@@ -321,6 +333,49 @@ class Controller_Index extends Controller_Template {
                 return "Dezembro";
                 break;
         }
+    }
+
+    public static function MMMddaaaa($valor) {
+        $data = explode('-', $valor); 
+        switch ($data[1]) {
+            case "01":
+                $mmmddaaaa = "JAN";
+                break;
+            case "02":
+                $mmmddaaaa = "FEV";
+                break;
+            case "03":
+                $mmmddaaaa = "MAR";
+                break;
+            case "04":
+                $mmmddaaaa = "ABR";
+                break;
+            case "05":
+                $mmmddaaaa = "MAI";
+                break;
+            case "06":
+                $mmmddaaaa = "JUN";
+                break;
+            case "07":
+                $mmmddaaaa = "JUL";
+                break;
+            case "08":
+                $mmmddaaaa = "AGO";
+                break;
+            case "09":
+                $mmmddaaaa = "SET";
+                break;
+            case "10":
+                $mmmddaaaa = "OUT";
+                break;
+            case "11":
+                $mmmddaaaa = "NOV";
+                break;
+            case "12":
+                $mmmddaaaa = "DEZ";
+                break;
+        }
+        return $mmmddaaaa .= ' '.$data[2].', '.$data[0];
     }
     
     public static function dataextenso($data) {

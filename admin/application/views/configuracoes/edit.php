@@ -60,10 +60,10 @@
         </div>
                             
         <div class="form-group">
-            <label for="CON_PINTREST" class="col-sm-2 control-label">Pintrest</label>
+            <label for="CON_PINTREST" class="col-sm-2 control-label">Pinterest</label>
             <div class="col-sm-10">
                 
-                <input type="text"   class="form-control  " placeholder="Pintrest" value="<?php if($configuracoes) echo $configuracoes["CON_PINTREST"] ?>" id="CON_PINTREST" name="CON_PINTREST" >
+                <input type="text"   class="form-control  " placeholder="Pinterest" value="<?php if($configuracoes) echo $configuracoes["CON_PINTREST"] ?>" id="CON_PINTREST" name="CON_PINTREST" >
             </div>
         </div>
                             
@@ -105,7 +105,7 @@
             </div>
         </div>
                                         
-        <div class="form-group">
+        <div class="form-group hide">
             <label for="logo" class="col-sm-2 control-label">Logo</label>
             <div class="col-sm-10">
                 <input type="file" id="logo" name="logo" >

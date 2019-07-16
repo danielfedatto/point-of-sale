@@ -6,7 +6,7 @@ Class Model_Banners extends ORM {
 
     protected $_table_name = "BANNERS";
     protected $_primary_key = "BAN_ID";
-        protected $_sorting = array("BAN_INICIO" => "desc");
+        protected $_sorting = array("BAN_ORDEM" => "ASC");
     
     //RELATIONSHIP
     protected $_belongs_to = array(
