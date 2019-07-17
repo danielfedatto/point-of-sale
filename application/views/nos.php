@@ -6,28 +6,24 @@
 </section>
 <section class="weOffer">
     <div class="containerFluid">
-    <div class="weOfferBoxController">
-        <div class="weOfferBox">
-        <figure><img src="img/offer_01.png" alt=""></figure>
-        <div class="offerDesc"><strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.</div>
+        <div class="weOfferBoxController">
+            <?php 
+            foreach($servicos as $ser){ 
+                $imgSer = glob('admin/upload/servicos/imagem_interna_'.$ser->SER_ID.'.*'); 
+                if($imgSer){ ?>
+                    <div class="weOfferBox">
+                        <figure>
+                            <img src="<?php echo url::base().$imgSer[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>">
+                        </figure>
+                        <div class="offerDesc">
+                            <strong><?php echo $ser->SER_TITULO; ?></strong> 
+                            <?php echo strip_tags($ser->SER_TEXTO); ?>
+                        </div>
+                    </div>
+                <?php
+                }
+            } ?>
         </div>
-        <div class="weOfferBox">
-        <figure><img src="img/offer_02.png" alt=""></figure>
-        <div class="offerDesc"><strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.</div>
-        </div>
-        <div class="weOfferBox">
-        <figure><img src="img/offer_03.png" alt=""></figure>
-        <div class="offerDesc"><strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.</div>
-        </div>
-        <div class="weOfferBox">
-        <figure><img src="img/offer_04.png" alt=""></figure>
-        <div class="offerDesc"><strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.</div>
-        </div>
-        <div class="weOfferBox">
-        <figure><img src="img/offer_05.png" alt=""></figure>
-        <div class="offerDesc"><strong>Consultorias</strong> Planos de negócios, pesquisas, análises e consultorias.</div>
-        </div>
-    </div>
     </div>
 </section>
 <section class="teamWork">
