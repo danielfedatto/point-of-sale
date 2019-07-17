@@ -1,0 +1,56 @@
+extends _includes/template.pug
+block content
+    section.homeSlider
+        .slider
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+    section.contatoInterno
+        .container
+            h3!= 'Tá na hora de <span>fazer</span> acontecer!'
+            .contatoController
+                .contatoInfo
+                    address
+                        h6 Point Of Sale - Estratégias para Varejo
+                        |Rua Anibal Venturi, 488, B. Lucas Araújo
+                        br
+                        |Passo Fundo/RS - Brasil
+                        br
+                        |contato@pointofsale.com.br
+                        br
+                        |
+                        span (54) 3045-5601
+                    .horarios
+                        h6 Horários de Atendimento
+                        | Segunda a Sexta-Feira
+                        br
+                        | Das 8h30 às 12 e
+                        br
+                        | das 13h30 às 18h;
+                .contatoForm
+                    #contato-form
+                        .inputControll
+                            input#nome(type="text", name="nome", value="", placeholder="Nome:")
+                        .inputControll.formGroup
+                            input#telefone(type="text", name="nome", value="", placeholder="Fone:")
+                            input#email(type="mail", name="email", value="", placeholder="E-mail:")
+                        .inputControll
+                            textarea#mensagem(name="", cols="30", rows="10", placeholder="Mensagem:")
+                            button.btnType2(type="submit") Enviar
+    section.local
+        #map
