@@ -13,6 +13,15 @@ class Controller_Contatos extends Controller_Index {
 
     public function action_index() {
         $view = View::Factory("contatos");
+
+        //CONFIGURACOES
+        $configuracoes = ORM::factory("configuracoes")->where("CON_ID", "=", "1")->find();
+
+        $view->titulo = $configuracoes->CON_EMPRESA;
+        $view->endereco = $configuracoes->CON_ENDERECO;
+        $view->email = $configuracoes->CON_EMAIL;
+        $view->telefone = $configuracoes->CON_TELEFONE;
+        $view->atendimento = $configuracoes->CON_HORARIO_ATENDIMENTO;
         
         $this->template->conteudo = $view;
     }

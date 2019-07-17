@@ -70,13 +70,11 @@
       </div>
       <div id="nav">
         <ul>
-          <li><a href="<?php echo url::base(); ?>" title="Home Page">HOME</a></li>
-          <li><a href="empresa.html" title="Quem somos">QUEM SOMOS</a></li>
-          <li><a href="advogados.html" title="Nossa Equipe">NOSSA EQUIPE</a></li>
-          <li><a href="areaatuacao.html" title="Área de Atuação">ÁREA DE ATUAÇÃO</a></li>
-          <li><a href="artigos.html" title="Artigos e Publicações">ARTIGOS E PUBLICAÇÕES</a></li>
-          <li><a href="noticias.html" title="Notícias">NOTÍCIAS</a></li>
-          <li><a href="contato.html" title="Contato">CONTATO</a></li>
+          <li><a href="<?php echo url::base(); ?>" title="Home">Home</a></li>
+          <li><a href="<?php echo url::base(); ?>nos" title="Quem somos">Nós</a></li>
+          <li><a href="<?php echo url::base(); ?>cases" title="Cases">Cases</a></li>
+          <li><a href="<?php echo url::base(); ?>blog" title="Blog">Blog</a></li>
+          <li><a href="<?php echo url::base(); ?>contatos" title="Contato">CONTATO</a></li>
         </ul>
       </div>
     </div>
@@ -89,7 +87,7 @@
             <li><a href="<?php echo url::base(); ?>nos" title="Sobre Nós">Nós</a></li>
             <li><a href="<?php echo url::base(); ?>cases" title="Cases">Cases</a></li>
             <li><a href="<?php echo url::base(); ?>blog" title="Blog">Blog</a></li>
-            <li><a href="<?php echo url::base(); ?>contato" title="Contato">Contato</a></li>
+            <li><a href="<?php echo url::base(); ?>contatos" title="Contato">Contato</a></li>
           </ul>
         </div>
       </div>
