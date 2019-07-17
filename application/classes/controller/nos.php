@@ -2,22 +2,22 @@
 
 defined("SYSPATH") or die("No direct script access.");
 
-class Controller_Quemsomos extends Controller_Index {
+class Controller_Nos extends Controller_Index {
 
     public function before() {
         parent::before();
         $this->_name = $this->request->controller();
-        $this->template->titulo .= " - Quem somos";
+        $this->template->titulo .= " - Nós";
         
     }
 
     public function action_index() {
-        $view = View::Factory("quemsomos");
+        $view = View::Factory("nos");
         
         //BUSCA OS REGISTROS        
-        $view->quemsomos = ORM::factory("quemsomos")->find();
-        $view->timetexto = ORM::factory("timetexto")->find();
-        $view->time = ORM::factory("time")->find_all();
+        $view->nos = ORM::factory("nos")->find();
+        $view->servicos = ORM::factory("servicos")->find_all();
+        $view->equipe = ORM::factory("equipe")->find_all();
         
         $this->template->conteudo = $view;
     }
