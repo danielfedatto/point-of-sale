@@ -6,7 +6,7 @@ Class Model_Equipe extends ORM {
 
     protected $_table_name = "EQUIPE";
     protected $_primary_key = "EQU_ID";
-        protected $_sorting = array("EQU_ID" => "asc");
+        protected $_sorting = array("EQU_ORDEM" => "asc");
     
     //RELATIONSHIP
     protected $_belongs_to = array(

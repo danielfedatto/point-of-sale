@@ -6,7 +6,7 @@ Class Model_Servicos extends ORM {
 
     protected $_table_name = "SERVICOS";
     protected $_primary_key = "SER_ID";
-        protected $_sorting = array("SER_ID" => "asc");
+        protected $_sorting = array("SER_ORDEM" => "asc");
     
     //RELATIONSHIP
     protected $_belongs_to = array(
