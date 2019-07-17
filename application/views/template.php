@@ -71,7 +71,7 @@
       </div>
       <div id="nav">
         <ul>
-          <li><a href="index.html" title="Home Page">HOME</a></li>
+          <li><a href="<?php echo url::base(); ?>" title="Home Page">HOME</a></li>
           <li><a href="empresa.html" title="Quem somos">QUEM SOMOS</a></li>
           <li><a href="advogados.html" title="Nossa Equipe">NOSSA EQUIPE</a></li>
           <li><a href="areaatuacao.html" title="Área de Atuação">ÁREA DE ATUAÇÃO</a></li>
@@ -160,12 +160,13 @@
             <form class="newsLetter" action="#" id="newsLetter">
               <h5>NEWSLETTER</h5>
               <p>Quer receber nossos conteúdos e ficar por dentro das novidades? Então cadastre-se!</p>
-              <div class="inputControll">
+              <div class="inputControll form-group">
                 <svg class="icon icon-newsletter">
                   <use xlink:href="#icon-newsletter"></use>
                 </svg>
-                <input type="text" placeholder="Digite seu e-mail">
-                <button class="btnType3" type="button">Inscrever</button>
+                <input type="text" name="NEW_EMAIL" id="NEW_EMAIL" validar="email" placeholder="Digite seu e-mail">
+                <button class="btnType3" type="button" id="salvarNews">Inscrever</button>
+                <div id="enviandoNews" style="display: none;">Enviando...</div>
               </div>
             </form>
           </div>

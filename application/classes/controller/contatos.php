@@ -17,10 +17,41 @@ class Controller_Contatos extends Controller_Index {
         $this->template->conteudo = $view;
     }
 
+    public function action_news() {
+        $this->auto_render = FALSE;
+        
+        $empresa = "Point of Sale";
+        if ($this->request->is_ajax()) {
+
+            $newsletter = ORM::factory("newsletter")->where('NEW_EMAIL', '=', $this->request->post('NEW_EMAIL'))->find_all();
+            if($newsletter->count() > 0){
+                echo json_encode(array('ok' => false));
+            }else{
+
+                $newsletter = ORM::factory("newsletter");
+                
+                //INSERE
+                foreach($this->request->post() as $campo => $value){
+                    $newsletter->$campo = $value;
+                }
+                
+                //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
+                try{
+                    $query = $newsletter->save();
+
+                    echo json_encode(array('ok' => true));
+                    
+                } catch (ORM_Validation_Exception $e){
+                    echo json_encode(array('ok' => false));
+                }
+            }
+        }
+    }
+
     public function action_enviar() {
         $this->auto_render = FALSE;
         
-        $empresa = "Costa Frame";
+        $empresa = "Point of Sale";
         if ($this->request->is_ajax()) {
 
             $contato = ORM::factory("contatos");
