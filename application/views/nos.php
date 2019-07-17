@@ -31,9 +31,16 @@
     <h3>As <span>Mentes</span> Criativas</h3>
     <h6>Quem faz a magia acontecer</h6>
     <div class="teamWorkBoxController">
-        <figure><img src="img/team_01.png" alt=""></figure>
-        <figure><img src="img/team_02.png" alt=""></figure>
-        <figure><img src="img/team_03.png" alt=""></figure>
+        <?php
+        foreach($equipe as $equi){ 
+            $imgEqui = glob('admin/upload/equipe/'.$equi->EQU_ID.'.*');
+            if($imgEqui){ ?>
+                <figure>
+                    <img src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
+                </figure>
+            <?php
+            }
+        } ?>
     </div>
     </div>
 </section>
