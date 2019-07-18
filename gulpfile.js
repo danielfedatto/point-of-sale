@@ -83,9 +83,8 @@ function scripts() {
 // Roda o servidor BrowserSync
 function server() {
 	browserSync.init({
-		server: {
-			baseDir: 'app/'
-		},
+		proxy: 'localhost',
+		files: '**/*.php',
 		notify: true
 	});
 }
