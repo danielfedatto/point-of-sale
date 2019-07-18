@@ -391,7 +391,7 @@ jQuery.fn.validar.me = function(o) {
                 alerta.innerHTML = "<i class='fa fa-times-circle-o'></i> "+e;
                 
                 $this.after(alerta);
-                alerta.parentNode.setAttribute("class", "form-group has-error");
+                alerta.parentNode.setAttribute("class", "inputControll form-group has-error");
                 
                 setTimeout(function(){
                     $("#alertaErro").remove();

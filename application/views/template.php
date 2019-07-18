@@ -161,7 +161,7 @@
                 <svg class="icon icon-newsletter">
                   <use xlink:href="#icon-newsletter"></use>
                 </svg>
-                <input type="text" name="NEW_EMAIL" id="NEW_EMAIL" validar="email" value="" placeholder="Digite seu e-mail">
+                <input type="text" name="NEW_EMAIL" id="NEW_EMAIL" label="E-mail" validar="email" value="" placeholder="Digite seu e-mail">
                 <button class="btnType3" type="button" id="salvarNews">Inscrever</button>
                 <div id="enviandoNews" style="display: none;">Enviando...</div>
               </div>
