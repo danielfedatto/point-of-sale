@@ -3,21 +3,24 @@ $(document).ready(function() {
 
     $("#salvarNews").click(function(event) {
         event.preventDefault();
-        $("#enviandoNews").show();
-        if($('#NEW_EMAIL').val() == ''){
-            alert('Informe o e-mail');
-        }else{
-            $.post(URLBASE + 'contatos/news', {NEW_EMAIL: $('#NEW_EMAIL').val()}, function(data) {
+        $("#newsLetter").submit();
+    });
+
+    $("#newsLetter").validar({
+        "after": function() {
+            $("#enviandoNews").show();
+            $.post(URLBASE + 'contatos/news', this.serialize(), function(data) {
                 if (data.ok) {
                     alert('Obrigado por realizar seu cadastro! \nReceberá nossas novidades em breve...');
                     $('#NEW_EMAIL').val('');
                 } else {
-                    alert('Ops! N&atilde;o conseguimos receber seu cadastro... \nTente novamente mais tarde!');
+                    alert('Ops! Não conseguimos receber seu cadastro... \nTente novamente mais tarde!');
                 }
                 $("#enviandoNews").hide();
             }, 'json');
-        }
-        return false;
+            return false;
+        },
+        "marcar": false
     });
 
     /*SALVAR CAMPOS*/
@@ -31,11 +34,10 @@ $(document).ready(function() {
             $("#enviando").show();
             $.post(URLBASE + 'contatos/enviar', this.serialize(), function(data) {
                 if (data.ok) {
-                    $('#enviando').html('<h2>Obrigado por entrar em contato! <br/>Retornaremos em breve...<h2>');
+                    $('#enviando').html('<h5>Obrigado por entrar em contato! <br/>Retornaremos em breve...<h5>');
                 } else {
-                    $('#enviando').html('<h2>Ops! N&atilde;o conseguimos receber seu contato... <br/>Tente novamente mais tarde!</h2>');
-                }
-                
+                    $('#enviando').html('<h5>Ops! N&atilde;o conseguimos receber seu contato... <br/>Tente novamente mais tarde!</h5>');
+                }    
             }, 'json');
             return false;
         },

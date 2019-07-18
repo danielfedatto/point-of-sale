@@ -75,7 +75,10 @@ class Controller_Contatos extends Controller_Index {
                 $contato->CON_DATA = date("d/m/Y");
                 $query = $contato->save();
 
-                $depa = "contato@costaframe.com";
+                $configuracoes = ORM::factory("configuracoes")->where("CON_ID", "=", "1")->find();
+
+                //$depa = $configuracoes->CON_EMAIL;
+                $depa = "costafelipe91@gmail.com";
                 
                 //TEXTO INTERNO
                 $texto = '';
@@ -100,7 +103,7 @@ class Controller_Contatos extends Controller_Index {
                                 <table cellpadding="0" cellspacing="0" border="0" align="center" width="700" style="background-color:' . $this->coresEmail['background'] . ';border-radius:35px;">
                                     <tr>
                                         <td style="padding:15px;text-align:center;">
-                                            <img src="' . $this->dominio . 'images/logo_costa_frame.png" width="260" style="vertical-align:middle;"/>
+                                            <img src="' . $this->dominio . 'images/logo-email.png" style="vertical-align:middle;"/>
                                             <span style="color:' . $this->coresEmail['basecolor'] . ';margin-left:150px;font-weight:bold;font-size:20px;">Contato</span>
                                         </td>
                                     </tr>
@@ -198,7 +201,7 @@ class Controller_Contatos extends Controller_Index {
                 $mail->Host = $this->host;
 
                 //Define a porta utilizada pelo Gmail para o envio autenticado
-                $mail->Port = "465";
+                $mail->Port = "587";
 
                 // Define que a mensagem utiliza método de envio autenticado
                 $mail->SMTPAuth = "true";

@@ -6,7 +6,7 @@ Class Model_Contatos extends ORM {
 
     protected $_table_name = "CONTATOS";
     protected $_primary_key = "CON_ID";
-        protected $_sorting = array("CON_DATA" => "desc");
+        protected $_sorting = array("CON_ID" => "desc");
     
     //RELATIONSHIP
     protected $_belongs_to = array(
