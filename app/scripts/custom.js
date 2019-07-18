@@ -31,11 +31,10 @@ $(document).ready(function() {
             $("#enviando").show();
             $.post(URLBASE + 'contatos/enviar', this.serialize(), function(data) {
                 if (data.ok) {
-                    $('#enviando').html('<h2>Obrigado por entrar em contato! <br/>Retornaremos em breve...<h2>');
+                    $('#enviando').html('<h5>Obrigado por entrar em contato! <br/>Retornaremos em breve...<h5>');
                 } else {
-                    $('#enviando').html('<h2>Ops! N&atilde;o conseguimos receber seu contato... <br/>Tente novamente mais tarde!</h2>');
-                }
-                
+                    $('#enviando').html('<h5>Ops! N&atilde;o conseguimos receber seu contato... <br/>Tente novamente mais tarde!</h5>');
+                }    
             }, 'json');
             return false;
         },

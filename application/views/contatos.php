@@ -30,6 +30,7 @@
 							<textarea id="CON_MENSAGEM" name="CON_MENSAGEM" label="Mensagem" validar="texto" cols="30" rows="10" placeholder="Mensagem:"></textarea>
 							<button class="btnType2" id="salvarContato" type="submit">Enviar</button>
 						</div>
+						<div id="enviando" style="display: none">Enviando...</div>
 					</form>
 				</div>
 			</div>
