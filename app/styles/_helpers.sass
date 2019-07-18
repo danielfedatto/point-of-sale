@@ -6,3 +6,30 @@ img
     height: auto
 .inputControll
     display: flex
+.pagination
+    display: flex
+    justify-content: center
+    padding: 0
+    li
+        display: inline-block
+        border-radius: 2px
+        text-align: center
+        vertical-align: top
+        height: 30px
+        a
+            color: #444
+            display: inline-block
+            font-size: 1.2rem
+            padding: 0 10px
+            line-height: 30px
+    .active
+        background-color: $color1
+        a
+            color: #fff
+    .disabled
+        a
+            cursor: default
+            color: #999
+    .icon
+        width: 2rem
+        height: 2rem

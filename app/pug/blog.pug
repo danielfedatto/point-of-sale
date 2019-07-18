@@ -22,6 +22,8 @@ block content
                             a(href="contato.html").btnType1 Fala com a gente!
     section.blogInterna
         .container
+            h3 Fique por dentro das 
+                span novidades
             .blogWrap
                 article
                     figure
@@ -119,3 +121,27 @@ block content
                             svg.icon.icon-access_time
                                 use(xlink:href="#icon-access_time")
                     a(href="blog-interna.html", title="").btnType2 Ler Tudo
+            //- Não usar mais do que 9 [li]
+            ul.pagination
+                li.disabled 
+                    a(href="#!")
+                        svg.icon.icon-chevron_left
+                            use(xlink:href="#icon-chevron_left")
+                li.active
+                    a(href="#!") 1
+                li
+                    a(href="#!") 2
+                li
+                    a(href="#!") 3
+                li
+                    a(href="#!") 4
+                li
+                    a(href="#!") 5
+                li.disabled 
+                    a(href="#!") ...
+                li
+                    a(href="#!") 11
+                li
+                    a(href="#!")
+                        svg.icon.icon-chevron_right
+                            use(xlink:href="#icon-chevron_right")
