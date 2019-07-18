@@ -187,7 +187,7 @@ class Controller_Blog extends Controller_Index {
                     //thumb
                     $img = Image::factory(DOCROOT."upload/blog/".$imgName);
                     $imgName = "thumb_" . $blog->pk() . ".".$ext;
-                    $img->resize(200)->save(DOCROOT."upload/blog/".$imgName);
+                    $img->resize(365)->save(DOCROOT."upload/blog/".$imgName);
                 }
             } catch (ORM_Validation_Exception $e){
                 $query = false;
@@ -285,7 +285,7 @@ class Controller_Blog extends Controller_Index {
                         //thumb
                         $img = Image::factory(DOCROOT."upload/blog/".$imgName);
                         $imgName = "thumb_" . $blog->pk() . ".".$ext;
-                        $img->resize(200)->save(DOCROOT."upload/blog/".$imgName);
+                        $img->resize(365)->save(DOCROOT."upload/blog/".$imgName);
                     }
                 } catch (ORM_Validation_Exception $e){
                     $query = false;
