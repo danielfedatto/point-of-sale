@@ -380,7 +380,7 @@ jQuery.fn.validar.me = function(o) {
                     $("#alertaErro").remove();
                 }
                 
-                alerta = document.createElement("label");
+                var alerta = document.createElement("label");
                 
                 alerta.setAttribute("id", "alertaErro");
                 
@@ -391,10 +391,10 @@ jQuery.fn.validar.me = function(o) {
                 alerta.innerHTML = "<i class='fa fa-times-circle-o'></i> "+e;
                 
                 $this.after(alerta);
-                alerta.parentNode.parentNode.setAttribute("class", "form-group has-error");
+                alerta.parentNode.setAttribute("class", "form-group has-error");
                 
                 setTimeout(function(){
-                    $("#alertaErro").remove();
+                    //$("#alertaErro").remove();
                 }, 4000);
 
                 //o.alert(e);
