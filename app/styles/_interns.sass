@@ -184,7 +184,7 @@
             &:last-child
                 margin: 0
     .inputControll
-        margin-bottom: 1rem
+        margin-bottom: 2rem
         position: relative
 .local
     width: 100%
@@ -242,3 +242,34 @@
                     color: $color1
 .pagination
     font-family: $comfortaa
+.blogPost
+    padding: 5rem 0
+.blogPostController
+    display: flex
+    flex-wrap: wrap
+    aside
+        width: 20%
+        .autorPost
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)
+            figure
+                padding: 2rem 0 0 0 
+            h5, h6
+                font-family: $comfortaa
+                text-align: center
+            h5
+                color: $color1
+                font-weight: bold
+            h6
+                color: #b2b2b2
+        .socialMedia
+            width: 100%
+            margin: 0
+            li
+                width: 100%
+                border: solid 1px #b2b2b2
+                margin: 0
+                .icon
+                    max-width: 100%
+                    fill: #ff9800
+    article
+        width: 80%

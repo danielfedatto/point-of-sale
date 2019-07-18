@@ -394,7 +394,7 @@ jQuery.fn.validar.me = function(o) {
                 alerta.parentNode.setAttribute("class", "inputControll form-group has-error");
                 
                 setTimeout(function(){
-                    $("#alertaErro").remove();
+                    //$("#alertaErro").remove();
                 }, 4000);
 
                 //o.alert(e);
