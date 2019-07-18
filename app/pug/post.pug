@@ -1,0 +1,45 @@
+extends _includes/template.pug
+block content
+    section.homeSlider
+        .slider
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+    section.blogPost
+        .container
+            .blogPostController
+                aside
+                    .autorPost
+                        figure
+                            img(src="img/team_01.png", alt="")
+                        h5 Júlia Dias
+                        h6 Arquiteta
+                        ul.socialMedia
+                            li
+                                a(href="https://facebook.com.br", target="_blank", title="Facebook") 
+                                    svg.icon.icon-facebook
+                                        use(xlink:href="#icon-facebook")
+                            li
+                                a(href="https://instagram.com.br", target="_blank", title="Instagram") 
+                                    svg.icon.icon-instagram
+                                        use(xlink:href="#icon-instagram")
+                            li
+                                a(href="https://behance.com.br", target="_blank", title="Behance") 
+                                    svg.icon.icon-behance
+                                        use(xlink:href="#icon-behance")
+                article
