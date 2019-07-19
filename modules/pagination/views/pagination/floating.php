@@ -6,7 +6,7 @@
 // Number of page links in the begin and end of whole range
 $count_out = ( ! empty($config['count_out'])) ? (int) $config['count_out'] : 3;
 // Number of page links on each side of current page
-$count_in = ( ! empty($config['count_in'])) ? (int) $config['count_in'] : 5;
+$count_in = ( ! empty($config['count_in'])) ? (int) $config['count_in'] : 3;
 
 // Beginning group of pages: $n1...$n2
 $n1 = 1;
@@ -70,16 +70,16 @@ for ($i = $n7; $i <= $n8; $i++)
     </ul>
 </div>-->
 
-<div id="pagination">
+<ul class="pagination">
 
 	<?php foreach ($links as $number => $content): ?>
 
 		<?php if ($number === $current_page): ?>
-			<a href="#" class="active"><?php echo $content ?></a>
+			<li class="active"><a href="#!"><?php echo $content ?></a></li>
 		<?php else: ?>
-			<a href="<?php echo HTML::chars($page->url($number)) ?>"><?php echo $content ?></a>
+			<li><a href="<?php echo HTML::chars($page->url($number)) ?>"><?php echo $content ?></a></li>
 		<?php endif ?>
 
 	<?php endforeach ?>
 
-</div>
+</ul>

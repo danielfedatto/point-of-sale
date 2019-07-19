@@ -15,7 +15,7 @@ class Kohana_Pagination {
 		'current_page'      => array('source' => 'query_string', 'key' => 'page'),
 		'total_items'       => 0,
 		'items_per_page'    => 10,
-		'view'              => 'pagination/basic',
+		'view'              => 'pagination/floating',
 		'auto_hide'         => TRUE,
 		'first_page_in_url' => FALSE,
 	);
