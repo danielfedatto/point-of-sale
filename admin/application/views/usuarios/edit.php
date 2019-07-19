@@ -17,6 +17,34 @@
                             <input type="text" class="form-control" placeholder="Nome" validar="texto" id="USU_NOME" name="USU_NOME" value="<?php echo $usuario["USU_NOME"] ?>">
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="USU_CARGO" class="col-sm-2 control-label">Cargo *</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Cargo" validar="texto" id="USU_CARGO" name="USU_CARGO" value="<?php echo $usuario["USU_CARGO"] ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="USU_FACEBOOK" class="col-sm-2 control-label">Facebook</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Facebook" id="USU_FACEBOOK" name="USU_FACEBOOK" value="<?php echo $usuario["USU_FACEBOOK"] ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="USU_INSTAGRAM" class="col-sm-2 control-label">Instagram</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Instagram" id="USU_INSTAGRAM" name="USU_INSTAGRAM" value="<?php echo $usuario["USU_INSTAGRAM"] ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="USU_BEHANCE" class="col-sm-2 control-label">Behance</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="Behance" id="USU_BEHANCE" name="USU_BEHANCE" value="<?php echo $usuario["USU_BEHANCE"] ?>">
+                        </div>
+                    </div>
                     
                     <div class="form-group">
                         <label for="USU_EMAIL" class="col-sm-2 control-label">E-mail *</label>
