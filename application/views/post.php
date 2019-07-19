@@ -4,7 +4,14 @@
             <aside>
             <div class="autorPost">
                 <figure>
-                    <img src="<?php echo url::base(); ?>app/img/team_01.png" alt="">
+                    <?php
+                    $img = glob("admin/upload/usuarios/thumb_".$blog->usuarios->USU_ID.".*");
+                    if($img){
+                        $img = $img[0];
+                    }else{
+                        $img = "admin/dist/img/pessoa.png";
+                    } ?>
+                    <img src="<?php echo url::base().$img; ?>" alt="">
                 </figure>
                 <h5><?php echo $blog->usuarios->USU_NOME; ?></h5>
                 <h6><?php echo $blog->usuarios->USU_CARGO; ?></h6>
