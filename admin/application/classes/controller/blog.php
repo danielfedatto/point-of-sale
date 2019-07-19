@@ -317,11 +317,6 @@ class Controller_Blog extends Controller_Index {
     //EXCLUI REGISTRO
     public function action_excluir(){
         //VERIFICA SE EXISTEM BLOGCATEGORIAS NESSA BLOG. SE EXISTIR, NÃO DEIXA EXCLUIR
-        $blogcategorias = ORM::factory("blogcategorias")->where("BLO_ID", "=", $this->request->param("id"))->count_all();
-                        
-        if ($blogcategorias > 0){
-            $this->action_index("<p class='res-alert warning'>Existem Blog Categorias cadastrados nessa Blog! Nenhuma alteração realizada!</p>", true);
-        }else{
                         
         //EXCLUI IMAGEM
         $imgsT = glob("upload/blog/thumb_" . $this->request->param("id") . ".*");
@@ -354,7 +349,6 @@ class Controller_Blog extends Controller_Index {
         }else{
             //SENAO, VOLTA COM MENSAGEM DE ERRO
             $this->action_index("<p class='res-alert warning'>Houve um problema!</p>", true);
-        }
         }
     }
     
