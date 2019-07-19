@@ -62,6 +62,10 @@ class Controller_Usuarios extends Controller_Index {
             $arr = array(
                 "USU_ID" => $usuario->USU_ID,
                 "USU_NOME" => $usuario->USU_NOME,
+                "USU_CARGO" => $usuario->USU_CARGO,
+                "USU_FACEBOOK" => $usuario->USU_FACEBOOK,
+                "USU_INSTAGRAM" => $usuario->USU_INSTAGRAM,
+                "USU_BEHANCE" => $usuario->USU_BEHANCE,
                 "USU_EMAIL" => $usuario->USU_EMAIL,
                 "USU_LOGIN" => $usuario->USU_LOGIN,
                 "USU_SENHA" => "",
@@ -88,6 +92,10 @@ class Controller_Usuarios extends Controller_Index {
             $arr = array(
                 "USU_ID" => "0",
                 "USU_NOME" => "",
+                "USU_CARGO" => "",
+                "USU_FACEBOOK" => "",
+                "USU_INSTAGRAM" => "",
+                "USU_BEHANCE" => "",
                 "USU_EMAIL" => "",
                 "USU_LOGIN" => "",
                 "USU_SENHA" => "",

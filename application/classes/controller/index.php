@@ -87,190 +87,27 @@ class Controller_Index extends Controller_Template {
     } 
     
     
-    public function action_contatos() {
-        $this->auto_render = FALSE;
-        
-        $empresa = "Business Connection";
-        if ($this->request->is_ajax()) {
+    public static function tempoCorrido($time){
 
-            $contato = ORM::factory("contatos");
-            
-            //INSERE
-            foreach($this->request->post() as $campo => $value){
-                $contato->$campo = $value;
-            }
-            
-            //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
-            try{
-                $contato->CON_DATA = date("d/m/Y");
-                $query = $contato->save();
+        $now = strtotime(date('Y-m-d H:i:s'));
+        $time = strtotime($time);
+        $diff = $now - $time;
 
-                $depa = "atendimento@businessconnection2019.com.br";
-                
-                //TEXTO INTERNO
-                $texto = '';
+        $seconds = $diff;
+        $minutes = round($diff / 60);
+        $hours = round($diff / 3600);
+        $days = round($diff / 86400);
+        $weeks = round($diff / 604800);
+        $months = round($diff / 2419200);
+        $years = round($diff / 29030400);
 
-                //MONTA O TEXTO
-                foreach($this->request->post() as $campo => $value){
-                    $label = str_replace("CON_", "", $campo);
-                    $valor = $value;
-                    if($campo == "CON_MENSAGEM"){
-                        $valor = nl2br($value);
-                    }
-                    $texto .= '<p style="line-height:1.6em;margin:10px 0;">'.ucwords(strtolower($label)).': ' . $valor . ' </p>';
-                }
-
-                //TEXTO EMAIL
-                $msg = '<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable" style="background-color:#ebebeb;font-family:sans-serif;" width="100%">
-                            <tr>
-                                    <td height="20px"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="700" style="background-color:' . $this->coresEmail['background'] . ';border-radius:35px;">
-                                    <tr>
-                                        <td style="padding:15px;text-align:center;">
-                                            <img src="' . $this->dominio . 'images/logo-fixed.png" width="260" style="vertical-align:middle;"/>
-                                            <span style="color:' . $this->coresEmail['basecolor'] . ';margin-left:150px;font-weight:bold;font-size:20px;">Contato</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding:5px;">
-                                            <div style="background-color:#fff;margin:auto;padding:15px;width:660px;border-radius:10px;">
-                                                <h1 style="color:' . $this->coresEmail['basecolor'] . ';margin-top:0;margin-bottom: 15px;">Contato</h1>
-                                                <p style="line-height:1.6em;margin:10px 0;">' . $texto . '</p>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <table style="font-size:11px;padding-top:10px;padding-left:10px;padding-right:10px;padding-bottom:25px;" cellpadding="0" cellspacing="0" border="0" align="center" width="700">
-                                                <tr>
-                                                    <td width="70%" valign="top"><em>Copyright © '.date('Y').' ' . $this->empresa . ', todos os direitos reservados.</em></td>
-                                                    <td width="30%" style="text-align:right;">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td height="20px"></td>
-                            </tr>
-                    </table>
-                    <style type="text/css">
-                        @media only screen and (max-device-width: 480px) {
-                            /* SMARTPHONES */
-                            a[href^="tel"], a[href^="sms"] {
-                                text-decoration: none;
-                                color: black; /* or whatever your want */
-                                pointer-events: none;
-                                cursor: default;
-                            }
-
-                            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-                                text-decoration: default;
-                                color: orange !important; /* or whatever your want */
-                                pointer-events: auto;
-                                cursor: default;
-                            }
-                        }
-                        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-                            /* TABLETS E IPADS*/
-                            a[href^="tel"], a[href^="sms"] {
-                                text-decoration: none;
-                                color: blue; /* or whatever your want */
-                                pointer-events: none;
-                                cursor: default;
-                            }
-
-                            .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
-                                text-decoration: default;
-                                color: orange !important;
-                                pointer-events: auto;
-                                cursor: default;
-                            }
-                        }
-                        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-                            /* IPHONE RETINA */
-                        }
-                        @media only screen and (-webkit-device-pixel-ratio:.75){
-                            /* ANDROIDS DE TELA RUIM */
-                        }
-                        @media only screen and (-webkit-device-pixel-ratio:1){
-                            /* ANDROIDS ~NORMAIS */
-                        }
-                        @media only screen and (-webkit-device-pixel-ratio:1.5){
-                            /* ANDROIDS DE ALTA DENSIDADE */
-                        }
-                    </style>';
-                
-                require "phpMailer/class.phpmailer.php";
-
-                $mail = new PHPMailer();
-
-                // Define o método de envio
-                //$mail->Mailer = "smtp";
-
-                // Define que a mensagem poderá ter formatação HTML
-                $mail->IsHTML(true);
-
-                // Define que a codificação do conteúdo da mensagem será utf-8
-                $mail->CharSet = "utf-8";
-
-                // Define que os emails enviadas utilizarão SMTP Seguro tls
-                $mail->SMTPSecure = "tls";
-
-                // Define que o Host que enviará a mensagem é o Gmail
-                $mail->Host = $this->host;
-
-                //Define a porta utilizada pelo Gmail para o envio autenticado
-                $mail->Port = "465";
-
-                // Define que a mensagem utiliza método de envio autenticado
-                $mail->SMTPAuth = "true";
-
-                // Define o usuário do gmail autenticado responsável pelo envio
-                $mail->Username = $this->emailEmpresa;
-
-                // Define a senha deste usuário citado acima
-                $mail->Password = $this->senhaEmail;
-
-                // Defina o email e o nome que aparecerá como remetente no cabeçalho
-                $mail->From = $query->CON_EMAIL;
-                $mail->FromName = $query->CON_NOME;
-
-                // Define o destinatário que receberá a mensagem
-                $mail->AddAddress($depa);
-
-                /*
-                  Define o email que receberá resposta desta
-                  mensagem, quando o destinatário responder
-                 */
-                $mail->AddReplyTo($mail->From, $mail->FromName);
-
-                // Assunto da mensagem
-                $mail->Subject = "Contato Site";
-
-                // Toda a estrutura HTML e corpo da mensagem
-                $mail->Body = $msg;
-
-                $a = $mail->Send();
-
-
-                if ($a){
-                    echo json_encode(array('ok' => true));
-                }else{
-                    echo json_encode(array('ok' => false));
-                }
-                
-            } catch (ORM_Validation_Exception $e){
-                echo json_encode(array('ok' => false));
-            }
-        }
+        if ($seconds <= 60) return"1 min atrás";
+        else if ($minutes <= 60) return $minutes==1 ?'1 min atrás':$minutes.' min atrás';
+        else if ($hours <= 24) return $hours==1 ?'1 hrs atrás':$hours.' hrs atrás';
+        else if ($days <= 7) return $days==1 ?'1 dia atras':$days.' dias atrás';
+        else if ($weeks <= 4) return $weeks==1 ?'1 semana atrás':$weeks.' semanas atrás';
+        else if ($months <= 12) return $months == 1 ?'1 mês atrás':$months.' meses atrás';
+        else return $years == 1 ? 'um ano atrás':$years.' anos atrás';
     }
 
     //PAGINACAO DA ORM

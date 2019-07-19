@@ -158,12 +158,7 @@ class Controller_Categorias extends Controller_Index {
     
     //EXCLUI REGISTRO
     public function action_excluir(){
-        //VERIFICA SE EXISTEM BLOGCATEGORIAS NESSA CATEGORIAS. SE EXISTIR, NÃO DEIXA EXCLUIR
-        $blogcategorias = ORM::factory("blogcategorias")->where("CAT_ID", "=", $this->request->param("id"))->count_all();
-                        
-        if ($blogcategorias > 0){
-            $this->action_index("<p class='res-alert warning'>Existem Blog Categorias cadastrados nessa Categorias! Nenhuma alteração realizada!</p>", true);
-        }else{
+        
                         
         $categorias = ORM::factory("categorias", $this->request->param("id"));
             
@@ -182,7 +177,7 @@ class Controller_Categorias extends Controller_Index {
             //SENAO, VOLTA COM MENSAGEM DE ERRO
             $this->action_index("<p class='res-alert warning'>Houve um problema!</p>", true);
         }
-        }
+        
     }
     
     //EXCLUI TODOS REGISTROS MARCADOS

@@ -6,7 +6,7 @@ Class Model_Blog extends ORM {
 
     protected $_table_name = "BLOG";
     protected $_primary_key = "BLO_ID";
-        protected $_sorting = array("BLO_ID" => "asc");
+        protected $_sorting = array("BLO_ID" => "desc");
     
     //RELATIONSHIP
     protected $_belongs_to = array(

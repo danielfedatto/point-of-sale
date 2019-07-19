@@ -24,7 +24,7 @@
 				<figcaption>
 					<h3><?php echo $cas->CAS_TITULO; ?></h3>
 					<span><?php echo $cas->CAS_TEXTO; ?></span>
-					<a class="btnType2" href="<?php echo url::base(); ?>">Saiba mais</a>
+					<a class="btnType2" href="<?php echo url::base(); ?>cases">Saiba mais</a>
 				</figcaption>
 			</figure>
 		<?php 
@@ -63,10 +63,10 @@
 						<figure>
 							<img src="<?php echo url::base().$imgArt[0]; ?>" alt="<?php echo $art->ART_TITULO; ?>">
 						</figure>
-						<a href="<?php echo url::base(); ?>artigos/ler/<?php echo $art->ART_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($art->ART_TITULO)); ?>" title="<?php echo $art->ART_TITULO; ?>">
+						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $art->ART_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($art->ART_TITULO)); ?>" title="<?php echo $art->ART_TITULO; ?>">
 							<h5><?php echo $art->ART_TITULO; ?></h5>
 						</a>
-						<a href="<?php echo url::base(); ?>artigos/ler/<?php echo $art->ART_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($art->ART_TITULO)); ?>" title="<?php echo $art->ART_TITULO; ?>">
+						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $art->ART_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($art->ART_TITULO)); ?>" title="<?php echo $art->ART_TITULO; ?>">
 							<p><?php echo Controller_Index::limitar_palavras($art->ART_TEXTO, 10); ?></p>
 						</a>
 						<div class="articleFooter">

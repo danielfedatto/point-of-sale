@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-        <title><?php echo $titulo; ?></title>
-        <meta charset="utf-8" />
-    	<meta name="description" content="<?php echo $description; ?>" />
-    	<meta name="keywords" content="<?php echo $keywords; ?>" />
-		<meta name="robots" content="all">
-		<meta name="RATING" content="GENERAL">
-		<meta name="REVISIT-AFTER" content="2 days">
-		<meta name="LANGUAGE" content="pt-br">
-		<meta name="GOOGLEBOT" content="INDEX, FOLLOW">
-		<meta name="author" content="Daniel Fedatto">
-		<meta name="copyright" content="Copyright (c) Linx">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
-		<meta name="application-name" content="<?php echo $titulo; ?>">
-		<meta name="msapplication-TileColor" content="#FFFFFF">
-		<meta name="msapplication-TileImage" content="<?php echo url::base() ?>dist/<?php echo url::base() ?>dist/img/mstile-144x144.png">
-		<meta name="msapplication-square70x70logo" content="<?php echo url::base() ?>dist/img/mstile-70x70.png">
-		<meta name="msapplication-square150x150logo" content="<?php echo url::base() ?>dist/img/mstile-150x150.png">
-		<meta name="msapplication-wide310x150logo" content="<?php echo url::base() ?>dist/img/mstile-310x150.png">
-		<meta name="msapplication-square310x310logo" content="<?php echo url::base() ?>dist/img/mstile-310x310.png">
-		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo url::base() ?>dist/img/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo url::base() ?>dist/img/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo url::base() ?>dist/img/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo url::base() ?>dist/img/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo url::base() ?>dist/img/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo url::base() ?>dist/img/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo url::base() ?>dist/img/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo url::base() ?>dist/img/apple-touch-icon-152x152.png">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-196x196.png" sizes="196x196">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-16x16.png" sizes="16x16">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-128x128.png" sizes="128x128">
-    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>app/css/style.min.css">
-        
-    <script type="text/javascript">
-        var URLBASE = "<?php echo url::base() ?>";
-    </script>
-		<?php echo $analytics; ?>
-	</head>
-	<body>
+  <head>
+    <title>Point of Sale - Estratégias para seu negócio</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Estratégias para seu negócio">
+    <meta name="robots" content="all">
+    <meta name="RATING" content="GENERAL">
+    <meta name="REVISIT-AFTER" content="2 days">
+    <meta name="LANGUAGE" content="pt-br">
+    <meta name="GOOGLEBOT" content="INDEX, FOLLOW">
+    <meta name="author" content="Daniel Fedatto">
+    <meta name="copyright" content="Copyright (c) Linx">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+    <meta name="application-name" content="&amp;nbsp;">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="img/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="img/mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="img/mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="img/mstile-310x310.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="img/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/favicon-128x128.png" sizes="128x128">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+  </head>
+  <body>
     <div class="svg-icon_ui-lib">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <symbol id="icon-pinterest" viewBox="0 0 32 32">
           <path d="M16.023 0c-8.828 0-15.984 7.156-15.984 15.983 0 6.772 4.211 12.556 10.157 14.883-0.14-1.265-0.265-3.204 0.055-4.585 0.292-1.249 1.875-7.943 1.875-7.943s-0.479-0.96-0.479-2.375c0-2.217 1.289-3.881 2.891-3.881 1.365 0 2.024 1.025 2.024 2.251 0 1.372-0.871 3.423-1.323 5.323-0.38 1.591 0.8 2.887 2.367 2.887 2.837 0 5.024-2.993 5.024-7.316 0-3.815-2.751-6.492-6.677-6.492-4.547 0-7.212 3.416-7.212 6.932 0 1.377 0.525 2.857 1.185 3.655 0.132 0.16 0.149 0.3 0.113 0.46-0.12 0.5-0.391 1.599-0.445 1.817-0.071 0.3-0.229 0.361-0.535 0.22-1.993-0.92-3.244-3.837-3.244-6.195 0-5.035 3.664-9.669 10.56-9.669 5.544 0 9.856 3.956 9.856 9.231 0 5.513-3.476 9.949-8.311 9.949-1.619 0-3.139-0.839-3.677-1.839l-0.999 3.797c-0.359 1.393-1.339 3.136-1.997 4.195 1.497 0.46 3.075 0.713 4.733 0.713 8.809 0 15.98-7.153 15.98-15.983 0-8.831-7.171-15.983-15.98-15.983l0.043-0.035z"></path>
         </symbol>
@@ -79,100 +73,127 @@
       </div>
       <div id="nav">
         <ul>
-          <li><a href="<?php echo url::base(); ?>" title="Home">Home</a></li>
-          <li><a href="<?php echo url::base(); ?>nos" title="Quem somos">Nós</a></li>
-          <li><a href="<?php echo url::base(); ?>cases" title="Cases">Cases</a></li>
-          <li><a href="<?php echo url::base(); ?>blog" title="Blog">Blog</a></li>
-          <li><a href="<?php echo url::base(); ?>contatos" title="Contato">CONTATO</a></li>
+          <li><a href="index.html" title="Home Page">HOME</a></li>
+          <li><a href="empresa.html" title="Quem somos">QUEM SOMOS</a></li>
+          <li><a href="advogados.html" title="Nossa Equipe">NOSSA EQUIPE</a></li>
+          <li><a href="areaatuacao.html" title="Área de Atuação">ÁREA DE ATUAÇÃO</a></li>
+          <li><a href="artigos.html" title="Artigos e Publicações">ARTIGOS E PUBLICAÇÕES</a></li>
+          <li><a href="noticias.html" title="Notícias">NOTÍCIAS</a></li>
+          <li><a href="http://gfsa.no-ip.biz:8082/" target="_blank" title="Área do Cliente">ÁREA DO CLIENTE</a></li>
+          <li><a href="contato.html" title="Contato">CONTATO</a></li>
         </ul>
       </div>
     </div>
     <header>
       <div class="headerContainer">
         <div class="headerLinksWrap">
-          <figure class="headerLogo"><a href="<?php echo url::base(); ?>"><img src="<?php echo url::base(); ?>dist/img/logo-main.svg" alt="Point of Sale"></a></figure>
+          <figure class="headerLogo"><a href="index.html"><img src="img/logo-main.svg" alt="Point of Sale"></a></figure>
           <ul class="headerLinks">
-            <li><a href="<?php echo url::base(); ?>" title="Página Inicial">Home</a></li>
-            <li><a href="<?php echo url::base(); ?>nos" title="Sobre Nós">Nós</a></li>
-            <li><a href="<?php echo url::base(); ?>cases" title="Cases">Cases</a></li>
-            <li><a href="<?php echo url::base(); ?>blog" title="Blog">Blog</a></li>
-            <li><a href="<?php echo url::base(); ?>contatos" title="Contato">Contato</a></li>
+            <li><a href="index.html" title="Página Inicial">Home</a></li>
+            <li><a href="nos.html" title="Sobre Nós">Nós</a></li>
+            <li><a href="cases.html" title="Cases">Cases</a></li>
+            <li><a href="blog.html" title="Blog">Blog</a></li>
+            <li><a href="contato.html" title="Contato">Contato</a></li>
           </ul>
         </div>
       </div>
     </header>
     <section class="homeSlider">
       <div class="slider">
-        <?php 
-        foreach($banners as $ban){ 
-          $imgBan = glob('admin/upload/banners/'.$ban->BAN_ID.'.*');
-          if($imgBan){ ?>
-            <div class="slide_<?php echo $ban->BAN_ID; ?>" style="background-image: url(<?php echo url::base().$imgBan[0]; ?>); backgroudn-position: center left;">
-              <div class="containerFluid">
-                <div class="bannerContent">
-                  <?php
-                  $imgBan2 = glob('admin/upload/banners/imagem_texto_'.$ban->BAN_ID.'.*');
-                  if($imgBan2){ ?>
-                    <div class="figureSlide">
-                      <figure><img src="<?php echo url::base().$imgBan2[0]; ?>" alt="<?php echo $ban->BAN_TITULO; ?>"></figure>
-                    </div>
-                  <?php
-                  } ?>
-                  <div class="bannerButton"><a class="btnType1" href="<?php echo url::base(); ?>contatos">Fala com a gente!</a></div>
-                </div>
+        <div class="slide_1" style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;">
+          <div class="containerFluid">
+            <div class="bannerContent">
+              <div class="figureSlide">
+                <figure><img src="img/wellcome_mensage.png" alt=""></figure>
               </div>
+              <div class="bannerButton"><a class="btnType1" href="contato.html">Fala com a gente!</a></div>
             </div>
-          <?php 
-          }
-        } ?>
+          </div>
+        </div>
+        <div class="slide_1" style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;">
+          <div class="containerFluid">
+            <div class="bannerContent">
+              <div class="figureSlide">
+                <figure><img src="img/wellcome_mensage.png" alt=""></figure>
+              </div>
+              <div class="bannerButton"><a class="btnType1" href="contato.html">Fala com a gente!</a></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <?php echo $conteudo; ?>
-    
+    <section class="articlePost">
+      <div class="container">
+        <div class="articlePostController">
+          <aside>
+            <div class="autorPost">
+              <figure><img src="img/team_01.png" alt=""></figure>
+              <h5>Júlia Dias</h5>
+              <h6>Arquiteta</h6>
+              <ul class="socialMedia">
+                <li><a href="https://facebook.com.br" target="_blank" title="Facebook"> 
+                    <svg class="icon icon-facebook">
+                      <use xlink:href="#icon-facebook"></use>
+                    </svg></a></li>
+                <li><a href="https://instagram.com.br" target="_blank" title="Instagram"> 
+                    <svg class="icon icon-instagram">
+                      <use xlink:href="#icon-instagram"></use>
+                    </svg></a></li>
+                <li><a href="https://behance.com.br" target="_blank" title="Behance"> 
+                    <svg class="icon icon-behance">
+                      <use xlink:href="#icon-behance"></use>
+                    </svg></a></li>
+              </ul><a class="otherPosts" href="#" title="Outros posts">Outros posts</a>
+            </div>
+          </aside>
+          <article>
+            <div class="categories"><a class="btnType2" href="blog-interna.html" title="">Design de consumo</a><a class="btnType2" href="blog-interna.html" title="">Design</a><a class="btnType2" href="blog-interna.html" title="">Publicidade</a><a class="btnType2" href="blog-interna.html" title="">Publicidade</a><a class="btnType2" href="blog-interna.html" title="">Publicidade</a><a class="btnType2" href="blog-interna.html" title="">Publicidade</a><a class="btnType2" href="blog-interna.html" title="">Publicidade</a></div>
+            <div class="postText">
+              <p>Consectetur labore eiusmod exercitation ullamco cupidatat aliqua eiusmod fugiat exercitation in aliquip amet labore dolor. Id velit mollit consectetur nostrud eu laboris nostrud consectetur pariatur nulla. Id laboris sint veniam et cillum in officia sunt dolore labore adipisicing.</p>
+              <p>Elit ut velit quis cupidatat fugiat ea. Laborum nostrud exercitation nisi voluptate aliqua Lorem sunt reprehenderit eiusmod duis. Ea do deserunt cillum consequat cupidatat dolor qui excepteur. Incididunt consectetur labore laboris ut ullamco dolor sit cupidatat est Lorem incididunt. Labore sit do tempor consectetur.</p>
+              <p>Dolore labore excepteur nulla laboris. Dolore Lorem fugiat aliquip voluptate ex consequat non dolor eiusmod. Consectetur tempor aute nostrud non culpa anim in minim officia. Veniam sit commodo ex sit laborum eu cupidatat eiusmod magna voluptate. Fugiat consectetur ut pariatur reprehenderit cillum deserunt. Elit ad laboris aliqua nostrud aliqua magna nulla culpa eu veniam mollit ut pariatur. Minim magna in veniam ad.</p>
+              <p>Pariatur minim eu est aliqua tempor irure. Enim magna sit sit qui proident ea exercitation officia aliqua excepteur eiusmod tempor. Proident consectetur ut ipsum enim aliqua veniam sit. Ullamco enim in reprehenderit sunt et reprehenderit ut.Amet ea cillum nulla fugiat veniam dolor aute velit.</p>
+              <figure><img src="img/banner_1.jpg" alt=""></figure>
+              <div class="fb-comments"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
     <footer>
       <div class="container">
         <div class="footerBoxController">
           <div class="footerBoxLeft">
-            <figure><img src="<?php echo url::base(); ?>dist/img/logo-main.svg" alt=""></figure>
+            <figure><img src="img/logo-main.svg" alt=""></figure>
             <ul class="socialMedia">
-              <?php if($facebook != ''){ ?>
-              <li><a href="<?php echo $facebook; ?>" target="_blank" title="Facebook"> 
+              <li><a href="https://facebook.com.br" target="_blank" title="Facebook"> 
                   <svg class="icon icon-facebook">
                     <use xlink:href="#icon-facebook"></use>
                   </svg></a></li>
-              <?php } ?>
-              <?php if($instagram != ''){ ?>
-              <li><a href="<?php echo $instagram; ?>" target="_blank" title="Instagram"> 
+              <li><a href="https://instagram.com.br" target="_blank" title="Instagram"> 
                   <svg class="icon icon-instagram">
                     <use xlink:href="#icon-instagram"></use>
                   </svg></a></li>
-              <?php } ?>
-              <?php if($pinterest != ''){ ?>
-              <li><a href="<?php echo $pinterest; ?>" target="_blank" title="Pinterest"> 
+              <li><a href="https://pinterest.com.br" target="_blank" title="Pinterest"> 
                   <svg class="icon icon-pinterest">
                     <use xlink:href="#icon-pinterest"></use>
                   </svg></a></li>
-              <?php } ?>
-              <?php if($behance != ''){ ?>
-              <li><a href="<?php echo $behance; ?>" target="_blank" title="Behance"> 
+              <li><a href="https://behance.com.br" target="_blank" title="Behance"> 
                   <svg class="icon icon-behance">
                     <use xlink:href="#icon-behance"></use>
                   </svg></a></li>
-              <?php } ?>
             </ul>
           </div>
           <div class="footerBoxRight">
             <form class="newsLetter" action="#" id="newsLetter">
               <h5>NEWSLETTER</h5>
               <p>Quer receber nossos conteúdos e ficar por dentro das novidades? Então cadastre-se!</p>
-              <div class="inputControll form-group">
+              <div class="inputControll">
                 <svg class="icon icon-newsletter">
                   <use xlink:href="#icon-newsletter"></use>
                 </svg>
-                <input type="text" name="NEW_EMAIL" id="NEW_EMAIL" label="E-mail" validar="email" value="" placeholder="Digite seu e-mail">
-                <button class="btnType3" type="button" id="salvarNews">Inscrever</button>
-                <div id="enviandoNews" style="display: none;">Enviando...</div>
+                <input type="text" placeholder="Digite seu e-mail">
+                <button class="btnType3" type="button">Inscrever</button>
               </div>
             </form>
           </div>
@@ -181,55 +202,5 @@
     </footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="<?php echo url::base(); ?>app/js/funcoes.min.js"></script>
+  <script src="js/funcoes.min.js"></script>
 </html>
-
-<?php if (Request::current()->controller() == "contatos"){ ?>
-<script>
-	// GOOGLE MAPS
-
-	function initMap(){
-		var mapa;
-		var ponto = new google.maps.LatLng(-28.250643, -52.418519);
-		var centro = ponto;
-		var estilo = [
-		];
-		var opcoes = {
-			zoom: 18,
-			center: centro,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			panControl: false,
-			zoomControl: true,
-			scrollwheel: false,
-			mapTypeControl: true,
-			scaleControl: false,
-			streetViewControl: false,
-			overviewMapControl: false,
-			zoomControlOptions: {style: google.maps.ZoomControlStyle.SMALL},
-			styles: estilo
-		};
-		mapa = new google.maps.Map(document.getElementById('map'), opcoes);
-		var image = 
-			new google.maps.MarkerImage('img/pin.svg',
-			new google.maps.Size(200, 200), 	//tamanho total
-			new google.maps.Point(0, 0), 	//origem (se for sprite, é diferente de zero)
-			new google.maps.Point(19, 25) 	//posição da "ponta" do alfinete
-		);
-		var marker = new google.maps.Marker({
-			position: ponto,
-			map: mapa,
-			icon: image,
-			url: 'https://www.google.com.br/maps/place/Cemit%C3%A9rio+e+Crematorio+Memorial+Vera+Cruz/@-28.251107,-52.418431,17.5z/data=!4m5!3m4!1s0x94e2c09119b0b13f:0x20886aa5ffa1b4ae!8m2!3d-28.2508403!4d-52.4184959'
-		});
-		google.maps.event.addListener(marker, 'click', function() {
-			window.open(marker.url);
-		});
-	}
-	if (document.getElementsByClassName('local')) {
-		$.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBk62EwVHfJkhiSXfadeNaFhYZhXlZI7bs&sensor=false').done(
-			function() {
-				initMap();
-			});
-	}
-</script>
-<?php } ?>
