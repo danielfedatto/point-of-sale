@@ -247,8 +247,12 @@
 .blogPostController, .articlePostController
     display: flex
     flex-wrap: wrap
+    @media screen and(max-width: 767px)
+        flex-flow: column-reverse
     aside
         width: 20%
+        @media screen and(max-width: 767px)
+            width: 100%
         .autorPost
             box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2)
             figure
@@ -267,6 +271,7 @@
                 text-align: center
                 padding: 1rem 0
                 color: #b2b2b2
+                font-family: $comfortaa
         .socialMedia
             width: 100%
             margin: 0
@@ -282,6 +287,12 @@
                     fill: $color1
     article
         width: 80%
+        @media screen and(max-width: 767px)
+            width: 100%
+            margin-bottom: 2rem
+        h4
+            font-family: $comfortaa
+            color: #b2b2b2
         .categories
             margin-left: 2rem
             .btnType2
