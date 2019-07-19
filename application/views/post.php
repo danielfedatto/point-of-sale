@@ -47,8 +47,8 @@
                         <a class="btnType2" href="<?php echo url::base(); ?>blog/categoria/<?php echo $cab->categorias->CAT_ID; ?>/<?php echo urlencode($cab->categorias->CAT_TITULO); ?>" title="<?php echo $cab->categorias->CAT_TITULO; ?>"><?php echo $cab->categorias->CAT_TITULO; ?></a>
                     <?php } ?>
                 </div>
-                <h5><?php echo $blog->BLO_TITULO; ?><h5>
                 <div class="postText">
+                    <h4><?php echo $blog->BLO_TITULO; ?></h4>
                     <?php 
                     echo $blog->BLO_TEXTO; 
                     

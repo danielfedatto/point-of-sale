@@ -24,7 +24,7 @@
 				<figcaption>
 					<h3><?php echo $cas->CAS_TITULO; ?></h3>
 					<span><?php echo $cas->CAS_TEXTO; ?></span>
-					<a class="btnType2" href="<?php echo url::base(); ?>">Saiba mais</a>
+					<a class="btnType2" href="<?php echo url::base(); ?>cases">Saiba mais</a>
 				</figcaption>
 			</figure>
 		<?php 
