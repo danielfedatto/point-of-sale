@@ -1,0 +1,62 @@
+extends _includes/template.pug
+block content
+    section.homeSlider
+        .slider
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+            //- Trocar a imagem do banner no url(img/banner_1.jpg)
+            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
+                .containerFluid
+                    .bannerContent
+                        .figureSlide
+                            figure
+                                img(src="img/wellcome_mensage.png", alt="")
+                        .bannerButton
+                            a(href="contato.html").btnType1 Fala com a gente!
+    section.articlePost
+        .container
+            .articlePostController
+                aside
+                    .autorPost
+                        figure
+                            img(src="img/team_01.png", alt="")
+                        h5 Júlia Dias
+                        h6 Arquiteta
+                        ul.socialMedia
+                            li
+                                a(href="https://facebook.com.br", target="_blank", title="Facebook") 
+                                    svg.icon.icon-facebook
+                                        use(xlink:href="#icon-facebook")
+                            li
+                                a(href="https://instagram.com.br", target="_blank", title="Instagram") 
+                                    svg.icon.icon-instagram
+                                        use(xlink:href="#icon-instagram")
+                            li
+                                a(href="https://behance.com.br", target="_blank", title="Behance") 
+                                    svg.icon.icon-behance
+                                        use(xlink:href="#icon-behance")
+                        a.otherPosts(href="#", title="Outros posts") Outros posts
+                article
+                    .categories
+                        a(href="blog-interna.html", title="").btnType2 Design de consumo
+                        a(href="blog-interna.html", title="").btnType2 Design
+                        a(href="blog-interna.html", title="").btnType2 Publicidade
+                        a(href="blog-interna.html", title="").btnType2 Publicidade
+                        a(href="blog-interna.html", title="").btnType2 Publicidade
+                        a(href="blog-interna.html", title="").btnType2 Publicidade
+                        a(href="blog-interna.html", title="").btnType2 Publicidade
+                    .postText
+                        p Consectetur labore eiusmod exercitation ullamco cupidatat aliqua eiusmod fugiat exercitation in aliquip amet labore dolor. Id velit mollit consectetur nostrud eu laboris nostrud consectetur pariatur nulla. Id laboris sint veniam et cillum in officia sunt dolore labore adipisicing.
+                        p Elit ut velit quis cupidatat fugiat ea. Laborum nostrud exercitation nisi voluptate aliqua Lorem sunt reprehenderit eiusmod duis. Ea do deserunt cillum consequat cupidatat dolor qui excepteur. Incididunt consectetur labore laboris ut ullamco dolor sit cupidatat est Lorem incididunt. Labore sit do tempor consectetur.
+                        p Dolore labore excepteur nulla laboris. Dolore Lorem fugiat aliquip voluptate ex consequat non dolor eiusmod. Consectetur tempor aute nostrud non culpa anim in minim officia. Veniam sit commodo ex sit laborum eu cupidatat eiusmod magna voluptate. Fugiat consectetur ut pariatur reprehenderit cillum deserunt. Elit ad laboris aliqua nostrud aliqua magna nulla culpa eu veniam mollit ut pariatur. Minim magna in veniam ad.
+                        p Pariatur minim eu est aliqua tempor irure. Enim magna sit sit qui proident ea exercitation officia aliqua excepteur eiusmod tempor. Proident consectetur ut ipsum enim aliqua veniam sit. Ullamco enim in reprehenderit sunt et reprehenderit ut.Amet ea cillum nulla fugiat veniam dolor aute velit.
+                        figure
+                            img(src="img/banner_1.jpg", alt="")
+                        .fb-comments
