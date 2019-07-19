@@ -19,10 +19,11 @@ class Controller_Post extends Controller_Index {
         $view = View::Factory("post");
         
         $id = $this->request->param("id");
-        $this->template->titulo .= ' - '.$this->request->param("titulo");
+        $this->template->titulo .= ' - '.urldecode($this->request->param("titulo"));
         
         //BUSCA OS REGISTROS        
         $view->blog = ORM::factory("blog")->with("usuarios")->where("BLO_ID", "=", $id)->find();
+        $view->blogcategorias = ORM::factory("blogcategorias")->with("categorias")->where("BLO_ID", "=", $id)->find_all();
         
         $this->template->conteudo = $view;
     }

@@ -38,11 +38,27 @@
                         </li>
                     <?php } ?>
                 </ul>
+                <a class="otherPosts" href="<?php echo url::base(); ?>blog/autor/<?php echo $blog->usuarios->USU_ID; ?>" title="Outros posts">Outros posts</a>
             </div>
             </aside>
             <article>
+                <div class="categories">
+                    <?php foreach($blogcategorias as $cab){ ?>
+                        <a class="btnType2" href="<?php echo url::base(); ?>blog/categoria/<?php echo $cab->categorias->CAT_ID; ?>/<?php echo urlencode($cab->categorias->CAT_TITULO); ?>" title="<?php echo $cab->categorias->CAT_TITULO; ?>"><?php echo $cab->categorias->CAT_TITULO; ?></a>
+                    <?php } ?>
+                </div>
                 <h5><?php echo $blog->BLO_TITULO; ?><h5>
-                <?php echo $blog->BLO_TEXTO; ?>
+                <div class="postText">
+                    <?php 
+                    echo $blog->BLO_TEXTO; 
+                    
+                    $imgBlog = glob("admin/upload/blog/".$blog->BLO_ID.".*");
+                    if($imgBlog){?>
+                        <figure><img src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blog->BLO_TITULO; ?>"></figure>
+                    <?php
+                    } ?>
+                    <div class="fb-comments"></div>
+                </div>
             </article>
         </div>
     </div>
