@@ -90,7 +90,7 @@
     <header>
       <div class="headerContainer">
         <div class="headerLinksWrap">
-          <figure class="headerLogo"><a href="index.html"><img src="<?php echo url::base(); ?>dist/img/logo-main.svg" alt="Point of Sale"></a></figure>
+          <figure class="headerLogo"><a href="<?php echo url::base(); ?>"><img src="<?php echo url::base(); ?>dist/img/logo-main.svg" alt="Point of Sale"></a></figure>
           <ul class="headerLinks">
             <li><a href="<?php echo url::base(); ?>" title="Página Inicial">Home</a></li>
             <li><a href="<?php echo url::base(); ?>nos" title="Sobre Nós">Nós</a></li>
