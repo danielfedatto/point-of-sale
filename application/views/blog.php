@@ -16,7 +16,7 @@
                             <a class="btnType2" href="#" title="<?php echo $blc->categorias->CAT_TITULO; ?>"><?php echo $blc->categorias->CAT_TITULO; ?></a>
                         <?php } ?>
                     </div>
-                    <a href="<?php echo url::base(); ?>blog/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="<?php echo $blc->categorias->CAT_TITULO; ?>">
+                    <a href="<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="<?php echo $blc->categorias->CAT_TITULO; ?>">
                         <h5><?php echo $blo->BLO_TITULO; ?></h5>
                     </a>
                     <div class="articleFooter">
@@ -29,19 +29,23 @@
                             </svg>
                         </span>
                     </div>
-                    <a class="btnType2" href="<?php echo url::base(); ?>blog/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="">Ler Tudo</a>
+                    <a class="btnType2" href="<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="">Ler Tudo</a>
                 </article>
             <?php 
             }
         } ?>
     </div>
 
-    <ul class="pagination">
+    <?php echo $pagination; ?>
 
-        <li class="disabled"> <a href="#!">
-            <svg class="icon icon-chevron_left">
-            <use xlink:href="#icon-chevron_left"></use>
-            </svg></a></li>
+    <!-- <ul class="pagination">
+        <li class="disabled"> 
+            <a href="#!">
+                <svg class="icon icon-chevron_left">
+                    <use xlink:href="#icon-chevron_left"></use>
+                </svg>
+            </a>
+        </li>
         <li class="active"><a href="#!">1</a></li>
         <li><a href="#!">2</a></li>
         <li><a href="#!">3</a></li>
@@ -49,11 +53,14 @@
         <li><a href="#!">5</a></li>
         <li class="disabled"> <a href="#!">...</a></li>
         <li><a href="#!">11</a></li>
-        <li><a href="#!">
-            <svg class="icon icon-chevron_right">
-            <use xlink:href="#icon-chevron_right"></use>
-            </svg></a></li>
+        <li>
+            <a href="#!">
+                <svg class="icon icon-chevron_right">
+                    <use xlink:href="#icon-chevron_right"></use>
+                </svg>
+            </a>
+        </li>
+    </ul> -->
 
-    </ul>
     </div>
 </section>
