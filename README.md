@@ -1,6 +1,7 @@
 <h3 align="center">Point of Sale</h3>
 
 [![built with gulp](https://img.shields.io/badge/gulp-built_project-eb4a4b.svg?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAYAAAAOCAMAAAA7QZ0XAAAABlBMVEUAAAD%2F%2F%2F%2Bl2Z%2FdAAAAAXRSTlMAQObYZgAAABdJREFUeAFjAAFGRjSSEQzwUgwQkjAFAAtaAD0Ls2nMAAAAAElFTkSuQmCC)](http://gulpjs.com/)
+[![buddy pipeline](https://app.buddy.works/point-of-sale/point-of-sale/pipelines/pipeline/201250/badge.svg?token=7dd31c51321c5dc843f2eb6dca4ff3612478fc4fe7d1c3267e0b30c55ae45023 "buddy pipeline")](https://app.buddy.works/point-of-sale/point-of-sale/pipelines/pipeline/201250)
 
 ## Índice
 - [Escopo do projeto](#escopo-do-projeto)
