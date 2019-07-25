@@ -22,14 +22,10 @@ return array
              * Ports and sockets may be appended to the hostname.
              */
             'hostname' => 'localhost',
-            'database' => 'pointofsale',
-            'username' => 'root',
-            'password' => '',
+            'database' => 'pointo50_pointofsale',
+            'username' => 'pointo50_upoint',
+            'password' => 'SMZRy94tDi6o',
             'persistent' => FALSE,
-
-            // 'database' => 'costaframe_site',
-            // 'username' => 'costaframe_usite',
-            // 'password' => 'teBqAUxsmbqP',
         ),
         'table_prefix' => '',
         'charset' => 'utf8',
