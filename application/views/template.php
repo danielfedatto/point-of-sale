@@ -33,7 +33,8 @@
 		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-96x96.png" sizes="96x96">
 		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-32x32.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-16x16.png" sizes="16x16">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-128x128.png" sizes="128x128">
+    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>app/styles/fancybox.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>dist/css/style.min.css">
         
     <script type="text/javascript">
