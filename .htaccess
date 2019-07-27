@@ -4,7 +4,7 @@ RewriteEngine On
 # Put your installation directory here:
 # If your URL is www.example.com/kohana/, use /kohana/
 # If your URL is www.example.com/, use /
-RewriteBase /
+RewriteBase /point-of-sale/
 
 # Protect application and system files from being viewed
 RewriteCond $1 ^(application|system|modules)
@@ -28,4 +28,4 @@ RewriteRule ^(.*)$ - [PT,L]
 RewriteRule ^(.*)$ index.php/$1 [PT,L]
 
 #PAGINA DE ERRO - PROIBIDO
-ErrorDocument 403 /error/
+ErrorDocument 403 /point-of-sale/error/

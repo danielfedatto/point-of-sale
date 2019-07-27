@@ -5,6 +5,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 layout
+.htaccess
+application/config/database.php
+admin/application/config/database.php
+application/bootstrap.php
+admin/application/bootstrap.php
 
 # Runtime data
 pids
@@ -60,3 +65,4 @@ typings/
 
 # next.js build output
 .next
+
