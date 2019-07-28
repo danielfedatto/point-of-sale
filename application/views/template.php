@@ -40,7 +40,16 @@
     <script type="text/javascript">
         var URLBASE = "<?php echo url::base() ?>";
     </script>
-		<?php echo $analytics; ?>
+
+    <!--HEADER DO FACEBOOK-->
+    <?php echo $faceHeader; ?>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=2222804991343598">
+    </script>
+
+    <?php echo $analytics; ?>
 	</head>
 	<body>
     <div class="svg-icon_ui-lib">

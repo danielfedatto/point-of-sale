@@ -57,7 +57,17 @@
                         <figure><img src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blog->BLO_TITULO; ?>"></figure>
                     <?php
                     } ?>
-                    <div class="fb-comments"></div>
+                    <div class="fb-share-button"
+                        data-href="<?php echo $_SERVER ['REQUEST_URI']; ?>"
+                        data-layout="button"
+                        data-size="large">
+                        <a target="_blank"
+                            href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $_SERVER ['REQUEST_URI']; ?>"
+                            class="fb-xfbml-parse-ignore">
+                            Compartilhar
+                        </a>
+                    </div>
+                    <div class="fb-comments" data-href="<?php echo $_SERVER['SERVER_NAME']; ?><?php echo $_SERVER ['REQUEST_URI']; ?>" data-width="100%" data-numposts="10"></div>
                 </div>
             </article>
         </div>

@@ -32,6 +32,8 @@ class Controller_Index extends Controller_Template {
     //QUANTIDADE DE ITENS POR PAGINA NA LISTAGEM
     public $qtdPagina;
 
+    public $faceHeader = "";
+
     public function before() {
         parent::before();
         
