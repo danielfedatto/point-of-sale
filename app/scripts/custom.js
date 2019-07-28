@@ -35,6 +35,9 @@ $(document).ready(function() {
             $.post(URLBASE + 'contatos/enviar', this.serialize(), function(data) {
                 if (data.ok) {
                     $('#enviando').html('<h5>Obrigado por entrar em contato! <br/>Retornaremos em breve...<h5>');
+                    setTimeout(function(){
+                        location.href = URLBASE;
+                    }, 3000);
                 } else {
                     $('#enviando').html('<h5>Ops! N&atilde;o conseguimos receber seu contato... <br/>Tente novamente mais tarde!</h5>');
                 }    
