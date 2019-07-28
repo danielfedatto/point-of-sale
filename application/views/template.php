@@ -191,7 +191,7 @@
 
 	function initMap(){
 		var mapa;
-		var ponto = new google.maps.LatLng(-28.250643, -52.418519);
+		var ponto = new google.maps.LatLng(-28.2586515,-52.3960434,18);
 		var centro = ponto;
 		var estilo = [
 		];
@@ -211,7 +211,7 @@
 		};
 		mapa = new google.maps.Map(document.getElementById('map'), opcoes);
 		var image = 
-			new google.maps.MarkerImage('img/pin.svg',
+			new google.maps.MarkerImage('dist/img/pin.png',
 			new google.maps.Size(200, 200), 	//tamanho total
 			new google.maps.Point(0, 0), 	//origem (se for sprite, é diferente de zero)
 			new google.maps.Point(19, 25) 	//posição da "ponta" do alfinete
@@ -220,7 +220,7 @@
 			position: ponto,
 			map: mapa,
 			icon: image,
-			url: 'https://www.google.com.br/maps/place/Cemit%C3%A9rio+e+Crematorio+Memorial+Vera+Cruz/@-28.251107,-52.418431,17.5z/data=!4m5!3m4!1s0x94e2c09119b0b13f:0x20886aa5ffa1b4ae!8m2!3d-28.2508403!4d-52.4184959'
+			url: 'https://www.google.com/maps/place/R.+Ant%C3%B4nio+Ara%C3%BAjo,+1046+-+802,+Passo+Fundo+-+RS,+99010-220/@-28.2586515,-52.3960434,18z/data=!4m13!1m7!3m6!1s0x94e2bf87ab6660dd:0x1c2ee8a757ff86a2!2sR.+Ant%C3%B4nio+Ara%C3%BAjo,+1046+-+802,+Passo+Fundo+-+RS,+99010-220!3b1!8m2!3d-28.2587693!4d-52.3956542!3m4!1s0x94e2bf87ab6660dd:0x1c2ee8a757ff86a2!8m2!3d-28.2587693!4d-52.3956542'
 		});
 		google.maps.event.addListener(marker, 'click', function() {
 			window.open(marker.url);
