@@ -22,9 +22,9 @@ return array
              * Ports and sockets may be appended to the hostname.
              */
             'hostname' => 'localhost',
-            'database' => 'pointo50_pointofsale',
-            'username' => 'pointo50_upoint',
-            'password' => 'SMZRy94tDi6o',
+            'database' => 'pointofsale',
+            'username' => 'root',
+            'password' => '',
             'persistent' => FALSE,
         ),
         'table_prefix' => '',
