@@ -103,7 +103,7 @@ class Controller_Contatos extends Controller_Index {
                                 <table cellpadding="0" cellspacing="0" border="0" align="center" width="700" style="background-color:' . $this->coresEmail['background'] . ';border-radius:35px;">
                                     <tr>
                                         <td style="padding:15px;text-align:center;">
-                                            <img src="' . $this->dominio . 'dist/img/logo-main.svg" style="width: 250px;vertical-align:middle;"/>
+                                            <img src="' . $this->dominio . 'admin/images/logo-email.png" style="width: 250px;vertical-align:middle;"/>
                                             <span style="color:' . $this->coresEmail['basecolor'] . ';margin-left:150px;font-weight:bold;font-size:20px;">Contato</span>
                                         </td>
                                     </tr>
