@@ -24,6 +24,17 @@ class Controller_Post extends Controller_Index {
         //BUSCA OS REGISTROS        
         $view->blog = ORM::factory("blog")->with("usuarios")->where("BLO_ID", "=", $id)->find();
         $view->blogcategorias = ORM::factory("blogcategorias")->with("categorias")->where("BLO_ID", "=", $id)->find_all();
+        $view->relacionados = ORM::factory("blog")->with("blogcategorias")
+                                ->and_where_open();
+                                foreach($view->blogcategorias as $cat){
+                                    $view->relacionados = $view->relacionados->or_where("blogcategorias.CAT_ID", "=", $cat->CAT_ID);
+                                }
+                                $view->relacionados = $view->relacionados->and_where_close()
+                                ->where("blog.BLO_ID", "!=", $id)
+                                ->group_by('blog.BLO_ID')
+                                ->order_by('blog.BLO_ID', 'DESC')
+                                ->limit(3)
+                                ->find_all();
 
         $tituloface = $view->blog->BLO_TITULO;
 
