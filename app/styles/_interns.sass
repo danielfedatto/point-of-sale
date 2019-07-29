@@ -125,8 +125,12 @@
     .contatoController
         padding: 2rem 0
         display: flex
+        @media screen and(max-width: 767px)
+            flex-flow: column-reverse
 .contatoInfo
     width: 50%
+    @media screen and(max-width: 767px)
+        width: 100%
     address
         font-family: $comfortaa
         color: #b2b2b2
@@ -143,6 +147,8 @@
         font-weight: bold
 .contatoForm
     width: 50%
+    @media screen and(max-width: 767px)
+        width: 100%
 #contato-form
     width: 100%
     input

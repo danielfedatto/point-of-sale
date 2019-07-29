@@ -31,6 +31,8 @@
         max-width: 1183px
         @media screen and(max-width: 767px)
             width: 250px
+        @media screen and(max-width: 1366px)
+            width: 600px
         img
             max-width: 100%
             height: auto
@@ -42,6 +44,8 @@
     width: 100%
     @media screen and(max-width: 767px)
         bottom: 70px
+    @media screen and(max-width: 1366px)
+        bottom: 80px
 .btnType1
     border: solid $color1
     padding: 1rem 1rem
@@ -109,7 +113,10 @@
             margin-left: auto
             left: auto
             right: auto
-            margin: 0
+            margin: 1rem auto
+            @media screen and(max-width: 1366px)
+                img
+                    width: 180px
             @media screen and(max-width: 767px)
                 width: 170px
 .indexCases
@@ -123,6 +130,9 @@
         overflow: hidden
         margin: 0
         position: relative
+        @media screen and(max-width: 1366px)
+            max-height: 280px
+            min-height: 280px
         @media screen and(max-width: 767px)
             width: 100%
             height: auto
@@ -145,6 +155,8 @@
             justify-content: center
             flex-flow: column
             transition: ease-in .2s
+            @media screen and(max-width: 1366px)
+                height: 280px
             @media screen and(max-width: 767px)
                 height: 234px
             h3, span
@@ -156,6 +168,8 @@
         img
             min-width: 100%
             min-height: 412px
+            @media screen and(max-width: 1366px)
+                min-height: auto
             @media screen and(max-width: 767px)
                 min-height: auto
         .btnType2
