@@ -127,8 +127,11 @@
                       <figure><img src="<?php echo url::base().$imgBan2[0]; ?>" alt="<?php echo $ban->BAN_TITULO; ?>"></figure>
                     </div>
                   <?php
+                  } 
+                  if($ban->BAN_TEXTO_BOTAO != ""){ ?>
+                    <div class="bannerButton"><a class="btnType1" href="<?php echo $ban->BAN_LINK_BOTAO; ?>"><?php echo $ban->BAN_TEXTO_BOTAO; ?></a></div>
+                  <?php
                   } ?>
-                  <div class="bannerButton"><a class="btnType1" href="<?php echo url::base(); ?>contatos">Fala com a gente!</a></div>
                 </div>
               </div>
             </div>
