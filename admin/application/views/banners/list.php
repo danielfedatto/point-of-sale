@@ -47,6 +47,10 @@
                               <span><a href="#" onclick="ordenar('BAN_ORDEM', 'asc')" class="seta-acima"></a>
                                   <a href="#" onclick="ordenar('BAN_ORDEM', 'desc')" class="seta-abaixo"></a></span>
                           </th>
+                          <th>Página
+                              <span><a href="#" onclick="ordenar('BAN_PAGINA', 'asc')" class="seta-acima"></a>
+                                  <a href="#" onclick="ordenar('BAN_PAGINA', 'desc')" class="seta-abaixo"></a></span>
+                          </th>
                           <th style="width: 100px"></th>
                       </tr>
 
@@ -60,6 +64,7 @@
                                   <td><?php echo Controller_Index::aaaammdd_ddmmaaaa($ban->BAN_INICIO); ?></td>
                                   <td><?php echo Controller_Index::aaaammdd_ddmmaaaa($ban->BAN_FIM); ?></td>
                                   <td><?php echo $ban->BAN_ORDEM; ?></td>
+                                  <td><?php echo $ban->BAN_PAGINA; ?></td>
                                   <td>
                                       <a href="<?php echo url::base() ?>banners/edit/<?php echo $ban->BAN_ID; ?>" 
                                           class="btn-app-list fa fa-edit"></a>

@@ -48,6 +48,35 @@
                 <input type="text" validar="int"  class="form-control pequeno" placeholder="Ordem" value="<?php if($banners) echo $banners["BAN_ORDEM"] ?>" id="BAN_ORDEM" name="BAN_ORDEM">
             </div>
         </div>
+
+        <div class="form-group multiplo" label="Página">
+            <label for="BAN_PAGINA" class="col-sm-2 control-label">Página</label>
+            <div class="col-sm-10">
+            <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "home") echo "checked"; ?> id="BANNERhome" value="home" validar="radio"> Home &nbsp;&nbsp;&nbsp;
+            <!--<label for="TESTESim" class="col-sm-2 control-label">Sim</label>-->
+            <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "nos") echo "checked"; ?> id="BANNERNos" value="nos" validar="radio"> Nós &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "cases") echo "checked"; ?> id="BANNERCases" value="cases" validar="radio"> Cases &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "blog") echo "checked"; ?> id="BANNERBlog" value="blog" validar="radio"> Blog &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "contatos") echo "checked"; ?> id="BANNERContatos" value="contato" validar="radio"> Contatos &nbsp;&nbsp;&nbsp;
+            <!--<label for="TESTENão" class="col-sm-2 control-label">Não</label>-->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="BAN_TEXTO_BOTAO" class="col-sm-2 control-label">Texto Botão</label>
+            <div class="col-sm-10">
+                
+                <input type="text"  class="form-control  " placeholder="Texto Botão" value="<?php if($banners) echo $banners["BAN_TEXTO_BOTAO"] ?>" id="BAN_TEXTO_BOTAO" name="BAN_TEXTO_BOTAO" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="BAN_LINK_BOTAO" class="col-sm-2 control-label">Link Botão</label>
+            <div class="col-sm-10">
+                
+                <input type="text"  class="form-control  " placeholder="Link Botão" value="<?php if($banners) echo $banners["BAN_LINK_BOTAO"] ?>" id="BAN_LINK_BOTAO" name="BAN_LINK_BOTAO" >
+            </div>
+        </div>
                                         
         <div class="form-group">
             <label for="background" class="col-sm-2 control-label">Background</label>

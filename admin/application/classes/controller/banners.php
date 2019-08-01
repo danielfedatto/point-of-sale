@@ -26,7 +26,7 @@ class Controller_Banners extends Controller_Index {
         $banners = ORM::factory("banners");
                 
         //SETA AS COLUNAS QUE VAI BUSCAR
-        $banners->setColumns(array("BAN_ID"=>"BAN_ID", "BAN_TITULO"=>"BAN_TITULO", "BAN_INICIO"=>"BAN_INICIO", "BAN_FIM"=>"BAN_FIM", "BAN_ORDEM"=>"BAN_ORDEM"));
+        $banners->setColumns(array("BAN_ID"=>"BAN_ID", "BAN_TITULO"=>"BAN_TITULO", "BAN_INICIO"=>"BAN_INICIO", "BAN_FIM"=>"BAN_FIM", "BAN_ORDEM"=>"BAN_ORDEM", "BAN_PAGINA"=>"BAN_PAGINA"));
         
         //TESTA SE TEM PESQUISA
         if(isset($_GET["chave"])){
@@ -78,6 +78,9 @@ class Controller_Banners extends Controller_Index {
                 "BAN_INICIO" => $banners->BAN_INICIO,
                 "BAN_FIM" => $banners->BAN_FIM,
                 "BAN_ORDEM" => $banners->BAN_ORDEM,
+                "BAN_PAGINA" => $banners->BAN_PAGINA,
+                "BAN_TEXTO_BOTAO" => $banners->BAN_TEXTO_BOTAO,
+                "BAN_LINK_BOTAO" => $banners->BAN_LINK_BOTAO,
             );
             
             $view->banners = $arr;
@@ -115,6 +118,9 @@ class Controller_Banners extends Controller_Index {
                 "BAN_INICIO" => date("Y-m-d"),
                 "BAN_FIM" => date("Y-m-d"),
                 "BAN_ORDEM" => "0",
+                "BAN_PAGINA" => "home",
+                "BAN_TEXTO_BOTAO" => '',
+                "BAN_LINK_BOTAO" => '',
             );
             
             $view->banners = $arr;

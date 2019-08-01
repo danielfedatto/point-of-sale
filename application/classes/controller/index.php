@@ -57,7 +57,16 @@ class Controller_Index extends Controller_Template {
         $this->template->atendimento = $configuracoes->CON_HORARIO_ATENDIMENTO;
         $this->template->id_logo = $configuracoes->CON_ID;
 
-        $this->template->banners = ORM::factory("banners")->where('BAN_INICIO', '<=', date('Y-m-d'))->where('BAN_FIM', '>=', date('Y-m-d'))->find_all();
+        $this->template->banners = ORM::factory("banners")
+                                        ->where('BAN_INICIO', '<=', date('Y-m-d'))
+                                        ->where('BAN_FIM', '>=', date('Y-m-d'));
+        if(Request::current()->controller() == 'index'){
+            $this->template->banners = $this->template->banners->where('BAN_PAGINA', '=', 'home');
+        }else{
+            $this->template->banners = $this->template->banners->where('BAN_PAGINA', '=', Request::current()->controller());
+        }
+        $this->template->banners = $this->template->banners->find_all();
+
     }
 
     public function action_index() {
