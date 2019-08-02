@@ -37,6 +37,7 @@
             if($imgEqui){ ?>
                 <figure>
                     <img src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
+                    <figcaption></figcaption>
                 </figure>
             <?php
             }

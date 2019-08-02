@@ -9,7 +9,6 @@ $(document).ready(function(){
       dots: false,
       arrows: true,
       slidesToShow: 3,
-      centerPadding: '120px',
       prevArrow: '<button type="button" class="slick-prev"></button>',
       nextArrow: '<button type="button" class="slick-next"></button>',
       responsive: [
