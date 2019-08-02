@@ -57,7 +57,7 @@
             <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "nos") echo "checked"; ?> id="BANNERNos" value="nos" validar="radio"> Nós &nbsp;&nbsp;&nbsp;
             <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "cases") echo "checked"; ?> id="BANNERCases" value="cases" validar="radio"> Cases &nbsp;&nbsp;&nbsp;
             <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "blog") echo "checked"; ?> id="BANNERBlog" value="blog" validar="radio"> Blog &nbsp;&nbsp;&nbsp;
-            <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "contatos") echo "checked"; ?> id="BANNERContatos" value="contato" validar="radio"> Contatos &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="BAN_PAGINA" <?php if ($banners["BAN_PAGINA"] == "contatos") echo "checked"; ?> id="BANNERContatos" value="contatos" validar="radio"> Contatos &nbsp;&nbsp;&nbsp;
             <!--<label for="TESTENão" class="col-sm-2 control-label">Não</label>-->
             </div>
         </div>

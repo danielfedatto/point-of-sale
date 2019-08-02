@@ -56,26 +56,31 @@
 	<div class="container">
 		<div class="articleWrap">
 			<?php 
-			foreach($artigos as $art){ 
-				$imgArt = glob('admin/upload/artigos/'.$art->ART_ID.'.*');
-				if($imgArt){ ?>
+			foreach($blog as $blo){ 
+				$imgBlo = glob('admin/upload/blog/'.$blo->BLO_ID.'.*');
+				if($imgBlo){ 
+					$blogcategorias = ORM::factory('blogcategorias')->where('BLO_ID', '=', $blo->BLO_ID)->find_all();
+					?>
 					<article>
 						<figure>
-							<img src="<?php echo url::base().$imgArt[0]; ?>" alt="<?php echo $art->ART_TITULO; ?>">
+							<img src="<?php echo url::base().$imgBlo[0]; ?>" alt="<?php echo $blo->BLO_TITULO; ?>">
 						</figure>
-						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $art->ART_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($art->ART_TITULO)); ?>" title="<?php echo $art->ART_TITULO; ?>">
-							<h5><?php echo $art->ART_TITULO; ?></h5>
+						<div class="categories">
+							<?php foreach($blogcategorias as $blc){ ?>
+								<a class="btnType2" href="<?php echo url::base(); ?>blog/categoria/<?php echo $blc->categorias->CAT_ID; ?>/<?php echo urlencode($blc->categorias->CAT_TITULO); ?>" title="<?php echo $blc->categorias->CAT_TITULO; ?>"><?php echo $blc->categorias->CAT_TITULO; ?></a>
+							<?php } ?>
+						</div>
+						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $blo->BLO_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($blo->BLO_TITULO)); ?>" title="<?php echo $blo->BLO_TITULO; ?>">
+							<h5><?php echo $blo->BLO_TITULO; ?></h5>
 						</a>
-						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $art->ART_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($art->ART_TITULO)); ?>" title="<?php echo $art->ART_TITULO; ?>">
-							<p><?php echo Controller_Index::limitar_palavras($art->ART_TEXTO, 10); ?></p>
+						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $blo->BLO_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($blo->BLO_TITULO)); ?>" title="<?php echo $blo->BLO_TITULO; ?>">
+							<p><?php echo Controller_Index::limitar_palavras($blo->BLO_TEXTO, 10); ?></p>
 						</a>
 						<div class="articleFooter">
-							<span><?php echo Controller_Index::MMMddaaaa($art->ART_DATA); ?></span>
-							<!-- <span class="comments">25
-								<svg class="icon icon-comments">
-									<use xlink:href="#icon-comments"></use>
-								</svg>
-							</span> -->
+							<span>Por 
+								<a href="#"><?php echo $blo->usuarios->USU_NOME; ?></a>
+							</span>
+							<span><?php echo Controller_Index::tempoCorrido($blo->BLO_DATA_E_HORA); ?></span>
 						</div>
 					</article>
 				<?php 

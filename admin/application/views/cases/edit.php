@@ -40,6 +40,18 @@
             <!--<label for="HOMENão" class="col-sm-2 control-label">Não</label>-->
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="SER" class="col-sm-2 control-label">A gente faz *</label>
+            <div class="col-sm-10">
+                <?php 
+                foreach($servicos as $ser){ 
+                    $servicoscases = ORM::factory('servicoscases')->where('CAS_ID', '=', $cases["CAS_ID"])->where('SER_ID', '=', $ser->SER_ID)->find(); ?>
+                    <input type="checkbox" value="<?php echo $ser->SER_ID ?>" <?php if($servicoscases->SER_ID > 0) echo 'checked'; ?> id="SER_ID_<?php echo $ser->SER_ID ?>" name="SER_ID[]"> <?php echo $ser->SER_TITULO ?> &nbsp;&nbsp;&nbsp;
+                <?php 
+                } ?>
+            </div>
+        </div>
                                         
         <div class="form-group">
             <label for="imagem" class="col-sm-2 control-label">Imagem</label>
