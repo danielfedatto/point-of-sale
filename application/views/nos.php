@@ -5,7 +5,7 @@
     </div>
 </section>
 <section class="weOffer">
-    <div class="containerFluid">
+    <div class="container">
         <div class="weOfferBoxController">
             <?php 
             foreach($servicos as $ser){ 
@@ -27,16 +27,17 @@
     </div>
 </section>
 <section class="teamWork">
-    <div class="containerFluid">
+    <div class="container">
     <h3>As <span>Mentes</span> Criativas</h3>
     <h6>Quem faz a magia acontecer</h6>
-    <div class="teamWorkBoxController">
+    <div class="teamWorkBoxController" id="teamwork">
         <?php
         foreach($equipe as $equi){ 
             $imgEqui = glob('admin/upload/equipe/'.$equi->EQU_ID.'.*');
             if($imgEqui){ ?>
                 <figure>
                     <img src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
+                    <figcaption></figcaption>
                 </figure>
             <?php
             }

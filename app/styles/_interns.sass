@@ -50,18 +50,27 @@
         text-align: center
         span
             color: $color1
-.teamWorkBoxController
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
-    @media screen and(max-width: 767px)
-        flex-flow: column
     figure
         text-align: center
         width: 33.3%
-        margin: 2rem 0 0 0
+        padding: 2rem
+        margin: 0
+        box-sizing: border-box
+        position: relative
+        figcaption
+            width: 100%
+            height: 100%
+            position: absolute
+            content: ''
+            border: solid 15px $color1
+            border-radius: 25px
+            top: 0
+            left: 0
+        img
+            border-radius: 25px
         @media screen and(max-width: 767px)
             width: 100%
+    
 // FIM PÁGINA NÓS
 // INÍCIO PÁGINA CASES
 .internCases

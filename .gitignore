@@ -5,7 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 layout
-.htaccess
+*.htaccess
 application/config/database.php
 admin/application/config/database.php
 application/bootstrap.php
@@ -66,3 +66,4 @@ typings/
 # next.js build output
 .next
 
+admin/.htaccess

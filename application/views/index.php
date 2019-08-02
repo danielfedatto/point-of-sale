@@ -1,5 +1,5 @@
 <section class="nosFazemos">
-	<div class="containerFluid">
+	<div class="container">
 	<h3>A GENTE FAZ:</h3>
 	<p><span>Somos especialistas em Varejo.</span></p>
 	<div class="content">
