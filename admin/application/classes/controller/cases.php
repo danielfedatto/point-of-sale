@@ -65,6 +65,9 @@ class Controller_Cases extends Controller_Index {
         $view = View::Factory("cases/edit");
         
         $id = $this->request->param("id");
+
+        //BUSCA CATEGORIAS
+        $view->servicos = ORM::factory("servicos")->find_all();
         
         //SE EXISTIR O ID, BUSCA O REGISTRO
         if($id){
@@ -115,6 +118,8 @@ class Controller_Cases extends Controller_Index {
     public function action_save(){ //MENSAGEM DE OK, OU ERRO
         $mensagem = "Registro alterado com sucesso!";
 
+        $post = $this->request->post();
+
         $excluiImagem = false;
                 
         //SE O ID ESTIVER ZERADO, INSERT
@@ -124,7 +129,7 @@ class Controller_Cases extends Controller_Index {
             
             //INSERE
             foreach($this->request->post() as $campo => $value){
-                if ($campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
+                if ($campo == "SER_ID" or $campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
                     //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
                 }else{ 
                     $cases->$campo = $value;
@@ -134,6 +139,20 @@ class Controller_Cases extends Controller_Index {
             //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
             try{
                 $query = $cases->save();
+
+                $i = 0;
+                if(isset($post['SER_ID'])){
+                    if(is_array($post['SER_ID'])){
+                        foreach($post['SER_ID'] as $lele){
+                            $servicoscases = ORM::factory('servicoscases');
+                            $servicoscases->SER_ID = $post['SER_ID'][$i];
+                            $servicoscases->CAS_ID = $cases->CAS_ID;
+                            $servicoscases->save();
+                            $i++;
+                        }
+                    }
+                }
+
                 $mensagem = "Registro inserido com sucesso!";
 
                 //INSERE A IMAGEM, SE EXISTIR
@@ -182,7 +201,7 @@ class Controller_Cases extends Controller_Index {
                 foreach($this->request->post() as $campo => $value){
                     if ($campo == "excluirImagem") {
                         $excluiImagem = str_replace("'", "", $value);
-                    }else if ($campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
+                    }else if ($campo == "SER_ID" or $campo == "imagem" or $campo == "imagemBlob" or $campo == "imagemx1" or $campo == "imagemy1" or $campo == "imagemw" or $campo == "imagemh") {
                         //NÃO SALVA NO BANCO, É O CAMPO COM A IMAGEM REDIMENSIONADA
                     }else{ 
                         $cases->$campo = $value;
@@ -192,6 +211,29 @@ class Controller_Cases extends Controller_Index {
                 //TENTA SALVAR. SE NÃO PASSAR NA VALIDAÇÃO, VAI PRO CATCH
                 try{
                     $query = $cases->save();
+
+                    //apaga os antigos
+                    $servicoscases = ORM::factory('servicoscases')->where('CAS_ID', '=', $this->request->post("CAS_ID"))->find_all();
+                    foreach($servicoscases as $sec){
+                        $apagaservicoscases = ORM::factory('servicoscases', $sec->SEC_ID);
+                        if ($apagaservicoscases->loaded()){
+                            //DELETA
+                            $apagaservicoscases->delete();
+                        }
+                    }
+
+                    $i = 0;
+                    if(isset($post['SER_ID'])){
+                        if(is_array($post['SER_ID'])){
+                            foreach($post['SER_ID'] as $lele){
+                                $servicoscases = ORM::factory('servicoscases');
+                                $servicoscases->SER_ID = $post['SER_ID'][$i];
+                                $servicoscases->CAS_ID = $cases->CAS_ID;
+                                $servicoscases->save();
+                                $i++;
+                            }
+                        }
+                    }
                             
                     //SE EXCLUIR IMAGEM ESTIVER MARCADO, EXCLUI A IMAGEM
                     if($excluiImagem == "on" or $this->request->post("imagemBlob") != ""){

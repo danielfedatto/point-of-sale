@@ -20,13 +20,13 @@ class Controller_Index extends Controller_Template {
     );
     
     //DOMÍNIO
-    public $dominio = "http://localhost/point-of-sale";
+    public $dominio = "https://pointofsale.com.br/site";
     //E-MAIL DE AUTENTICAÇÃO
-    public $emailEmpresa = "";
+    public $emailEmpresa = "site@pointofsale.com.br";
     //SENHA DO E-MAIL DE AUTENTICAÇÃO
-    public $senhaEmail = "";
+    public $senhaEmail = "gGvRVauiiiQE";
     //HOST DO E-MAIL DE AUTENTICAÇÃO
-    public $host = "";
+    public $host = "mail.pointofsale.com.br";
     //VARIÁVEL DE SESSÕES
     protected $sessao;
     //QUANTIDADE DE ITENS POR PAGINA NA LISTAGEM
@@ -75,7 +75,7 @@ class Controller_Index extends Controller_Template {
         $view->servicos = ORM::factory("servicos")->find_all();
         $view->cases = ORM::factory("cases")->where("CAS_HOME", "=", "S")->limit(6)->order_by(DB::expr('RAND()'))->find_all();
         $view->clientes = ORM::factory("clientes")->order_by(DB::expr('RAND()'))->find_all();
-        $view->artigos = ORM::factory("artigos")->limit(3)->find_all();
+        $view->blog = ORM::factory("blog")->limit(3)->find_all();
 
         $this->template->conteudo = $view;
     }
