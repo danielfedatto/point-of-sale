@@ -21,12 +21,29 @@
                 <input type="text" validar="texto"  class="form-control  " placeholder="Título" value="<?php if($cases) echo $cases["CAS_TITULO"] ?>" id="CAS_TITULO" name="CAS_TITULO" >
             </div>
         </div>
+
+        <div class="form-group">
+            <label for="CAS_SUBTITULO" class="col-sm-2 control-label">Subtítulo *</label>
+            <div class="col-sm-10">
+                
+                <input type="text" validar="texto"  class="form-control  " placeholder="Subtítulo" value="<?php if($cases) echo $cases["CAS_SUBTITULO"] ?>" id="CAS_SUBTITULO" name="CAS_SUBTITULO" >
+            </div>
+        </div>
                             
         <div class="form-group">
             <label for="CAS_TEXTO" class="col-sm-2 control-label">Texto *</label>
             <div class="col-sm-10">
                 <textarea  class="form-control ckeditor" placeholder="Texto" id="CAS_TEXTO" name="CAS_TEXTO">
                     <?php if($cases) echo $cases["CAS_TEXTO"] ?>
+                </textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="CAS_DETALHES" class="col-sm-2 control-label">Detalhes *</label>
+            <div class="col-sm-10">
+                <textarea  class="form-control ckeditor" placeholder="Detalhes" id="CAS_DETALHES" name="CAS_DETALHES">
+                    <?php if($cases) echo $cases["CAS_DETALHES"] ?>
                 </textarea>
             </div>
         </div>
@@ -109,6 +126,9 @@ if ( typeof CKEDITOR == "undefined" ){
 
     var editorCAS_TEXTO = CKEDITOR.replace( "CAS_TEXTO" );
     CKFinder.setupCKEditor( editorCAS_TEXTO, "<?php echo url::base()?>js/ckfinder/" ) ;
+
+    var editorCAS_DETALHES = CKEDITOR.replace( "CAS_DETALHES" );
+    CKFinder.setupCKEditor( editorCAS_DETALHES, "<?php echo url::base()?>js/ckfinder/" ) ;
 }
 // ]]>
 </script>
