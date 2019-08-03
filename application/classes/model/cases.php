@@ -11,7 +11,12 @@ Class Model_Cases extends ORM {
     //RELATIONSHIP
     protected $_belongs_to = array(
     );
+    
     protected $_has_many = array(
+        "servicoscases" => array(
+            "model"       => "servicoscases",
+            "foreign_key" => "CAS_ID",
+        ),
     );
                 
     //REGRAS DE VALIDAÇÃO
