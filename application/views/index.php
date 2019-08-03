@@ -73,7 +73,7 @@
 									<a href="<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="<?php echo $blo->BLO_TITULO; ?>">
 										<h5><?php echo $blo->BLO_TITULO; ?></h5>
 									</a>
-									<span>Por <a href="<?php echo url::base(); ?>blog/autor/<?php echo $blog->usuarios->USU_ID; ?>"><?php echo $blo->usuarios->USU_NOME; ?></a></span>
+									<span>Por <a href="<?php echo url::base(); ?>blog/autor/<?php echo $blo->usuarios->USU_ID; ?>"><?php echo $blo->usuarios->USU_NOME; ?></a></span>
 									<span class="comments"><?php echo Controller_Index::tempoCorrido($blo->BLO_DATA_E_HORA); ?>
 										<i class="left">
 											<svg class="icon icon-access_time left">
