@@ -1,6 +1,6 @@
 <section class="nosFazemos">
 	<div class="container">
-	<h3>A GENTE FAZ:</h3>
+	<h3>A gente faz:</h3>
 	<p><span>Somos especialistas em Varejo.</span></p>
 	<div class="content">
 		<?php
@@ -51,37 +51,39 @@
 		</div>
 	</div>
 </section>
-<section class="indexArticles">
-	<h3>AGENTE <span>FALA:</span></h3>
+<section class="indexBlog">
 	<div class="container">
-		<div class="articleWrap">
+		<h3> A gente<span> fala:</span></h3>
+		<div class="blogWrap">
 			<?php 
 			foreach($blog as $blo){ 
 				$imgBlo = glob('admin/upload/blog/'.$blo->BLO_ID.'.*');
 				if($imgBlo){ 
-					$blogcategorias = ORM::factory('blogcategorias')->where('BLO_ID', '=', $blo->BLO_ID)->find_all();
-					?>
-					<article>
+					$blogcategorias = ORM::factory('blogcategorias')->where('BLO_ID', '=', $blo->BLO_ID)->find_all(); ?>
+					<article onclick="location.href='<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>'">
 						<figure>
 							<img src="<?php echo url::base().$imgBlo[0]; ?>" alt="<?php echo $blo->BLO_TITULO; ?>">
+							<figcaption>
+								<div class="categories">
+									<?php foreach($blogcategorias as $blc){ ?>
+										<a class="btnType2" href="<?php echo url::base(); ?>blog/categoria/<?php echo $blc->categorias->CAT_ID; ?>/<?php echo urlencode($blc->categorias->CAT_TITULO); ?>" title="<?php echo $blc->categorias->CAT_TITULO; ?>"><?php echo $blc->categorias->CAT_TITULO; ?></a>
+									<?php } ?>
+								</div>
+								<div class="articleFooter">
+									<a href="<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="<?php echo $blo->BLO_TITULO; ?>">
+										<h5><?php echo $blo->BLO_TITULO; ?></h5>
+									</a>
+									<span>Por <a href="<?php echo url::base(); ?>blog/autor/<?php echo $blog->usuarios->USU_ID; ?>"><?php echo $blo->usuarios->USU_NOME; ?></a></span>
+									<span class="comments"><?php echo Controller_Index::tempoCorrido($blo->BLO_DATA_E_HORA); ?>
+										<i class="left">
+											<svg class="icon icon-access_time left">
+												<use xlink:href="#icon-access_time"></use>
+											</svg>
+										</i>
+									</span>
+								</div>
+							</figcaption>
 						</figure>
-						<div class="categories">
-							<?php foreach($blogcategorias as $blc){ ?>
-								<a class="btnType2" href="<?php echo url::base(); ?>blog/categoria/<?php echo $blc->categorias->CAT_ID; ?>/<?php echo urlencode($blc->categorias->CAT_TITULO); ?>" title="<?php echo $blc->categorias->CAT_TITULO; ?>"><?php echo $blc->categorias->CAT_TITULO; ?></a>
-							<?php } ?>
-						</div>
-						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $blo->BLO_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($blo->BLO_TITULO)); ?>" title="<?php echo $blo->BLO_TITULO; ?>">
-							<h5><?php echo $blo->BLO_TITULO; ?></h5>
-						</a>
-						<a href="<?php echo url::base(); ?>artigos/ver/<?php echo $blo->BLO_ID; ?>/<?php echo Controller_Index::arrumaURL(urlencode($blo->BLO_TITULO)); ?>" title="<?php echo $blo->BLO_TITULO; ?>">
-							<p><?php echo Controller_Index::limitar_palavras($blo->BLO_TEXTO, 10); ?></p>
-						</a>
-						<div class="articleFooter">
-							<span>Por 
-								<a href="#"><?php echo $blo->usuarios->USU_NOME; ?></a>
-							</span>
-							<span><?php echo Controller_Index::tempoCorrido($blo->BLO_DATA_E_HORA); ?></span>
-						</div>
 					</article>
 				<?php 
 				}
