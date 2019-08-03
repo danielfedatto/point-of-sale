@@ -13,30 +13,13 @@
                 <figcaption>
                     <div class="internCasesDesc">
                         <h5><?php echo $cas->CAS_TITULO; ?></h5>
-                        <span><?php echo strip_tags($cas->CAS_TEXTO); ?></span>
+                        <span><?php echo $cas->CAS_SUBTITULO?></span>
                     </div>
                     <div class="internCasesBtn">
-                        <a class="btnType2" href="<?php echo url::base().$imgCase[0]; ?>" 
-                            data-fancybox="cases_<?php echo $cas->CAS_ID; ?>"                         
-                            data-caption="<?php echo $cas->CAS_TITULO; ?>">Ver Projeto</a>
+                        <a class="btnType2" href="<?php echo url::base(); ?>caseinterna/index/<?php echo $cas->CAS_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($cas->CAS_TITULO)); ?>">Ver Projeto</a>
                     </div>
                 </figcaption>
             </figure>
-            <div style="display: none;">
-                <?php
-                $galeria = ORM::factory("galeria")->where("GAL_IMAGEM", "like", "%fotos_cases/thumb_".$cas->CAS_ID."_%")->find_all();
-                foreach($galeria as $key => $gal){
-                    $imgGal = glob("admin/".$gal->GAL_IMAGEM);
-                    if($imgGal AND strpos($gal->GAL_IMAGEM, "thumb_" . $cas->CAS_ID . "_")){ ?>
-                        <a href="<?php echo url::base().str_replace("thumb_", "", $imgGal[0]); ?>"
-                            data-fancybox="cases_<?php echo $cas->CAS_ID; ?>"                         
-                            data-thumb="<?php echo url::base().$imgGal[0]; ?>"
-                            data-caption="<?php echo $gal->GAL_LEGENDA; ?>">
-                        </a>
-                    <?php 
-                    } 
-                } ?> 
-            </div>
         <?php
         }
     } ?>
