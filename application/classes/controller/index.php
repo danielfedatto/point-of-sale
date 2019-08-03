@@ -114,7 +114,7 @@ class Controller_Index extends Controller_Template {
 
         if ($seconds <= 60) return"1 min atrás";
         else if ($minutes <= 60) return $minutes==1 ?'1 min atrás':$minutes.' min atrás';
-        else if ($hours <= 24) return $hours==1 ?'1 hrs atrás':$hours.' hrs atrás';
+        else if ($hours <= 24) return $hours==1 ?'1 horas atrás':$hours.' horas atrás';
         else if ($days <= 7) return $days==1 ?'1 dia atras':$days.' dias atrás';
         else if ($weeks <= 4) return $weeks==1 ?'1 semana atrás':$weeks.' semanas atrás';
         else if ($months <= 12) return $months == 1 ?'1 mês atrás':$months.' meses atrás';
