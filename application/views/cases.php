@@ -1,3 +1,8 @@
+<div class="categories categories-cases">
+    <?php foreach($servicos as $ser){ ?>
+        <a class="btnType2" href="<?php echo url::base(); ?>cases/servicos/<?php echo $ser->SER_ID; ?>/<?php echo urlencode($ser->SER_TITULO); ?>" title="<?php echo $ser->SER_TITULO; ?>"><?php echo $ser->SER_TITULO; ?></a>
+    <?php } ?>
+</div>
 <section class="internCases">
     <?php 
     foreach($cases as $cas){ 
