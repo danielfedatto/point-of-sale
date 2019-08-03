@@ -29,7 +29,7 @@ class Controller_Cases extends Controller_Index {
         $id = $this->request->param("id");
         $this->template->titulo .= ' - '.urldecode($this->request->param("titulo"));
 
-        $view->servicos = false;
+        $view->servicos = ORM::factory("servicos")->where("SER_ID", "=", $id)->find_all();
         
         //BUSCA OS REGISTROS        
         $view->cases = ORM::factory("cases")
