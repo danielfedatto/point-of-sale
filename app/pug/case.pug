@@ -1,147 +1,77 @@
 extends _includes/template.pug
 block content
-    section.homeSlider
-        .slider
+    section.caseBanner
+        .banner
             //- Trocar a imagem do banner no url(img/banner_1.jpg)
             div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
-                .containerFluid
-                    .bannerContent
-                        .figureSlide
-                            figure
-                                img(src="img/wellcome_mensage.png", alt="")
-                        .bannerButton
-                            a(href="contato.html").btnType1 Fala com a gente!
-            //- Trocar a imagem do banner no url(img/banner_1.jpg)
-            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
-                .containerFluid
-                    .bannerContent
-                        .figureSlide
-                            figure
-                                img(src="img/wellcome_mensage.png", alt="")
-                        .bannerButton
-                            a(href="contato.html").btnType1 Fala com a gente!
-    section.blogInterna
+                .container
+                    .bannerContentPost
+                        .blogBannerInfo
+    .caseBar
+        figure
+            img(src="img/caseicon.png", alt="")
+    section.casePost
         .container
-            h3 Fique por dentro das 
-                span novidades
-            .blogWrap
+            .casePostController
                 article
-                    figure
-                        img(src="img/article_01.jpg", alt="")
+                    h4 Deserunt ea eu irure magna nostrud est cillum duis.
                     .categories
-                        a(href="post.html", title="").btnType2 Design de consumo
-                        a(href="post.html", title="").btnType2 Design
-                        a(href="post.html", title="").btnType2 Publicidade
-                    a(href="artigo.html", title="Título do artigo")
-                        h5 Enim labore exercitation sint
-                    .articleFooter
-                        span Por 
-                            a(href="post.html") Tatiana Luquini
-                        span.comments 2 horas atrás
-                            svg.icon.icon-access_time
-                                use(xlink:href="#icon-access_time")
-                    a(href="post.html", title="").btnType2 Ler Tudo
-                article
-                    figure
-                        img(src="img/article_01.jpg", alt="")
-                    .categories
-                        a(href="post.html", title="").btnType2 Design de consumo
-                        a(href="post.html", title="").btnType2 Design
-                        a(href="post.html", title="").btnType2 Publicidade
-                    a(href="artigo.html", title="Título do artigo")
-                        h5 Enim labore exercitation sint
-                    .articleFooter
-                        span Por 
-                            a(href="post.html") Tatiana Luquini
-                        span.comments 2 horas atrás
-                            svg.icon.icon-access_time
-                                use(xlink:href="#icon-access_time")
-                    a(href="post.html", title="").btnType2 Ler Tudo
-                article
-                    figure
-                        img(src="img/article_01.jpg", alt="")
-                    .categories
-                        a(href="post.html", title="").btnType2 Design de consumo
-                        a(href="post.html", title="").btnType2 Design
-                        a(href="post.html", title="").btnType2 Publicidade
-                    a(href="artigo.html", title="Título do artigo")
-                        h5 Enim labore exercitation sint
-                    .articleFooter
-                        span Por 
-                            a(href="post.html") Tatiana Luquini
-                        span.comments 2 horas atrás
-                            svg.icon.icon-access_time
-                                use(xlink:href="#icon-access_time")
-                    a(href="post.html", title="").btnType2 Ler Tudo
-                article
-                    figure
-                        img(src="img/article_01.jpg", alt="")
-                    .categories
-                        a(href="post.html", title="").btnType2 Design de consumo
-                        a(href="post.html", title="").btnType2 Design
-                        a(href="post.html", title="").btnType2 Publicidade
-                    a(href="artigo.html", title="Título do artigo")
-                        h5 Enim labore exercitation sint
-                    .articleFooter
-                        span Por 
-                            a(href="post.html") Tatiana Luquini
-                        span.comments 2 horas atrás
-                            svg.icon.icon-access_time
-                                use(xlink:href="#icon-access_time")
-                    a(href="post.html", title="").btnType2 Ler Tudo
-                article
-                    figure
-                        img(src="img/article_01.jpg", alt="")
-                    .categories
-                        a(href="post.html", title="").btnType2 Design de consumo
-                        a(href="post.html", title="").btnType2 Design
-                        a(href="post.html", title="").btnType2 Publicidade
-                    a(href="artigo.html", title="Título do artigo")
-                        h5 Enim labore exercitation sint
-                    .articleFooter
-                        span Por 
-                            a(href="post.html") Tatiana Luquini
-                        span.comments 2 horas atrás
-                            svg.icon.icon-access_time
-                                use(xlink:href="#icon-access_time")
-                    a(href="post.html", title="").btnType2 Ler Tudo
-                article
-                    figure
-                        img(src="img/article_01.jpg", alt="")
-                    .categories
-                        a(href="post.html", title="").btnType2 Design de consumo
-                        a(href="post.html", title="").btnType2 Design
-                        a(href="post.html", title="").btnType2 Publicidade
-                    a(href="artigo.html", title="Título do artigo")
-                        h5 Enim labore exercitation sint
-                    .articleFooter
-                        span Por 
-                            a(href="post.html") Tatiana Luquini
-                        span.comments 2 horas atrás
-                            svg.icon.icon-access_time
-                                use(xlink:href="#icon-access_time")
-                    a(href="post.html", title="").btnType2 Ler Tudo
-            //- Não usar mais do que 9 [li]
-            ul.pagination
-                li.disabled 
-                    a(href="#!")
-                        svg.icon.icon-chevron_left
-                            use(xlink:href="#icon-chevron_left")
-                li.active
-                    a(href="#!") 1
-                li
-                    a(href="#!") 2
-                li
-                    a(href="#!") 3
-                li
-                    a(href="#!") 4
-                li
-                    a(href="#!") 5
-                li.disabled 
-                    a(href="#!") ...
-                li
-                    a(href="#!") 11
-                li
-                    a(href="#!")
-                        svg.icon.icon-chevron_right
-                            use(xlink:href="#icon-chevron_right")
+                        a(href="blog-interna.html", title="").btnType2 Design de consumo
+                        a(href="blog-interna.html", title="").btnType2 Design
+                        a(href="blog-interna.html", title="").btnType2 Publicidade
+                    .postText
+                        figure
+                            img(src="img/banner_1.jpg", alt="")
+                        h4 Ex dolore ipsum ex dolor enim eiusmod occaecat.
+                        p Consectetur labore eiusmod exercitation ullamco cupidatat aliqua eiusmod fugiat exercitation in aliquip amet labore dolor. Id velit mollit consectetur nostrud eu laboris nostrud consectetur pariatur nulla. Id laboris sint veniam et cillum in officia sunt dolore labore adipisicing.
+                        p Elit ut velit quis cupidatat fugiat ea. Laborum nostrud exercitation nisi voluptate aliqua Lorem sunt reprehenderit eiusmod duis. Ea do deserunt cillum consequat cupidatat dolor qui excepteur. Incididunt consectetur labore laboris ut ullamco dolor sit cupidatat est Lorem incididunt. Labore sit do tempor consectetur.
+                        p Dolore labore excepteur nulla laboris. Dolore Lorem fugiat aliquip voluptate ex consequat non dolor eiusmod. Consectetur tempor aute nostrud non culpa anim in minim officia. Veniam sit commodo ex sit laborum eu cupidatat eiusmod magna voluptate. Fugiat consectetur ut pariatur reprehenderit cillum deserunt. Elit ad laboris aliqua nostrud aliqua magna nulla culpa eu veniam mollit ut pariatur. Minim magna in veniam ad.
+                        p Pariatur minim eu est aliqua tempor irure. Enim magna sit sit qui proident ea exercitation officia aliqua excepteur eiusmod tempor. Proident consectetur ut ipsum enim aliqua veniam sit. Ullamco enim in reprehenderit sunt et reprehenderit ut.Amet ea cillum nulla fugiat veniam dolor aute velit.
+                    .caseInfoTable
+                        h5 Detalhes do Projeto:
+                        table
+                            tr
+                                td Planejamento e estudo de mercado:
+                                td Gerson Renato Klein
+                            tr
+                                td Arquitetura Comercial:
+                                td Arq. Paloma Bugança - CAU A135676-3 
+                            tr
+                                td Design de Consumo:
+                                td Tatiane Denise Luquini
+                            tr
+                                td Execução da Obra:
+                                td Contrutora RDA
+                            tr
+                                td Entrega Final:
+                                td Novembro/2018
+                    h4 Outros Projetos:
+                    .otherCaseWrap
+                        article
+                            figure
+                                img(src="img/article_01.jpg", alt="")
+                            a(href="case.html")
+                                h5 Non quis id quis commodo nostrud.
+                            a(href="case.html")
+                                p Aliquip incididunt officia
+                        article
+                            figure
+                                img(src="img/article_01.jpg", alt="")
+                            a(href="case.html")
+                                h5 Non quis id quis commodo nostrud.
+                            a(href="case.html")
+                                p Aliquip incididunt officia
+                        article
+                            figure
+                                img(src="img/article_01.jpg", alt="")
+                            a(href="case.html")
+                                h5 Non quis id quis commodo nostrud.
+                            a(href="case.html")
+                                p Aliquip incididunt officia
+                        article
+                            figure
+                                img(src="img/article_01.jpg", alt="")
+                            a(href="case.html")
+                                h5 Non quis id quis commodo nostrud.
+                            a(href="case.html")
+                                p Aliquip incididunt officia
