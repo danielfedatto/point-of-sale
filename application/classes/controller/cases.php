@@ -14,7 +14,10 @@ class Controller_Cases extends Controller_Index {
     public function action_index() {
         $view = View::Factory("cases");
         
-        //BUSCA OS REGISTROS        
+        //BUSCA OS SERVICOS
+        $view->servicos = ORM::factory("servicos")->find_all();
+
+        //BUSCA OS REGISTROS DE CASES       
         $view->cases = ORM::factory("cases")->order_by(DB::expr('RAND()'))->find_all();
         
         $this->template->conteudo = $view;
@@ -25,6 +28,8 @@ class Controller_Cases extends Controller_Index {
 
         $id = $this->request->param("id");
         $this->template->titulo .= ' - '.urldecode($this->request->param("titulo"));
+
+        $view->servicos = false;
         
         //BUSCA OS REGISTROS        
         $view->cases = ORM::factory("cases")
