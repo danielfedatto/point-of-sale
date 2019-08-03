@@ -1,11 +1,3 @@
-<section class="blogInternaInfo">
-    <h2>Esse é o título da postagem</h2>
-    <span class="comments"><?php echo Controller_Index::tempoCorrido($blo->BLO_DATA_E_HORA); ?>
-        <svg class="icon icon-access_time">
-            <use xlink:href="#icon-access_time"></use>
-        </svg>
-    </span>
-</section>
 <section class="blogInterna">
     <div class="container">
     <h3>Fique por dentro das <span>novidades</span></h3>
