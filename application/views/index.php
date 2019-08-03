@@ -7,7 +7,11 @@
 		foreach($servicos as $ser){ 
 			$imgServico = glob('admin/upload/servicos/'.$ser->SER_ID.'.*');
 			if($imgServico){ ?>
-				<figure><img src="<?php echo url::base().$imgServico[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>"></figure>
+				<figure>
+					<a href="<?php echo url::base(); ?>cases/servicos/<?php echo $ser->SER_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($ser->SER_TITULO)); ?>">
+						<img src="<?php echo url::base().$imgServico[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>">
+					</a>
+				</figure>
 			<?php
 			}
 		} ?>

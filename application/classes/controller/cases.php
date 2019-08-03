@@ -20,6 +20,23 @@ class Controller_Cases extends Controller_Index {
         $this->template->conteudo = $view;
     }
 
+    public function action_servicos() {
+        $view = View::Factory("cases");
+
+        $id = $this->request->param("id");
+        $this->template->titulo .= ' - '.urldecode($this->request->param("titulo"));
+        
+        //BUSCA OS REGISTROS        
+        $view->cases = ORM::factory("cases")
+                            ->with("servicoscases")
+                            ->where("SER_ID", "=", $id)
+                            ->group_by('cases.CAS_ID')
+                            ->order_by(DB::expr('RAND()'))
+                            ->find_all();
+        
+        $this->template->conteudo = $view;
+    }
+
 }
 
 // End quem somos
