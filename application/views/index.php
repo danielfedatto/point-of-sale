@@ -21,7 +21,7 @@
 <section class="indexCases">
 	<?php 
 	foreach($cases as $cas){ 
-		$imgCas = glob('admin/upload/cases/'.$cas->CAS_ID.'.*');
+		$imgCas = glob('admin/upload/cases/thumb_'.$cas->CAS_ID.'.*');
 		if($imgCas){ ?>
 			<figure>
 				<img src="<?php echo url::base().$imgCas[0]; ?>" alt="">
@@ -40,7 +40,7 @@
 		<div id="clientes">
 			<?php 
 			foreach($clientes as $cli){ 
-				$imgCli = glob('admin/upload/clientes/'.$cli->CLI_ID.'.*');
+				$imgCli = glob('admin/upload/clientes/thumb_'.$cli->CLI_ID.'.*');
 				if($imgCli){ 
 					$onclick = '';
 					if($cli->CLI_LINK != ''){
@@ -61,7 +61,7 @@
 		<div class="blogWrap">
 			<?php 
 			foreach($blog as $blo){ 
-				$imgBlo = glob('admin/upload/blog/'.$blo->BLO_ID.'.*');
+				$imgBlo = glob('admin/upload/blog/thumb_'.$blo->BLO_ID.'.*');
 				if($imgBlo){ 
 					$blogcategorias = ORM::factory('blogcategorias')->where('BLO_ID', '=', $blo->BLO_ID)->find_all(); ?>
 					<article onclick="location.href='<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>'">

@@ -6,7 +6,7 @@
 <section class="internCases">
     <?php 
     foreach($cases as $cas){ 
-        $imgCase = glob('admin/upload/cases/'.$cas->CAS_ID.'.*'); 
+        $imgCase = glob('admin/upload/cases/thumb_'.$cas->CAS_ID.'.*'); 
         if($imgCase){ ?>
             <figure>
                 <img src="<?php echo url::base().$imgCase[0]; ?>" alt="<?php echo $cas->CAS_TITULO; ?>">
