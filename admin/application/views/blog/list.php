@@ -43,7 +43,7 @@
                               <span><a href="#" onclick="ordenar('USU_NOME', 'asc')" class="seta-acima"></a>
                                   <a href="#" onclick="ordenar('USU_NOME', 'desc')" class="seta-abaixo"></a></span>
                           </th>
-                          <th style="width: 130px"></th>
+                          <th style="width: 100px"></th>
                       </tr>
 
                       <?php
@@ -61,8 +61,8 @@
                                   </td>
                                   <td><?php echo $blo->usuarios->USU_NOME; ?></td>
                                   <td>
-                                    <a href="<?php echo url::base() ?>galeria/index/blog/<?php echo $blo->BLO_ID; ?>" 
-                                          class="btn-app-list fa fa-photo"></a>
+                                    <!-- <a href="<?php echo url::base() ?>galeria/index/blog/<?php echo $blo->BLO_ID; ?>" 
+                                          class="btn-app-list fa fa-photo"></a> -->
                                       <a href="<?php echo url::base() ?>blog/edit/<?php echo $blo->BLO_ID; ?>" 
                                           class="btn-app-list fa fa-edit"></a>
                                           <a onclick="if (window.confirm('Deseja realmente excluir o registro?')) {

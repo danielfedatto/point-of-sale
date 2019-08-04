@@ -189,7 +189,7 @@ class Controller_Cases extends Controller_Index {
                     //thumb
                     $img = Image::factory(DOCROOT."upload/cases/".$imgName);
                     $imgName = "thumb_" . $cases->pk() . ".".$ext;
-                    $img->resize(200)->save(DOCROOT."upload/cases/".$imgName);
+                    $img->resize(425)->save(DOCROOT."upload/cases/".$imgName);
                 }
             } catch (ORM_Validation_Exception $e){
                 $query = false;
@@ -287,7 +287,7 @@ class Controller_Cases extends Controller_Index {
                         //thumb
                         $img = Image::factory(DOCROOT."upload/cases/".$imgName);
                         $imgName = "thumb_" . $cases->pk() . ".".$ext;
-                        $img->resize(200)->save(DOCROOT."upload/cases/".$imgName);
+                        $img->resize(425)->save(DOCROOT."upload/cases/".$imgName);
                     }
                 } catch (ORM_Validation_Exception $e){
                     $query = false;
