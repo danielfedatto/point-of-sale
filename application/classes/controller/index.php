@@ -55,7 +55,7 @@ class Controller_Index extends Controller_Template {
         $this->template->email = $configuracoes->CON_EMAIL;
         $this->template->telefone = $configuracoes->CON_TELEFONE;
         $this->template->atendimento = $configuracoes->CON_HORARIO_ATENDIMENTO;
-        $this->template->id_logo = $configuracoes->CON_ID;
+        $this->template->CON_ID = $configuracoes->CON_ID;
 
         $this->template->banners = ORM::factory("banners")
                                         ->where('BAN_INICIO', '<=', date('Y-m-d'))

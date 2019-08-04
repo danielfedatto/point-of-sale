@@ -103,7 +103,16 @@
     <header>
       <div class="headerContainer">
         <div class="headerLinksWrap">
-          <figure class="headerLogo"><a href="<?php echo url::base(); ?>"><img src="<?php echo url::base(); ?>dist/img/logo-main.svg" alt="Point of Sale"></a></figure>
+          <?php 
+          $logoCabecalho = glob("admin/upload/configuracoes/logo_cabecalho_".$CON_ID.".*"); 
+          if($logoCabecalho){ ?>
+            <figure class="headerLogo">
+              <a href="<?php echo url::base(); ?>">
+                <img src="<?php echo url::base().$logoCabecalho[0]; ?>" alt="Point of Sale">
+              </a>
+            </figure>
+          <?php
+          } ?>
           <ul class="headerLinks">
             <li><a href="<?php echo url::base(); ?>" title="Página Inicial">Home</a></li>
             <li><a href="<?php echo url::base(); ?>nos" title="Sobre Nós">Nós</a></li>
@@ -150,7 +159,14 @@
       <div class="container">
         <div class="footerBoxController">
           <div class="footerBoxLeft">
-            <figure><img src="<?php echo url::base(); ?>dist/img/logo-main.svg" alt=""></figure>
+            <?php 
+            $logoRodape = glob("admin/upload/configuracoes/logo_rodape_".$CON_ID.".*"); 
+            if($logoRodape){ ?>
+              <figure>
+                <img src="<?php echo url::base().$logoRodape[0]; ?>" alt="">
+              </figure>
+            <?php
+            } ?>
             <ul class="socialMedia">
               <?php if($facebook != ''){ ?>
               <li><a href="<?php echo $facebook; ?>" target="_blank" title="Facebook"> 
