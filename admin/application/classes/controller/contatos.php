@@ -163,6 +163,42 @@ class Controller_Contatos extends Controller_Index {
             //SENAO, VOLTA COM MENSAGEM DE ERRO
             $this->action_index("<p class='res-alert warning'>".$mensagem."</p>", true);
         }}
+
+    public function action_excel() {
+        $this->auto_render = FALSE;
+        
+        $arquivo = 'contatos_'.date('d_m_Y').'.xls';   
+
+        $contatos = ORM::factory('contatos')->find_all();
+                
+        $html = "";
+        $html .= "<table border='1'>";
+            $html .= "<tr>";
+                $html .= "<td colspan='4' align='center'><b>CONTATOS</b></td>";
+            $html .= "</tr>";
+        foreach ($contatos as $con){
+            $html .= "<tr>";
+                $html .= "<td>".$con->CON_ID."</td>";
+                $html .= "<td>".$con->CON_NOME."</td>";
+                $html .= "<td>".$con->CON_EMAIL."</td>";
+                $html .= "<td>".$con->CON_FONE."</td>";
+            $html .= "</tr>";
+        }
+        
+        $html .='</table>';
+        
+        // Configurações header para forçar o download
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'.$arquivo.'"');
+        header('Cache-Control: max-age=0');
+        // Se for o IE9, isso talvez seja necessário
+        header('Cache-Control: max-age=1');
+        
+        // Envia o conteúdo do arquivo
+        echo utf8_decode($html);
+        
+        $this->action_index("", false);
+    }
     
     //FUNCAO DE PESQUISA
     public function action_pesquisa(){
