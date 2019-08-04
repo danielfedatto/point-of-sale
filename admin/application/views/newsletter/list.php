@@ -7,7 +7,9 @@
     <?php } ?>
     
     <!--INCLUIR E PESQUISA-->
-    <div class="operacoes"><a href="<?php echo url::base() ?>newsletter/edit" class="btn-inserir">Novo</a><form id="formBusca" name="formBusca" method="get" action="<?php echo url::base() ?>newsletter/pesquisa" class="pesquisa">
+    <div class="operacoes">
+        <a href="<?php echo url::base() ?>newsletter/edit" class="btn-inserir">Novo</a>
+        <form id="formBusca" name="formBusca" method="get" action="<?php echo url::base() ?>newsletter/pesquisa" class="pesquisa">
             <label for="chave">Pesquise um registro:</label>
             <input type="search" id="chave" name="chave" placeholder="Busca" />
             
@@ -17,6 +19,11 @@
 
             <button type="submit">Buscar</button>
         </form>
+
+        <form id="formExcel" name="formExcel" method="post" action="<?php echo url::base() ?>newsletter/excel" style="float: right;" target="_blank">
+            <input type="hidden" name="time" value="<?php echo time(); ?>"/>
+            <img onclick="$('#formExcel').submit();" src="<?php echo url::base() ?>images/excel.png" style="width: 31px; margin-left: 5px;">
+        </form>  
     </div>
     
     <div class="row">

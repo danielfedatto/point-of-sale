@@ -6,7 +6,7 @@ Class Model_Newsletter extends ORM {
 
     protected $_table_name = "NEWSLETTER";
     protected $_primary_key = "NEW_ID";
-        protected $_sorting = array("NEW_ID" => "asc");
+        protected $_sorting = array("NEW_ID" => "desc");
     
     //RELATIONSHIP
     protected $_belongs_to = array(
