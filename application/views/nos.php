@@ -38,8 +38,11 @@
                 $imgEqui = glob('admin/upload/equipe/'.$equi->EQU_ID.'.*');
                 if($imgEqui){ ?>
                     <div class="teamWorkFig">
-                        <figure>
-                            <img src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
+                        <figure class="moldure">
+                            
+                                <img src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
+                            <!-- <p><?php echo $equi->EQU_NOME; ?></p>
+                            <p><?php echo $equi->EQU_CARGO; ?></p> -->
                         </figure>
                     </div>
                 <?php

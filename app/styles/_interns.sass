@@ -50,19 +50,35 @@
         text-align: center
         span
             color: $color1
-    figure
+    .moldure
         margin: 2.5rem
+        overflow: hidden
+        border-radius: 40px
+        width: 330px
+        height: 330px
+        
+        figcaption
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            background: white
+
         img
             display: block
-            border-radius: 25px
             @media screen and(max-width: 767px)
                 width: 100%
 #teamwork
     padding-top: 2rem
+
+    .slick-prev
+        left: -5%
+    .slick-next
+        right: -5%
+
 .teamWorkFig
     position: relative
     width: 400px
-    height: 400px
     margin-right: 1rem
 .teamWorkFig:before, .teamWorkFig:after, .teamWorkFig>:first-child:before, .teamWorkFig>:first-child:after
     position: absolute
@@ -71,26 +87,26 @@
     border-color: $color1
     border-style: solid
     content: ' '
-.teamWorkFig:before 
+.teamWorkFig:before
     top: 10px
     left: 10px
     border-width: 10px 0 0 10px
-    border-radius: 25px 0 0 0
-.teamWorkFig:after 
+    border-radius: 40px 0 0 0
+.teamWorkFig:after
     top: 10px
     right: 10px
     border-width: 10px 10px 0 0
-    border-radius: 0 25px 0 0
+    border-radius: 0 40px 0 0
 .teamWorkFig>:first-child:before
     bottom: 10px
     right: 10px
     border-width: 0 10px 10px 0
-    border-radius: 0 0 25px 0
+    border-radius: 0 0 40px 0
 .teamWorkFig>:first-child:after 
     bottom: 10px
     left: 10px
     border-width: 0 0 10px 10px
-    border-radius: 0 0 0 25px
+    border-radius: 0 0 0 40px
 // FIM PÁGINA NÓS
 // INÍCIO PÁGINA CASES
 .categories-cases

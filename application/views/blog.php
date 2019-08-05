@@ -38,29 +38,5 @@
 
     <?php echo $pagination; ?>
 
-    <!-- <ul class="pagination">
-        <li class="disabled"> 
-            <a href="#!">
-                <svg class="icon icon-chevron_left">
-                    <use xlink:href="#icon-chevron_left"></use>
-                </svg>
-            </a>
-        </li>
-        <li class="active"><a href="#!">1</a></li>
-        <li><a href="#!">2</a></li>
-        <li><a href="#!">3</a></li>
-        <li><a href="#!">4</a></li>
-        <li><a href="#!">5</a></li>
-        <li class="disabled"> <a href="#!">...</a></li>
-        <li><a href="#!">11</a></li>
-        <li>
-            <a href="#!">
-                <svg class="icon icon-chevron_right">
-                    <use xlink:href="#icon-chevron_right"></use>
-                </svg>
-            </a>
-        </li>
-    </ul> -->
-
     </div>
 </section>

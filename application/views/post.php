@@ -1,7 +1,7 @@
 <section class="blogBanner">
     <div class="banner">
         <?php $imgBlog = glob("admin/upload/blog/".$blog->BLO_ID.".*"); ?>
-        <div class="slide_1" <?php if($imgBlog){ ?> style="background-image: url(<?php echo url::base().$imgBlog[0]; ?>); background-repeat: no-repeat; backgroudn-position: center center;" <?php } ?>>
+        <div class="slide_1" <?php if($imgBlog){ ?> style="background-image: url(<?php echo url::base().$imgBlog[0]; ?>); background-repeat: no-repeat; backgroudn-position: center center; background-size: 100% auto;" <?php } ?>>
             <div class="container">
                 <div class="bannerContentPost">
                     <div class="blogBannerInfo">
