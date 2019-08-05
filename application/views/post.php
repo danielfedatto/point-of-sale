@@ -1,3 +1,34 @@
+<section class="blogBanner">
+    <div class="banner">
+        <?php $imgBlog = glob("admin/upload/blog/".$blog->BLO_ID.".*"); ?>
+        <div class="slide_1" <?php if($imgBlog){ ?> style="background-image: url(<?php echo url::base().$imgBlog[0]; ?>); background-repeat: no-repeat; backgroudn-position: center center;" <?php } ?>>
+            <div class="container">
+                <div class="bannerContentPost">
+                    <div class="blogBannerInfo">
+                        <h4><?php echo $blog->BLO_TITULO; ?></h4>
+                        <div class="blogBannerInfoFooter">
+                            <div class="time">
+                                <svg class="icon icon-access_time left">
+                                    <use xlink:href="#icon-access_time"></use>
+                                </svg><span><?php echo Controller_Index::tempoCorrido($blog->BLO_DATA_E_HORA); ?></span>
+                            </div>
+                            <!-- <div class="comments">
+                                <svg class="icon icon-comments left">
+                                    <use xlink:href="#icon-comments"></use>
+                                </svg><span>141</span>
+                            </div>
+                            <div class="share">
+                                <svg class="icon icon-share left">
+                                    <use xlink:href="#icon-share"></use>
+                                </svg><span>25</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="blogPost">
     <div class="container">
         <div class="blogPostController">
@@ -51,8 +82,6 @@
                     <h4><?php echo $blog->BLO_TITULO; ?></h4>
                     <?php 
                     echo $blog->BLO_TEXTO; 
-                    
-                    $imgBlog = glob("admin/upload/blog/".$blog->BLO_ID.".*");
                     if($imgBlog){?>
                         <figure><img src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blog->BLO_TITULO; ?>"></figure>
                     <?php

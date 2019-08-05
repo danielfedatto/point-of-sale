@@ -35,7 +35,7 @@
                               <span><a href="#" onclick="ordenar('CAS_TITULO', 'asc')" class="seta-acima"></a>
                                   <a href="#" onclick="ordenar('CAS_TITULO', 'desc')" class="seta-abaixo"></a></span>
                           </th>
-                          <th style="width: 130px"></th>
+                          <th style="width: 100px"></th>
                       </tr>
 
                       <?php
@@ -46,8 +46,8 @@
                               <tr><td><?php echo $cas->CAS_ID; ?></td>
                                   <td><?php echo $cas->CAS_TITULO; ?></td>
                                   <td>
-                                    <a href="<?php echo url::base() ?>galeria/index/cases/<?php echo $cas->CAS_ID; ?>" 
-                                          class="btn-app-list fa fa-photo"></a>
+                                    <!-- <a href="<?php echo url::base() ?>galeria/index/cases/<?php echo $cas->CAS_ID; ?>" 
+                                          class="btn-app-list fa fa-photo"></a> -->
                                       <a href="<?php echo url::base() ?>cases/edit/<?php echo $cas->CAS_ID; ?>" 
                                           class="btn-app-list fa fa-edit"></a>
                                           <a onclick="if (window.confirm('Deseja realmente excluir o registro?')) {

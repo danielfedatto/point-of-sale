@@ -18,6 +18,10 @@
 
             <button type="submit">Buscar</button>
         </form>
+        <form id="formExcel" name="formExcel" method="post" action="<?php echo url::base() ?>contatos/excel" style="float: right;" target="_blank">
+            <input type="hidden" name="time" value="<?php echo time(); ?>"/>
+            <img onclick="$('#formExcel').submit();" src="<?php echo url::base() ?>images/excel.png" style="width: 31px; margin-left: 5px;">
+        </form>  
     </div>
     
     <div class="row">

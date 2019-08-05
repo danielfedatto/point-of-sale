@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
     <head>
         <title><?php echo $titulo; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="author" content="Paulo Knob - DEZ/2012" />
-        <meta name="copyright" content="copyright (c) ows" />
+        <meta name="author" content="" />
+        <meta name="copyright" content="" />
         <meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1" />
 
         <link href="<?php echo url::base(); ?>css/style.css" type="text/css" rel="stylesheet" />
@@ -12,10 +12,6 @@
         <script type="text/javascript">
             var URLBASE = "<?php echo url::base() ?>";
         </script>
-
-        <!--JQUERY-->
-        <script src="http://static.ows.com.br/libs/jquery/1.8.2/jquery-1.8.2.min.js" type="text/javascript"></script>
-        <!--FIM JQUERY-->
     </head>
     <body >
         <div id="quatrocentos">

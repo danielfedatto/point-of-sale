@@ -1,25 +1,26 @@
 extends _includes/template.pug
 block content
-    section.homeSlider
-        .slider
+    section.blogBanner
+        .banner
             //- Trocar a imagem do banner no url(img/banner_1.jpg)
             div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
-                .containerFluid
-                    .bannerContent
-                        .figureSlide
-                            figure
-                                img(src="img/wellcome_mensage.png", alt="")
-                        .bannerButton
-                            a(href="contato.html").btnType1 Fala com a gente!
-            //- Trocar a imagem do banner no url(img/banner_1.jpg)
-            div(style="background-image: url(img/banner_1.jpg);backgroudn-position: center left;", class="slide_1")
-                .containerFluid
-                    .bannerContent
-                        .figureSlide
-                            figure
-                                img(src="img/wellcome_mensage.png", alt="")
-                        .bannerButton
-                            a(href="contato.html").btnType1 Fala com a gente!
+                .container
+                    .bannerContentPost
+                        .blogBannerInfo
+                            h4 Título da postagem do blog
+                            .blogBannerInfoFooter
+                                .time
+                                    svg.icon.icon-access_time.left
+                                        use(xlink:href="#icon-access_time")
+                                    span 2 horas atrás
+                                .comments
+                                    svg.icon.icon-comments.left
+                                        use(xlink:href="#icon-comments")
+                                    span 141
+                                .share
+                                    svg.icon.icon-share.left
+                                        use(xlink:href="#icon-share")
+                                    span 25
     section.blogPost
         .container
             .blogPostController

@@ -12,6 +12,10 @@ Class Model_Servicos extends ORM {
     protected $_belongs_to = array(
     );
     protected $_has_many = array(
+        "servicoscases" => array(
+            "model"       => "servicoscases",
+            "foreign_key" => "SER_ID",
+        ),
     );
                 
     //REGRAS DE VALIDAÇÃO

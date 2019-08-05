@@ -78,7 +78,9 @@ class Controller_Cases extends Controller_Index {
             $arr = array(
                 "CAS_ID" => $cases->CAS_ID,
                 "CAS_TITULO" => $cases->CAS_TITULO,
+                "CAS_SUBTITULO" => $cases->CAS_SUBTITULO,
                 "CAS_TEXTO" => $cases->CAS_TEXTO,
+                "CAS_DETALHES" => $cases->CAS_DETALHES,
                 "CAS_HOME" => $cases->CAS_HOME,
             );
             
@@ -101,7 +103,9 @@ class Controller_Cases extends Controller_Index {
             $arr = array( 
                 "CAS_ID" => "0",
                 "CAS_TITULO" => "",
+                "CAS_SUBTITULO" => "",
                 "CAS_TEXTO" => "",
+                "CAS_DETALHES" => "",
                 "CAS_HOME" => "S",
             );
             
@@ -185,7 +189,7 @@ class Controller_Cases extends Controller_Index {
                     //thumb
                     $img = Image::factory(DOCROOT."upload/cases/".$imgName);
                     $imgName = "thumb_" . $cases->pk() . ".".$ext;
-                    $img->resize(200)->save(DOCROOT."upload/cases/".$imgName);
+                    $img->resize(425)->save(DOCROOT."upload/cases/".$imgName);
                 }
             } catch (ORM_Validation_Exception $e){
                 $query = false;
@@ -283,7 +287,7 @@ class Controller_Cases extends Controller_Index {
                         //thumb
                         $img = Image::factory(DOCROOT."upload/cases/".$imgName);
                         $imgName = "thumb_" . $cases->pk() . ".".$ext;
-                        $img->resize(200)->save(DOCROOT."upload/cases/".$imgName);
+                        $img->resize(425)->save(DOCROOT."upload/cases/".$imgName);
                     }
                 } catch (ORM_Validation_Exception $e){
                     $query = false;

@@ -105,12 +105,19 @@
             </div>
         </div>
                                         
-        <div class="form-group hide">
-            <label for="logo" class="col-sm-2 control-label">Logo</label>
+        <div class="form-group">
+            <label for="logo_cabecalho" class="col-sm-2 control-label">Logo Cabeçalho</label>
             <div class="col-sm-10">
-                <input type="file" id="logo" name="logo" >
+                <input type="file" id="logo_cabecalho" name="logo_cabecalho" >
             </div>
-        </div><?php if($logo) echo $logo; ?>
+        </div><?php if($logo_cabecalho) echo $logo_cabecalho; ?>
+                                    
+        <div class="form-group">
+            <label for="logo_rodape" class="col-sm-2 control-label">Logo Rodapé</label>
+            <div class="col-sm-10">
+                <input type="file" id="logo_rodape" name="logo_rodape" >
+            </div>
+        </div><?php if($logo_rodape) echo $logo_rodape; ?>
                                     
                 </div>
 

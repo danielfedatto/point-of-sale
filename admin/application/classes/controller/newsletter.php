@@ -203,6 +203,40 @@ class Controller_Newsletter extends Controller_Index {
             $this->action_index("<p class='res-alert warning'>Houve um problema! Nenhum registro selecionado!</p>", true);
         }}
     
+    public function action_excel() {
+        $this->auto_render = FALSE;
+        
+        $arquivo = 'newsletter_'.date('d_m_Y').'.xls';   
+
+        $newsletter = ORM::factory('newsletter')->find_all();
+                
+        $html = "";
+        $html .= "<table border='1'>";
+            $html .= "<tr>";
+                $html .= "<td colspan='2' align='center'><b>NEWSLETTER</b></td>";
+            $html .= "</tr>";
+        foreach ($newsletter as $news){
+            $html .= "<tr>";
+                $html .= "<td>".$news->NEW_ID."</td>";
+                $html .= "<td>".$news->NEW_EMAIL."</td>";
+            $html .= "</tr>";
+        }
+        
+        $html .='</table>';
+        
+        // Configurações header para forçar o download
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'.$arquivo.'"');
+        header('Cache-Control: max-age=0');
+        // Se for o IE9, isso talvez seja necessário
+        header('Cache-Control: max-age=1');
+        
+        // Envia o conteúdo do arquivo
+        echo utf8_decode($html);
+        
+        $this->action_index("", false);
+    }
+        
     //FUNCAO DE PESQUISA
     public function action_pesquisa(){
         $this->action_index("", false);
