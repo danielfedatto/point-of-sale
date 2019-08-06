@@ -25,6 +25,7 @@
         flex-flow: column
         margin-top: 2rem
     figure
+        width: 150px
         margin: 0 1rem 0 0
         @media screen and(max-width: 767px)
             margin: 0
@@ -90,14 +91,14 @@
 #teamwork
     padding-top: 2rem
     .slick-prev, .slick-next
-        top: 103%
+        @media screen and(max-width: 767px)
+            top: 103%
         &:before
             color: #b2b2b2
     .slick-prev
         left: -5%
     .slick-next
         right: -5%
-    
 .teamWorkFig
     position: relative
     width: 400px
