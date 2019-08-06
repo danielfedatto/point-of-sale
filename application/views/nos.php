@@ -39,10 +39,13 @@
                 if($imgEqui){ ?>
                     <div class="teamWorkFig">
                         <figure class="moldure">
-                            
+                            <div class="moldureHover">
                                 <img src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
-                            <!-- <p><?php echo $equi->EQU_NOME; ?></p>
-                            <p><?php echo $equi->EQU_CARGO; ?></p> -->
+                                <figcaption>
+                                    <p><?php echo $equi->EQU_NOME; ?></p>
+                                    <p><?php echo $equi->EQU_CARGO; ?></p>
+                                </figcaption>
+                            </div>
                         </figure>
                     </div>
                 <?php
