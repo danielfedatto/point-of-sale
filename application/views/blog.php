@@ -9,7 +9,9 @@
             if($imgBlog){ ?>
                 <article>
                     <figure>
-                        <img src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blo->BLO_TITULO; ?>">
+                        <a href="<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="<?php echo $blc->categorias->CAT_TITULO; ?>">
+                            <img src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blo->BLO_TITULO; ?>">
+                        </a>
                     </figure>
                     <div class="categories">
                         <?php foreach($blogcategorias as $blc){ ?>

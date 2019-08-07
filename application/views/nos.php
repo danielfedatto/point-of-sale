@@ -18,7 +18,7 @@
                             </a>
                         </figure>
                         <div class="offerDesc">
-                            <strong><?php echo $ser->SER_TITULO; ?></strong> 
+                            <h5><?php echo $ser->SER_TITULO; ?></h5> 
                             <?php echo strip_tags($ser->SER_TEXTO); ?>
                         </div>
                     </div>

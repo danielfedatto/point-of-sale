@@ -70,7 +70,9 @@
                         if($imgCasRel){ ?>
                             <article>
                                 <figure>
-                                    <img src="<?php echo url::base().$imgCasRel[0]; ?>" alt="<?php echo $rel->CAS_TITULO?>">
+                                    <a href="<?php echo url::base(); ?>caseinterna/index/<?php echo $rel->CAS_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($rel->CAS_TITULO)); ?>">
+                                        <img src="<?php echo url::base().$imgCasRel[0]; ?>" alt="<?php echo $rel->CAS_TITULO?>">
+                                    </a>
                                 </figure>
                                 <a href="<?php echo url::base(); ?>caseinterna/index/<?php echo $rel->CAS_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($rel->CAS_TITULO)); ?>">
                                     <h5><?php echo $rel->CAS_TITULO?></h5>
