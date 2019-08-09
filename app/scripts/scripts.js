@@ -5,7 +5,6 @@ $(document).ready(function(){
         arrows: false,
     });
     $("#teamwork").slick({
-      infinite: true,
       dots: false,
       arrows: true,
       slidesToShow: 3,

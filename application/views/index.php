@@ -40,7 +40,7 @@
 		<div id="clientes">
 			<?php 
 			foreach($clientes as $cli){ 
-				$imgCli = glob('admin/upload/clientes/thumb_'.$cli->CLI_ID.'.*');
+				$imgCli = glob('admin/upload/clientes/'.$cli->CLI_ID.'.*');
 				if($imgCli){ 
 					$onclick = '';
 					if($cli->CLI_LINK != ''){
