@@ -1,6 +1,16 @@
+<section class="interBanner">
+</section>
+<div class="caseBar">
+    <figure><img src="<?php echo url::base(); ?>dist/img/caseicon.png" alt=""></figure>
+</div>
 <section class="blogInterna">
     <div class="container">
-    <h3>Fique por dentro das <span>novidades</span></h3>
+    <h4><?php echo $blo->BLO_TITULO; ?></h4>
+    <div class="categories_blog">
+        <?php foreach($categorias as $cat){ ?>
+            <a class="btnType2" href="<?php echo url::base(); ?>blog/categoria/<?php echo $cat->CAT_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($cat->CAT_TITULO)); ?>" title="<?php echo $cat->CAT_TITULO; ?>"><?php echo $cat->CAT_TITULO; ?></a>
+        <?php } ?>
+    </div>
     <div class="blogWrap">
         <?php
         foreach($blog as $blo){

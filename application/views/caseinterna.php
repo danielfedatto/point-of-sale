@@ -1,13 +1,4 @@
-<section class="caseBanner">
-    <div class="banner">
-    <div class="slide_1" style="background-image: url(<?php echo url::base(); ?>dist/img/banner_1.jpg);backgroudn-position: center left;">
-        <div class="container">
-        <div class="bannerContentPost">
-            <div class="blogBannerInfo"></div>
-        </div>
-        </div>
-    </div>
-    </div>
+<section class="interBanner">
 </section>
 <div class="caseBar">
     <figure><img src="<?php echo url::base(); ?>dist/img/caseicon.png" alt=""></figure>

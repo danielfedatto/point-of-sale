@@ -1,3 +1,8 @@
+<section class="interBanner">
+</section>
+<div class="caseBar">
+    <figure><img src="<?php echo url::base(); ?>dist/img/caseicon.png" alt=""></figure>
+</div>
 <div class="categories categories-cases">
     <?php foreach($servicos as $ser){ ?>
         <a class="btnType2" href="<?php echo url::base(); ?>cases/servicos/<?php echo $ser->SER_ID; ?>/<?php echo urlencode($ser->SER_TITULO); ?>" title="<?php echo $ser->SER_TITULO; ?>"><?php echo $ser->SER_TITULO; ?></a>

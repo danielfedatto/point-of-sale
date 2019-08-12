@@ -13,6 +13,8 @@ class Controller_Blog extends Controller_Index {
 
     public function action_index() {
         $view = View::Factory("blog");
+
+        $view->categorias = ORM::factory('categorias')->find_all();
         
         //BUSCA OS REGISTROS        
         $blog = ORM::factory("blog")->with("usuarios");
@@ -31,6 +33,8 @@ class Controller_Blog extends Controller_Index {
         
         $id = $this->request->param("id");
 
+        $view->categorias = ORM::factory('categorias')->find_all();
+
         //BUSCA OS REGISTROS        
         $blog = ORM::factory("blog")->with("usuarios")->where("blog.USU_ID", "=", $id);
 
@@ -48,6 +52,8 @@ class Controller_Blog extends Controller_Index {
         
         $id = $this->request->param("id");
         $this->template->titulo .= ' - '.urldecode($this->request->param("titulo"));
+
+        $view->categorias = ORM::factory('categorias')->find_all();
 
         //BUSCA OS REGISTROS        
         $blog = ORM::factory("blog")->with("blogcategorias")->with("usuarios")
