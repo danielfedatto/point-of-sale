@@ -101,7 +101,7 @@
       </div>
     </div>
     <header>
-      <div class="headerContainer">
+      <div id="desk-nav">
         <div class="headerLinksWrap">
           <?php 
           $logoCabecalho = glob("admin/upload/configuracoes/logo_cabecalho_".$CON_ID.".*"); 
