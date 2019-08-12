@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $(".sticker").sticky({
+      zIndex: 2
+    });
     $(".slider").slick({
         infinite: false,
         dots: true,
@@ -69,7 +72,13 @@ $(document).ready(function(){
         ]
     });
 });
-
+$(window).scroll(function() {
+	if ($(window).scrollTop() > 10) {
+		$('#desk-nav').addClass('sticky');
+	} else {
+		$('#desk-nav').removeClass('sticky');
+	}
+});
 // MENU MOBILE
 
 var burgerBtn = document.getElementById('burgerBtn');
