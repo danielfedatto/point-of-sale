@@ -1,6 +1,6 @@
 // INÍCIO PÁGINA NÓS
 .weDescription
-    padding: 2rem 0
+    padding: 4rem 0
     background: $color1
     h3
         margin-top: 0
@@ -27,11 +27,12 @@
         flex-flow: column
         margin-top: 2rem
     figure
-        width: 150px
+        width: 50%
         margin: 0 1rem 0 0
         @media screen and(max-width: 767px)
             margin: 0
 .offerDesc
+    width: 50%
     font-family: $comfortaa
     color: #b2b2b2
     font-size: 1.3em
@@ -146,13 +147,6 @@
     width: 100%
     text-align: center
     position: relative
-    &:after
-        content: ''
-        background: #b2b2b2
-        width: 40px
-        height: 2px
-        position: absolute
-        bottom: -2rem
     .btnType2
         margin: 1.5rem 1rem
         border: solid 1px #fff
@@ -306,6 +300,7 @@
     align-items: center
     justify-content: center
     .blogBannerInfo
+        margin-top: 100px
         h4
             font-family: $comfortaa
             color: white
@@ -352,6 +347,9 @@
             flex-flow: column
         .btnType2
             margin-right: 1rem
+            border: solid 1px white
+            &:hover
+                border: solid 1px $color1
             @media screen and(max-width: 767px)
                 width: fit-content
                 margin-bottom: 1rem
@@ -498,7 +496,7 @@
         background: $color1
     figure
         margin: 0
-        width: 70px
+        width: 55px
 .casePostController
     article
         margin-top: 8rem
