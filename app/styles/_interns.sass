@@ -1,16 +1,18 @@
 // INÍCIO PÁGINA NÓS
 .weDescription
-    padding: 4rem 0
+    padding: 2rem 0
     background: $color1
+    h3
+        margin-top: 0
     h3, h5
         color: white
         text-align: center
         font-family: $comfortaa
         font-weight: bold
     h5 
-        margin-top: 4rem
+        margin-top: 2rem
 .weOffer
-    padding: 4rem 0 8rem 0
+    padding: 2rem 0 4rem 0
 .weOfferBoxController
     display: flex
     flex-wrap: wrap
@@ -36,7 +38,7 @@
     padding-right: 2em
     h5
         font-family: $arista
-        font-weight: bolder
+        font-weight: normal
     @media screen and(max-width: 767px)
         text-align: center
         margin-top: 1rem
@@ -45,7 +47,7 @@
         display: block
         font-weight: $extra-bold
 .teamWork
-    padding: 5rem 0
+    padding: 2rem 0
     background: #ededed
     h3, h6
         color: #b2b2b2
@@ -57,10 +59,11 @@
     h6
         font-family: $comfortaa
     .moldure
-        margin: 2.5rem
-        overflow: hidden
-        border-radius: 40px
+        width: 330px
         height: 330px
+        margin: 4rem
+        overflow: hidden
+        border-radius: 15px
         @media screen and(max-width: 767px)
             height: auto
     .moldureHover
@@ -108,34 +111,34 @@
 .teamWorkFig
     position: relative
     width: 400px
-    margin-right: 1rem
+    padding-right: 4rem
 .teamWorkFig:before, .teamWorkFig:after, .teamWorkFig>:first-child:before, .teamWorkFig>:first-child:after
     position: absolute
-    width: 70px
-    height: 70px
+    width: 80px
+    height: 50px
     border-color: $color1
     border-style: solid
     content: ' '
 .teamWorkFig:before
-    top: 10px
-    left: 10px
+    top: 33px
+    left: 33px
     border-width: 10px 0 0 10px
-    border-radius: 40px 0 0 0
+    border-radius: 35px 0 0 0
 .teamWorkFig:after
-    top: 10px
-    right: 10px
+    top: 33px
+    right: 69px
     border-width: 10px 10px 0 0
-    border-radius: 0 40px 0 0
+    border-radius: 0 35px 0 0
 .teamWorkFig>:first-child:before
-    bottom: 10px
-    right: 10px
+    bottom: 33px
+    right: 69px
     border-width: 0 10px 10px 0
-    border-radius: 0 0 40px 0
+    border-radius: 0 0 35px 0
 .teamWorkFig>:first-child:after 
-    bottom: 10px
-    left: 10px
+    bottom: 33px
+    left: 33px
     border-width: 0 0 10px 10px
-    border-radius: 0 0 0 40px
+    border-radius: 0 0 0 35px
 // FIM PÁGINA NÓS
 // INÍCIO PÁGINA CASES
 .categories-cases
@@ -152,6 +155,9 @@
         bottom: -2rem
     .btnType2
         margin: 1.5rem 1rem
+        border: solid 1px #fff
+        &:hover
+            border: solid 1px $color1
 .internCases
     display: flex
     flex-wrap: wrap
@@ -191,6 +197,8 @@
                 padding: .5rem 1.5rem
                 display: block
                 width: fit-content
+                &:hover
+                    border: solid 1px $color1
             h5
                 font-weight: bold
             h5, span
@@ -204,7 +212,7 @@
     
 // INÍCIO DA PÁGINA CONTATO
 .contatoInterno
-    padding: 5rem 0
+    padding: 2rem 0
     h3
         color: #b2b2b2
         font-family: $comfortaa
@@ -473,7 +481,7 @@
         justify-content: center
 .caseBar
     width: 100%
-    height: 160px
+    height: 80px
     background: $color1
     display: flex
     justify-content: center
@@ -481,15 +489,16 @@
     position: relative
     &:before
         content: ''
-        width: 50px
-        height: 50px
+        width: 25px
+        height: 25px
         z-index: -1
         transform: rotate(45deg)
         position: absolute
-        bottom: -25px
+        bottom: -13px
         background: $color1
     figure
         margin: 0
+        width: 70px
 .casePostController
     article
         margin-top: 8rem
