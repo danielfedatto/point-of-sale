@@ -5,7 +5,6 @@
 </div>
 <section class="blogInterna">
     <div class="container">
-    <h4><?php echo $blo->BLO_TITULO; ?></h4>
     <div class="categories_blog">
         <?php foreach($categorias as $cat){ ?>
             <a class="btnType2" href="<?php echo url::base(); ?>blog/categoria/<?php echo $cat->CAT_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($cat->CAT_TITULO)); ?>" title="<?php echo $cat->CAT_TITULO; ?>"><?php echo $cat->CAT_TITULO; ?></a>
