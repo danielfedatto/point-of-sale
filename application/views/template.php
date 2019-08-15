@@ -96,7 +96,7 @@
           <li><a href="<?php echo url::base(); ?>nos" title="Quem somos">Nós</a></li>
           <li><a href="<?php echo url::base(); ?>cases" title="Cases">Cases</a></li>
           <li><a href="<?php echo url::base(); ?>blog" title="Blog">Blog</a></li>
-          <li><a href="<?php echo url::base(); ?>contatos" title="Contato">CONTATO</a></li>
+          <li><a href="<?php echo url::base(); ?>contatos" title="Contato">Contato</a></li>
         </ul>
       </div>
     </div>
