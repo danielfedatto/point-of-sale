@@ -88,6 +88,15 @@
     </div>
     <div id="mobile">
       <div class="stickerMob">
+        <?php
+          $logoCabecalho = glob("admin/upload/configuracoes/logo_cabecalho_".$CON_ID.".*");  
+          if($logoCabecalho){ ?>
+            <a href="<?php echo url::base(); ?>">
+              <img class="logoMobile" src="<?php echo url::base().$logoCabecalho[0]; ?>" alt="Point of Sale">
+            </a>
+          <?php
+          }
+          ?>
         <div id="burgerBtn"></div>
       </div>
       <div id="nav">
@@ -104,7 +113,6 @@
       <div id="desk-nav">
         <div class="headerLinksWrap">
           <?php 
-          $logoCabecalho = glob("admin/upload/configuracoes/logo_cabecalho_".$CON_ID.".*"); 
           if($logoCabecalho){ ?>
             <figure class="headerLogo">
               <a href="<?php echo url::base(); ?>">
