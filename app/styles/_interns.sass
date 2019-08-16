@@ -63,12 +63,14 @@
         width: 250px
         height: 250px
         margin: 4rem
-        overflow: hidden
-        border-radius: 15px
+        
         @media screen and(max-width: 767px)
             width: 250px
             height: auto
     .moldureHover
+        position: relative
+        overflow: hidden
+        border-radius: 15px
         position: relative
         &:hover
             figcaption
@@ -116,40 +118,39 @@
             right: 15%
 .teamWorkFig
     position: relative
-    width: 400px
-    padding-right: 4rem
-.teamWorkFig:before, .teamWorkFig:after, .teamWorkFig>:first-child:before, .teamWorkFig>:first-child:after
+
+.borderTopLeft, .borderTopRight, .borderBottomLeft, .borderBottomRight
     position: absolute
-    width: 80px
-    height: 50px
     border-color: $color1
     border-style: solid
     content: ' '
-.teamWorkFig:before
+.borderTopLeft, .borderTopRight
+    width: 80px
+    height: 50px
+.borderBottomLeft, .borderBottomRight
+    width: 50px
+    height: 80px
+.borderTopLeft
     top: 33px
     left: 33px
     border-width: 10px 0 0 10px
     border-radius: 35px 0 0 0
-
-.teamWorkFig:after
+.borderTopRight
     top: 33px
-    right: 150px
+    right: 33px
     border-width: 10px 10px 0 0
     border-radius: 0 35px 0 0
-    @media screen and(max-width: 767px)
-        right: 95px
-.teamWorkFig>:first-child:before
-    bottom: 33px
-    right: 150px
-    border-width: 0 10px 10px 0
-    border-radius: 0 0 35px 0
-    @media screen and(max-width: 767px)
-        right: 95px
-.teamWorkFig>:first-child:after 
+.borderBottomLeft
     bottom: 33px
     left: 33px
     border-width: 0 0 10px 10px
     border-radius: 0 0 0 35px
+.borderBottomRight
+    bottom: 33px
+    right: 33px
+    border-width: 0 10px 10px 0
+    border-radius: 0 0 35px 0
+
 // FIM PÁGINA NÓS
 // INÍCIO PÁGINA CASES
 .categories-cases
