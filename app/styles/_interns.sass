@@ -60,8 +60,8 @@
     h6
         font-family: $comfortaa
     .moldure
-        width: 330px
-        height: 330px
+        width: 250px
+        height: 250px
         margin: 4rem
         overflow: hidden
         border-radius: 15px
@@ -107,9 +107,13 @@
             color: #b2b2b2
             font-size: 4em
     .slick-prev
-        left: 15%
+        left: -4%
+        @media screen and(max-width: 767px)
+            left: 15%
     .slick-next
-        right: 15%
+        right: 0
+        @media screen and(max-width: 767px)
+            right: 15%
 .teamWorkFig
     position: relative
     width: 400px
@@ -126,16 +130,21 @@
     left: 33px
     border-width: 10px 0 0 10px
     border-radius: 35px 0 0 0
+
 .teamWorkFig:after
     top: 33px
-    right: 69px
+    right: 150px
     border-width: 10px 10px 0 0
     border-radius: 0 35px 0 0
+    @media screen and(max-width: 767px)
+        right: 95px
 .teamWorkFig>:first-child:before
     bottom: 33px
-    right: 69px
+    right: 150px
     border-width: 0 10px 10px 0
     border-radius: 0 0 35px 0
+    @media screen and(max-width: 767px)
+        right: 95px
 .teamWorkFig>:first-child:after 
     bottom: 33px
     left: 33px
