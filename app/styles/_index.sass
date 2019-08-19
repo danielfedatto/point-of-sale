@@ -101,27 +101,25 @@
         font-family: $arista
         span
             font-size: 1.5em,
-    .content
-        margin-top: 2rem
-        display: flex
-        justify-content: space-between
+.nosFazemosSlider
+    figure
+        margin: 0
+        box-sizing: border-box
+        padding: 1.5rem
+    .slick-prev, .slick-next
         @media screen and(max-width: 767px)
-            flex-flow: column
-            align-items: center
-        figure
-            float: left
-            display: inline-block
-            left: auto
-            right: auto
-            margin: 0 4rem 0 0
-            &:last-child
-                margin: 0
-            @media screen and(max-width: 1366px)
-                img
-                    width: 180px
-            @media screen and(max-width: 767px)
-                width: 170px
-                margin: 0 0 1rem 0
+            top: 100%
+        &:before
+            color: #fff
+            font-size: 4em
+    .slick-prev
+        left: -4%
+        @media screen and(max-width: 767px)
+            left: 15%
+    .slick-next
+        right: 0
+        @media screen and(max-width: 767px)
+            right: 15%
 .indexCases
     display: flex
     flex-wrap: wrap
@@ -205,16 +203,22 @@
             font-size: 3em
 .indexBlog
     padding: 4rem 0
+    @media screen and(max-width: 767px)
+        padding: 1rem 0
     h3
         color: #b7b7b7
         text-align: center
         font-family: $arista
+        @media screen and(max-width: 767px)
+            margin-top: 0
     span
         color: $color1
     .blogWrap
         article
             box-sizing: border-box
             margin-bottom: 4rem
+            @media screen and(max-width: 767px)
+                margin-bottom: 0
             figure
                 width: 100%
                 margin: 0

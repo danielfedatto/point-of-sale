@@ -31,13 +31,15 @@
                         <h5><?php echo $blo->BLO_TITULO; ?></h5>
                     </a>
                     <div class="articleFooter">
-                        <span>Por 
-                            <a href="#"><?php echo $blo->usuarios->USU_NOME; ?></a>
+                        <span>
+                            Por <a href="#"><?php echo $blo->usuarios->USU_NOME; ?></a>
                         </span>
                         <span class="comments"><?php echo Controller_Index::tempoCorrido($blo->BLO_DATA_E_HORA); ?>
-                            <svg class="icon icon-access_time">
-                                <use xlink:href="#icon-access_time"></use>
-                            </svg>
+                            <i class="left">
+                                <svg class="icon icon-access_time">
+                                    <use xlink:href="#icon-access_time"></use>
+                                </svg>
+                            </i>
                         </span>
                     </div>
                     <a class="btnType2" href="<?php echo url::base(); ?>post/ver/<?php echo $blo->BLO_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($blo->BLO_TITULO)); ?>" title="">Ler Tudo</a>
