@@ -60,10 +60,8 @@
     h6
         font-family: $comfortaa
     .moldure
-        width: 250px
-        height: 250px
         margin: 4rem
-        
+        width: 250px
         @media screen and(max-width: 767px)
             width: 250px
             height: auto
@@ -118,7 +116,9 @@
             right: 15%
 .teamWorkFig
     position: relative
-
+    display: flex !important
+    align-items: center
+    justify-content: center
 .borderTopLeft, .borderTopRight, .borderBottomLeft, .borderBottomRight
     position: absolute
     border-color: $color1
@@ -132,24 +132,32 @@
     height: 80px
 .borderTopLeft
     top: 33px
-    left: 33px
+    left: 60px
     border-width: 10px 0 0 10px
     border-radius: 35px 0 0 0
+    @media screen and(max-width: 767px)
+        left: 33px
 .borderTopRight
     top: 33px
-    right: 33px
+    right: 60px
     border-width: 10px 10px 0 0
     border-radius: 0 35px 0 0
+    @media screen and(max-width: 767px)
+        right: 33px
 .borderBottomLeft
     bottom: 33px
-    left: 33px
+    left: 60px
     border-width: 0 0 10px 10px
     border-radius: 0 0 0 35px
+    @media screen and(max-width: 767px)
+        left: 33px
 .borderBottomRight
     bottom: 33px
-    right: 33px
+    right: 60px
     border-width: 0 10px 10px 0
     border-radius: 0 0 35px 0
+    @media screen and(max-width: 767px)
+        right: 33px
 
 // FIM PÁGINA NÓS
 // INÍCIO PÁGINA CASES
@@ -158,11 +166,17 @@
     width: 100%
     text-align: center
     position: relative
+    @media screen and(max-width: 767px)
+        margin: 2rem 0 .5rem 0
     .btnType2
         margin: 1.5rem 1rem
         border: solid 1px #fff
         &:hover
             border: solid 1px $color1
+        @media screen and(max-width: 767px)
+            margin: 0
+            margin-bottom: .5rem
+            font-size: 1em
 .internCases
     display: flex
     flex-wrap: wrap
@@ -335,6 +349,8 @@
 // INÍCIO DA PÁGINA DE LISTAGEM DO POST
 .blogInterna
     padding: 5rem 0
+    @media screen and(max-width: 767px)
+        padding: 2rem 0
     h4
         font-family: $arista
         text-align: center
@@ -351,9 +367,7 @@
             position: absolute
             bottom: -2rem
     .categories_blog
-        display: flex
-        justify-content: center
-        margin-bottom: 3rem
+        margin: 1rem 0
         @media screen and(max-width: 767px)
             flex-flow: column
         .btnType2
@@ -362,8 +376,9 @@
             &:hover
                 border: solid 1px $color1
             @media screen and(max-width: 767px)
-                width: fit-content
-                margin-bottom: 1rem
+                margin-bottom: .5rem
+                margin-right: 0
+                font-size: 1em
     h3
         color: #b2b2b2
         font-family: $arista
@@ -377,9 +392,12 @@
     margin-top: 4rem
     @media screen and(max-width: 767px)
         grid-template-columns: repeat(auto-fill,minmax(100%,1fr))
+        margin-top: 0
     article
         box-sizing: border-box
         margin-bottom: 4rem
+        @media screen and(max-width: 767px)
+            margin-bottom: 0
         figure
             width: 100%
             margin: 0
@@ -400,9 +418,13 @@
             p
                 color: #a6a6a6
         .articleFooter
+            i
+                margin-right: 8px
             span 
                 color: #a6a6a6
                 font-family: $comfortaa
+                display: inline-block
+                line-height: 17px
                 a
                     color: $color1
             .icon

@@ -2,7 +2,7 @@
 	<div class="container">
 		<h3>A gente faz:</h3>
 		<p><span>Somos especialistas em Varejo.</span></p>
-		<div class="content">
+		<div class="nosFazemosSlider">
 			<?php
 			foreach($servicos as $ser){ 
 				$imgServico = glob('admin/upload/servicos/'.$ser->SER_ID.'.*');
