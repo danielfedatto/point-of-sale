@@ -100,20 +100,20 @@
                 width: 100%
 #teamwork
     padding-top: 2rem
+    @media screen and(max-width: 767px)
+        padding-top: 0
     .slick-prev, .slick-next
-        @media screen and(max-width: 767px)
-            top: 99%
         &:before
             color: #b2b2b2
             font-size: 4em
     .slick-prev
         left: -4%
         @media screen and(max-width: 767px)
-            left: 15%
+            left: -5%
     .slick-next
         right: 0
         @media screen and(max-width: 767px)
-            right: 15%
+            right: -5%
 .teamWorkFig
     position: relative
     display: flex !important

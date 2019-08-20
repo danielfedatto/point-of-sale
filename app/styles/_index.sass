@@ -28,7 +28,7 @@
     display: flex
     align-items: center
     @media screen and(max-width: 767px)
-        height: 150px
+        height: 250px
     figure
         width: 460px
         max-width: 460px
@@ -46,7 +46,7 @@
     bottom: 10%
     width: 100%
     @media screen and(max-width: 767px)
-        bottom: 70px
+        bottom: 30px
 .btnType1
     border: solid $color1
     padding: 1rem 1rem
@@ -90,6 +90,8 @@
 .nosFazemos
     background: $color1
     padding: 4rem 0
+    @media screen and(max-width: 767px)
+        padding: 4rem 0 0 0 
     h3
         color: white
         text-align: center
@@ -106,20 +108,20 @@
         margin: 0
         box-sizing: border-box
         padding: 1.5rem
-    .slick-prev, .slick-next
         @media screen and(max-width: 767px)
-            top: 100%
+            padding: 3.5rem
+    .slick-prev, .slick-next
         &:before
             color: #fff
             font-size: 4em
     .slick-prev
         left: -4%
         @media screen and(max-width: 767px)
-            left: 15%
+            left: -5%
     .slick-next
         right: 0
         @media screen and(max-width: 767px)
-            right: 15%
+            right: -5%
 .indexCases
     display: flex
     flex-wrap: wrap
