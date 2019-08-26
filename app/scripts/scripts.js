@@ -102,6 +102,10 @@ $(document).ready(function(){
             }
         ]
     });
+    $('#burgerBtn').click(function(){
+      $('#mobile').toggleClass('navigation');
+      $('body').toggleClass('overflow');
+    });
 });
 $(window).scroll(function() {
 	if ($(window).scrollTop() > 10) {
@@ -110,19 +114,7 @@ $(window).scroll(function() {
 		$('#desk-nav').removeClass('sticky');
 	}
 });
-// MENU MOBILE
 
-var burgerBtn = document.getElementById('burgerBtn');
-var body = document.body
-burgerBtn.addEventListener('click', function() {
-    mobile.classList.toggle('navigation');
-    body.classList.toggle('overflow');
-}, false);
-function testAnim(x) {
-    $('.download.meterial-icons').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-      $(this).removeClass();
-    });
-};
 document.addEventListener(
     'DOMContentLoaded',
     () => {
