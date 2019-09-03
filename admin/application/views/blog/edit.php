@@ -199,8 +199,8 @@ if ( typeof CKEDITOR == "undefined" ){
         var world = new Object();
 //        world.width = canvas.offsetWidth;
 //        world.height = canvas.offsetHeight;
-        world.width = 3000;
-        world.height = 3000;
+        world.width = 1500;
+        world.height = 1500;
 
         var WidthDif = img.width - world.width;
         var HeightDif = img.height - world.height;
