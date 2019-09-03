@@ -621,3 +621,13 @@
                     margin: 0
                     img
                         width: 100%
+.blogBanner
+    position: relative
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%)
