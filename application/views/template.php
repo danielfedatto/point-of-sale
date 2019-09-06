@@ -34,8 +34,8 @@
 		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-32x32.png" sizes="32x32">
 		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-128x128.png" sizes="128x128">
-    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>app/css/style.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>dist/css/fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>dist/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>app/css/fancybox.min.css">
         
     <script type="text/javascript">
         var URLBASE = "<?php echo url::base() ?>";
@@ -221,7 +221,7 @@
     </footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="<?php echo url::base(); ?>app/js/funcoes.min.js"></script>
+  <script src="<?php echo url::base(); ?>dist/js/funcoes.min.js"></script>
 </html>
 
 <?php if (Request::current()->controller() == "contatos"){ ?>
