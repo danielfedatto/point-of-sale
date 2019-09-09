@@ -3990,21 +3990,25 @@ small {
   align-items: center;
   justify-content: center; }
 
-.autorFig .moldure .borderTopLeft {
-  top: 10px;
-  left: 15px; }
-
-.autorFig .moldure .borderTopRight {
-  top: 10px;
-  right: 15px; }
-
-.autorFig .moldure .borderBottomLeft {
-  bottom: 0;
-  left: 15px; }
-
-.autorFig .moldure .borderBottomRight {
-  bottom: 0;
-  right: 15px; }
+.autorFig .moldure {
+  border-radius: 15px;
+  margin: 0;
+  margin: 2rem;
+  overflow: hidden; }
+  .autorFig .moldure img {
+    display: block; }
+  .autorFig .moldure .borderTopLeft {
+    top: 10px;
+    left: 10px; }
+  .autorFig .moldure .borderTopRight {
+    top: 10px;
+    right: 10px; }
+  .autorFig .moldure .borderBottomLeft {
+    bottom: 10px;
+    left: 10px; }
+  .autorFig .moldure .borderBottomRight {
+    bottom: 10px;
+    right: 10px; }
 
 .borderTopLeft, .borderTopRight, .borderBottomLeft, .borderBottomRight {
   position: absolute;
@@ -4359,9 +4363,6 @@ small {
         width: 100%; } }
     .blogPostController aside .autorPost, .articlePostController aside .autorPost {
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2); }
-      .blogPostController aside .autorPost figure, .articlePostController aside .autorPost figure {
-        padding: 2rem 0 0 0;
-        margin-top: 0; }
       .blogPostController aside .autorPost h5, .blogPostController aside .autorPost h6, .articlePostController aside .autorPost h5, .articlePostController aside .autorPost h6 {
         font-family: "Comfortaa", cursive;
         text-align: center; }
