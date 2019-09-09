@@ -111,7 +111,7 @@
     </div>
     <header>
       <?php
-        if (Request::current()->controller() == "cases" or Request::current()->controller() == "blog") {
+        if (Request::current()->controller() == "cases" or Request::current()->controller() == "blog" or Request::current()->controller() == "caseinterna"){
           $classeHeader = "header-internas";
         }
         else {
