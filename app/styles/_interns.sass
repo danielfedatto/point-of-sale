@@ -207,12 +207,18 @@
         display: block
         overflow: hidden
         position: relative
+        @media screen and(max-width: 420px)
+            min-width: 100%
+        @media screen and(max-width: 1366px)
+            height: 280px
         img
             height: 450px
             width: auto
             min-width: 100%
-        @media screen and(max-width: 420px)
-            min-width: 100%
+            @media screen and(max-width: 420px)
+                height: 280px
+            @media screen and(max-width: 1366px)
+                height: 280px
         &:hover
             figcaption
                 transform: translate(0)

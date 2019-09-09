@@ -4089,13 +4089,22 @@ small {
     display: block;
     overflow: hidden;
     position: relative; }
+    @media screen and (max-width: 420px) {
+      .internCases figure {
+        min-width: 100%; } }
+    @media screen and (max-width: 1366px) {
+      .internCases figure {
+        height: 280px; } }
     .internCases figure img {
       height: 450px;
       width: auto;
       min-width: 100%; }
-    @media screen and (max-width: 420px) {
-      .internCases figure {
-        min-width: 100%; } }
+      @media screen and (max-width: 420px) {
+        .internCases figure img {
+          height: 280px; } }
+      @media screen and (max-width: 1366px) {
+        .internCases figure img {
+          height: 280px; } }
     .internCases figure:hover figcaption {
       transform: translate(0); }
     .internCases figure figcaption {
