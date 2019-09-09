@@ -3984,11 +3984,27 @@ small {
       #teamwork .slick-next {
         right: -5%; } }
 
-.teamWorkFig {
+.teamWorkFig, .autorFig {
   position: relative;
   display: flex !important;
   align-items: center;
   justify-content: center; }
+
+.autorFig .moldure .borderTopLeft {
+  top: 10px;
+  left: 15px; }
+
+.autorFig .moldure .borderTopRight {
+  top: 10px;
+  right: 15px; }
+
+.autorFig .moldure .borderBottomLeft {
+  bottom: 0;
+  left: 15px; }
+
+.autorFig .moldure .borderBottomRight {
+  bottom: 0;
+  right: 15px; }
 
 .borderTopLeft, .borderTopRight, .borderBottomLeft, .borderBottomRight {
   position: absolute;
@@ -4064,17 +4080,18 @@ small {
   flex-wrap: wrap; }
   .internCases figure {
     width: 33.3%;
-    height: 300px;
+    height: 450px;
     margin: 0;
     display: block;
     overflow: hidden;
     position: relative; }
+    .internCases figure img {
+      height: 450px;
+      width: auto;
+      min-width: 100%; }
     @media screen and (max-width: 420px) {
       .internCases figure {
         min-width: 100%; } }
-    .internCases figure img {
-      height: 300px;
-      width: auto; }
     .internCases figure:hover figcaption {
       transform: translate(0); }
     .internCases figure figcaption {
