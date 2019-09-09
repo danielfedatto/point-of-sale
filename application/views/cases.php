@@ -1,7 +1,9 @@
 <section class="interBanner">
 </section>
 <div class="caseBar">
-    <figure><img src="<?php echo url::base(); ?>dist/img/caseicon.png" alt=""></figure>
+    <figure>
+        <img class="fluid-img" src="<?php echo url::base(); ?>dist/img/caseicon.png" alt="">
+    </figure>
 </div>
 <div class="categories categories-cases">
     <?php foreach($servicos as $ser){ ?>

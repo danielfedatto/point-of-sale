@@ -8,7 +8,8 @@ const
     uglifyjs      	= 	require('gulp-uglify')
     cssnano			=	require('gulp-cssnano')
 	rename			=	require("gulp-rename")
-	autoprefixer 	= 	require("gulp-autoprefixer")
+	autoprefixer 	= 	require("autoprefixer")
+	cssnano		 	= 	require("cssnano")
 	imagemin		=	require("gulp-imagemin")
     plumber 		= 	require('gulp-plumber')
 	notify 			= 	require("gulp-notify")
@@ -17,6 +18,7 @@ const
 	concat 			= 	require('gulp-concat')
 	sourcemaps		=	require('gulp-sourcemaps')
 	iconfont		=	require('gulp-iconfont')
+	postcss			= 	require('gulp-postcss')
 var
 	runTimestamp = Math.round(Date.now()/1000)
 // Compila o PUG
@@ -35,14 +37,15 @@ function templates() {
 // Compila SASS e CSS, minifica e aplica a multiplataforma
 function styles() {
 	return src('app/styles/style.sass')
-		.pipe(sass({outputStyle: ':nested'})).on('error', notify.onError({
+		.pipe(sass({outputStyle: ':nested'}))
+		.on('error', notify.onError({
 			title: 'SASS',
 			message:"<%= error.message %>"
 		}))
-		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8'], {cascade: false}))
-		.pipe(cssnano())
+		.pipe(dest("./app/css/"))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(dest('app/css'))
+		.pipe(postcss([autoprefixer(), cssnano()]))
+		.pipe(dest('./app/css/'))
 		.pipe(browserSync.reload({stream: true}));
 }
 // Transforma as imagens (svg) em fontes

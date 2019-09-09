@@ -42,7 +42,7 @@
                         }else{
                             $img = "admin/dist/img/pessoa.png";
                         } ?>
-                        <img src="<?php echo url::base().$img; ?>" alt="">
+                        <img class="fluid-img" src="<?php echo url::base().$img; ?>" alt="">
                     </figure>
                     <h5><?php echo $blog->usuarios->USU_NOME; ?></h5>
                     <h6><?php echo $blog->usuarios->USU_CARGO; ?></h6>
@@ -83,7 +83,7 @@
                     <?php 
                     echo $blog->BLO_TEXTO; 
                     if($imgBlog){?>
-                        <figure><img src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blog->BLO_TITULO; ?>"></figure>
+                        <figure><img class="fluid-img" src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blog->BLO_TITULO; ?>"></figure>
                     <?php
                     } ?>
                     <div class="fb-share-button"
