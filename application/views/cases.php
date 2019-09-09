@@ -1,5 +1,3 @@
-<section class="interBanner">
-</section>
 <div class="caseBar">
     <figure>
         <img class="fluid-img" src="<?php echo url::base(); ?>dist/img/caseicon.png" alt="">

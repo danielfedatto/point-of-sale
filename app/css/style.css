@@ -564,6 +564,12 @@ template {
   .sticky .headerLinksWrap {
     height: 90px !important; }
 
+.header-internas {
+  background: white;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2); }
+  .header-internas .headerLinks a {
+    color: #c2c2c2 !important; }
+
 #desk-nav {
   position: fixed;
   z-index: 150;
@@ -3717,8 +3723,9 @@ small {
       @media screen and (max-width: 767px) {
         .indexCases figure figcaption {
           height: 234px; } }
-      .indexCases figure figcaption h3, .indexCases figure figcaption span {
+      .indexCases figure figcaption h4, .indexCases figure figcaption span {
         color: white;
+        text-align: center;
         font-family: "Arista Pro Alternate", cursive;
         margin: 0; }
       .indexCases figure figcaption span {
@@ -4423,6 +4430,7 @@ small {
 
 .caseBar {
   width: 100%;
+  margin-top: 140px;
   height: 80px;
   background: #ff9800;
   display: flex;
