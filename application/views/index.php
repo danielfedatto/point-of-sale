@@ -9,7 +9,7 @@
 				if($imgServico){ ?>
 					<figure>
 						<a href="<?php echo url::base(); ?>cases/servicos/<?php echo $ser->SER_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($ser->SER_TITULO)); ?>">
-							<img src="<?php echo url::base().$imgServico[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>">
+							<img class="fluid-img" src="<?php echo url::base().$imgServico[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>">
 						</a>
 					</figure>
 				<?php
@@ -26,7 +26,7 @@
 			<figure>
 				<img src="<?php echo url::base().$imgCas[0]; ?>" alt="">
 				<figcaption>
-					<h3><?php echo $cas->CAS_TITULO; ?></h3>
+					<h4><?php echo $cas->CAS_TITULO; ?></h4>
 					<span><?php echo $cas->CAS_SUBTITULO?></span>
 					<a class="btnType2" href="<?php echo url::base(); ?>caseinterna/index/<?php echo $cas->CAS_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($cas->CAS_TITULO)); ?>">Saiba mais</a>
 				</figcaption>

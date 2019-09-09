@@ -34,16 +34,22 @@
         <div class="blogPostController">
             <aside>
                 <div class="autorPost">
-                    <figure>
-                        <?php
-                        $img = glob("admin/upload/usuarios/thumb_".$blog->usuarios->USU_ID.".*");
-                        if($img){
-                            $img = $img[0];
-                        }else{
-                            $img = "admin/dist/img/pessoa.png";
-                        } ?>
-                        <img src="<?php echo url::base().$img; ?>" alt="">
-                    </figure>
+                    <div class="autorFig">
+                        <figure class="moldure">
+                            <div class="borderTopLeft"></div>
+                            <div class="borderTopRight"></div>
+                                <?php
+                                $img = glob("admin/upload/usuarios/thumb_".$blog->usuarios->USU_ID.".*");
+                                if($img){
+                                    $img = $img[0];
+                                }else{
+                                    $img = "admin/dist/img/pessoa.png";
+                                } ?>
+                            <img class="fluid-img" src="<?php echo url::base().$img; ?>" alt="">
+                            <div class="borderBottomLeft"></div>
+                            <div class="borderBottomRight"></div>
+                        </figure>
+                    </div>
                     <h5><?php echo $blog->usuarios->USU_NOME; ?></h5>
                     <h6><?php echo $blog->usuarios->USU_CARGO; ?></h6>
                     <ul class="socialMedia">
@@ -83,7 +89,7 @@
                     <?php 
                     echo $blog->BLO_TEXTO; 
                     if($imgBlog){?>
-                        <figure><img src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blog->BLO_TITULO; ?>"></figure>
+                        <figure><img class="fluid-img" src="<?php echo url::base().$imgBlog[0]; ?>" alt="<?php echo $blog->BLO_TITULO; ?>"></figure>
                     <?php
                     } ?>
                     <div class="fb-share-button"

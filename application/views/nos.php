@@ -14,7 +14,7 @@
                     <div class="weOfferBox">
                         <figure>
                             <a href="<?php echo url::base(); ?>cases/servicos/<?php echo $ser->SER_ID; ?>/<?php echo urlencode(Controller_Index::arrumaURL($ser->SER_TITULO)); ?>">
-                                <img src="<?php echo url::base().$imgSer[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>">
+                                <img class="fluid-img" src="<?php echo url::base().$imgSer[0]; ?>" alt="<?php echo $ser->SER_TITULO; ?>">
                             </a>
                         </figure>
                         <div class="offerDesc">
@@ -43,7 +43,7 @@
                             <div class="borderTopRight"></div>
                             
                             <div class="moldureHover">
-                                <img src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
+                                <img class="fluid-img" src="<?php echo url::base().$imgEqui[0]; ?>" alt="<?php echo $equi->EQU_NOME; ?>">
                                 <figcaption>
                                     <p><?php echo $equi->EQU_NOME; ?></p>
                                     <p><?php echo $equi->EQU_CARGO; ?></p>

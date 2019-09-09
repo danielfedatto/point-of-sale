@@ -16,27 +16,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
 		<meta name="application-name" content="<?php echo $titulo; ?>">
 		<meta name="msapplication-TileColor" content="#FFFFFF">
-		<meta name="msapplication-TileImage" content="<?php echo url::base() ?>dist/<?php echo url::base() ?>dist/img/mstile-144x144.png">
-		<meta name="msapplication-square70x70logo" content="<?php echo url::base() ?>dist/img/mstile-70x70.png">
-		<meta name="msapplication-square150x150logo" content="<?php echo url::base() ?>dist/img/mstile-150x150.png">
-		<meta name="msapplication-wide310x150logo" content="<?php echo url::base() ?>dist/img/mstile-310x150.png">
-		<meta name="msapplication-square310x310logo" content="<?php echo url::base() ?>dist/img/mstile-310x310.png">
-		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo url::base() ?>dist/img/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo url::base() ?>dist/img/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo url::base() ?>dist/img/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo url::base() ?>dist/img/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo url::base() ?>dist/img/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo url::base() ?>dist/img/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo url::base() ?>dist/img/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo url::base() ?>dist/img/apple-touch-icon-152x152.png">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-196x196.png" sizes="196x196">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-128x128.png" sizes="128x128">
-    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>dist/css/style.min.css">
+		<meta name="msapplication-TileImage" content="<?php echo url::base() ?>app/<?php echo url::base() ?>app/img/mstile-144x144.png">
+		<meta name="msapplication-square70x70logo" content="<?php echo url::base() ?>app/img/mstile-70x70.png">
+		<meta name="msapplication-square150x150logo" content="<?php echo url::base() ?>app/img/mstile-150x150.png">
+		<meta name="msapplication-wide310x150logo" content="<?php echo url::base() ?>app/img/mstile-310x150.png">
+		<meta name="msapplication-square310x310logo" content="<?php echo url::base() ?>app/img/mstile-310x310.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo url::base() ?>app/img/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo url::base() ?>app/img/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo url::base() ?>app/img/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo url::base() ?>app/img/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?php echo url::base() ?>app/img/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo url::base() ?>app/img/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo url::base() ?>app/img/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo url::base() ?>app/img/apple-touch-icon-152x152.png">
+		<link rel="icon" type="image/png" href="<?php echo url::base() ?>app/img/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="<?php echo url::base() ?>app/img/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="<?php echo url::base() ?>app/img/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="<?php echo url::base() ?>app/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="<?php echo url::base() ?>app/img/favicon-128x128.png" sizes="128x128">
+    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>app/css/style.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>app/css/fancybox.min.css">
-        
+
     <script type="text/javascript">
         var URLBASE = "<?php echo url::base() ?>";
     </script>
@@ -110,7 +110,15 @@
       </div>
     </div>
     <header>
-      <div id="desk-nav">
+      <?php
+        if (Request::current()->controller() == "cases" or Request::current()->controller() == "blog") {
+          $classeHeader = "header-internas";
+        }
+        else {
+          $classeHeader = "";
+        }
+      ?>
+      <div id="desk-nav" class="<?php echo $classeHeader; ?>">
         <div class="headerLinksWrap">
           <?php 
           if($logoCabecalho){ ?>
@@ -137,7 +145,7 @@
         foreach($banners as $ban){ 
           $imgBan = glob('admin/upload/banners/'.$ban->BAN_ID.'.*');
           if($imgBan){ ?>
-            <div class="slide_<?php echo $ban->BAN_ID; ?>" style="background-image: url(<?php echo url::base().$imgBan[0]; ?>); backgroudn-position: center left;">
+            <div class="slide_<?php echo $ban->BAN_ID; ?>" style="background-image: url(<?php echo url::base().$imgBan[0]; ?>); background-size: cover">
               <div class="containerFluid">
                 <div class="bannerContent">
                   <?php
@@ -171,7 +179,7 @@
             $logoRodape = glob("admin/upload/configuracoes/logo_rodape_".$CON_ID.".*"); 
             if($logoRodape){ ?>
               <figure class="logoFooter">
-                <img src="<?php echo url::base().$logoRodape[0]; ?>" alt="">
+                <img class="fluid-img" src="<?php echo url::base().$logoRodape[0]; ?>" alt="">
               </figure>
             <?php
             } ?>
@@ -221,7 +229,7 @@
     </footer>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="<?php echo url::base(); ?>dist/js/funcoes.min.js"></script>
+  <script src="<?php echo url::base(); ?>app/js/funcoes.min.js"></script>
 </html>
 
 <?php if (Request::current()->controller() == "contatos"){ ?>
@@ -250,7 +258,7 @@
 		};
 		mapa = new google.maps.Map(document.getElementById('map'), opcoes);
 		var image = 
-			new google.maps.MarkerImage('dist/img/pin.png',
+			new google.maps.MarkerImage('app/img/pin.png',
 			new google.maps.Size(200, 200), 	//tamanho total
 			new google.maps.Point(0, 0), 	//origem (se for sprite, é diferente de zero)
 			new google.maps.Point(19, 25) 	//posição da "ponta" do alfinete
