@@ -104,14 +104,27 @@
                 <textarea  class="form-control" placeholder="Horário Atendimento" id="CON_HORARIO_ATENDIMENTO" name="CON_HORARIO_ATENDIMENTO"><?php if($configuracoes) echo $configuracoes["CON_HORARIO_ATENDIMENTO"] ?></textarea>
             </div>
         </div>
-                                        
+
+        <hr>
+
         <div class="form-group">
             <label for="logo_cabecalho" class="col-sm-2 control-label">Logo Cabeçalho</label>
             <div class="col-sm-10">
                 <input type="file" id="logo_cabecalho" name="logo_cabecalho" >
             </div>
         </div><?php if($logo_cabecalho) echo $logo_cabecalho; ?>
-                                    
+        
+        <hr>
+        
+        <div class="form-group">
+            <label for="logo_cabecalho_rolar" class="col-sm-2 control-label">Logo Cabeçalho Rolar</label>
+            <div class="col-sm-10">
+                <input type="file" id="logo_cabecalho_rolar" name="logo_cabecalho_rolar" >
+            </div>
+        </div><?php if($logo_cabecalho_rolar) echo $logo_cabecalho_rolar; ?>
+
+        <hr>
+
         <div class="form-group">
             <label for="logo_rodape" class="col-sm-2 control-label">Logo Rodapé</label>
             <div class="col-sm-10">
