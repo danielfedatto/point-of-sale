@@ -35,7 +35,7 @@
 		<link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="<?php echo url::base() ?>dist/img/favicon-128x128.png" sizes="128x128">
     <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>dist/css/style.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>dist/css/fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo url::base() ?>app/css/fancybox.min.css">
 
     <script type="text/javascript">
         var URLBASE = "<?php echo url::base() ?>";
@@ -90,9 +90,10 @@
       <div class="stickerMob">
         <?php
           $logoCabecalho = glob("admin/upload/configuracoes/logo_cabecalho_".$CON_ID.".*");  
-          if($logoCabecalho){ ?>
+          $logoCabecalhoRolar = glob("admin/upload/configuracoes/logo_cabecalho_rolar_".$CON_ID.".*");  
+          if($logoCabecalhoRolar){ ?>
             <a href="<?php echo url::base(); ?>">
-              <img class="logoMobile" src="<?php echo url::base().$logoCabecalho[0]; ?>" alt="Point of Sale">
+              <img class="logoMobile" src="<?php echo url::base().$logoCabecalhoRolar[0]; ?>" alt="Point of Sale">
             </a>
           <?php
           }
@@ -124,7 +125,8 @@
           if($logoCabecalho){ ?>
             <figure class="headerLogo">
               <a href="<?php echo url::base(); ?>">
-                <img src="<?php echo url::base().$logoCabecalho[0]; ?>" alt="Point of Sale">
+                <img class="logo-entrada" src="<?php echo url::base().$logoCabecalho[0]; ?>" alt="Point of Sale">
+                <img class="logo-rolar" src="<?php echo url::base().$logoCabecalhoRolar[0]; ?>" alt="Point of Sale">
               </a>
             </figure>
           <?php
