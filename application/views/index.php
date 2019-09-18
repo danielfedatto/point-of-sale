@@ -93,5 +93,8 @@
 				}
 			} ?>
 		</div>
+		<div class="btnAllBlog">
+			<a class="btnType2" href="<?php echo url::base(); ?>blog" title="Blog - Ver todas">Ver Mais</a>
+		</div>
 	</div>
 </section>

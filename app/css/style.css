@@ -3861,6 +3861,13 @@ small {
         height: 15px;
         margin-right: 5px;
         fill: #FFFFFF; }
+  .indexBlog .btnAllBlog {
+    text-align: center; }
+    @media screen and (max-width: 767px) {
+      .indexBlog .btnAllBlog {
+        margin-top: 1rem; } }
+    .indexBlog .btnAllBlog .btnType2:hover {
+      border: 1px solid #ff9800; }
 
 .weDescription {
   padding: 4rem 0;
