@@ -102,6 +102,19 @@ class Controller_Configuracoes extends Controller_Index {
             else {
                 $view->logo_cabecalho = false;
             }
+
+            //BUSCA O LOGO_CABECALHO_ROLAR, SE HOUVER
+            $logo_cabecalho_rolar = glob("upload/configuracoes/logo_cabecalho_rolar_" . $configuracoes->CON_ID . ".*");
+            if ($logo_cabecalho_rolar) {
+                $view->logo_cabecalho_rolar = "<div class='form-group'>
+                        <label class='col-sm-2 control-label'>Excluir Logo Cabeçalho Rolar</label>
+                        <input type='checkbox' id='excluirLogo_cabecalho_rolar' name='excluirLogo_cabecalho_rolar'>
+                        Arquivo Cadastrado!!
+                    </div>";
+            }
+            else {
+                $view->logo_cabecalho_rolar = false;
+            }
                     
             //BUSCA O LOGO_RODAPE, SE HOUVER
             $logo_rodape = glob("upload/configuracoes/logo_rodape_" . $configuracoes->CON_ID . ".*");
@@ -135,6 +148,7 @@ class Controller_Configuracoes extends Controller_Index {
             
             $view->configuracoes = $arr;
             $view->logo_cabecalho = false;
+            $view->logo_cabecalho_rolar = false;
             $view->logo_rodape = false;
         }
         
@@ -147,7 +161,9 @@ class Controller_Configuracoes extends Controller_Index {
     public function action_save(){ //MENSAGEM DE OK, OU ERRO
         $mensagem = "Registro alterado com sucesso!";
 
-        $excluiLogo = false;
+        $excluiLogo_cabecalho = false;
+        $excluiLogo_cabecalho_rolar = false;
+        $excluiLogo_rodape = false;
                 
         //SE O ID ESTIVER ZERADO, INSERT
         if($this->request->post("CON_ID") == "0" ){ 
@@ -172,7 +188,16 @@ class Controller_Configuracoes extends Controller_Index {
 
                     copy($_FILES["logo_cabecalho"]["tmp_name"], DOCROOT."upload/configuracoes/".$arqName);
                 }
-                            
+                     
+                //INSERE O ARQUIVO, SE EXISTIR
+                if ($_FILES["logo_cabecalho_rolar"]["name"] != "") {
+
+                    $ext = explode(".", $_FILES["logo_cabecalho_rolar"]["name"]);
+                    $arqName = "logo_cabecalho_rolar_".$configuracoes->pk() . "." . $ext[count($ext) - 1];
+
+                    copy($_FILES["logo_cabecalho_rolar"]["tmp_name"], DOCROOT."upload/configuracoes/".$arqName);
+                }
+
                 //INSERE O ARQUIVO, SE EXISTIR
                 if ($_FILES["logo_rodape"]["name"] != "") {
 
@@ -196,6 +221,9 @@ class Controller_Configuracoes extends Controller_Index {
                     if ($campo == "excluirLogo_cabecalho") {
                         $excluiLogo_cabecalho = str_replace("'", "", $value);
                     }
+                    if ($campo == "excluirLogo_cabecalho_rolar") {
+                        $excluiLogo_cabecalho_rolar = str_replace("'", "", $value);
+                    }
                     else if ($campo == "excluirLogo_rodape") {
                         $excluiLogo_rodape = str_replace("'", "", $value);
                     }else{ 
@@ -216,7 +244,6 @@ class Controller_Configuracoes extends Controller_Index {
                             }
                         }
                     }
-
                     //INSERE O LOGO_CABECALHO, SE EXISTIR
                     if ($_FILES["logo_cabecalho"]["name"] != "") {
 
@@ -225,6 +252,26 @@ class Controller_Configuracoes extends Controller_Index {
 
                         copy($_FILES["logo_cabecalho"]["tmp_name"], DOCROOT."upload/configuracoes/".$arqName);
                     }
+
+                    //SE EXCLUIR LOGO_CABECALHO_ROLAR ESTIVER MARCADO, EXCLUI O LOGO_CABECALHO
+                    if($excluiLogo_cabecalho_rolar == "on" or $_FILES["logo_cabecalho_rolar"]["name"] != ""){
+                        $arq = glob("upload/configuracoes/logo_cabecalho_rolar_" . str_replace("'", "", $configuracoes->pk()) . ".*");
+
+                        if($arq){
+                            foreach($arq as $ar){
+                                unlink($ar);
+                            }
+                        }
+                    }
+                    //INSERE O LOGO_CABECALHO, SE EXISTIR
+                    if ($_FILES["logo_cabecalho_rolar"]["name"] != "") {
+
+                        $ext = explode(".", $_FILES["logo_cabecalho_rolar"]["name"]);
+                        $arqName = "logo_cabecalho_rolar_".str_replace("'", "", $configuracoes->pk()) . "." . $ext[count($ext) - 1];
+
+                        copy($_FILES["logo_cabecalho_rolar"]["tmp_name"], DOCROOT."upload/configuracoes/".$arqName);
+                    }
+
                     //SE EXCLUIR LOGO_RODAPE ESTIVER MARCADO, EXCLUI O LOGO_RODAPE
                     if($excluiLogo_rodape == "on" or $_FILES["logo_rodape"]["name"] != ""){
                         $arq = glob("upload/configuracoes/logo_rodape_" . str_replace("'", "", $configuracoes->pk()) . ".*");
@@ -264,17 +311,26 @@ class Controller_Configuracoes extends Controller_Index {
         }
         
         //SE FUNCIONOU, VOLTA PRA LISTAGEM COM MENSAGEM DE OK
-        if($query or $_FILES["logo"]["name"] != "" or $excluiLogo){
+        if($query or $_FILES["logo_cabecalho"]["name"] != "" or $_FILES["logo_cabecalho_rolar"]["name"] != "" or $_FILES["logo_rodape"]["name"] != "" or $excluiLogo_cabecalho or $excluiLogo_cabecalho_rolar or $excluiLogo_rodape){
             $this->action_index("<p class='res-alert sucess'>".$mensagem."</p>", false);
         }else{
             //SENAO, VOLTA COM MENSAGEM DE ERRO
             $this->action_index("<p class='res-alert warning'>".$mensagem."</p>", true);
-        }}
+        }
+    }
     
     //EXCLUI REGISTRO
     public function action_excluir(){
         //EXCLUI LOGO_CABECALHO
         $arq = glob("upload/configuracoes/logo_cabecalho_" . $this->request->param("id") . ".*");
+
+        if($arq){
+            foreach($arq as $ar){
+                unlink($ar);
+            }
+        }
+        //EXCLUI LOGO_CABECALHO_ROLAR
+        $arq = glob("upload/configuracoes/logo_cabecalho_rolar_" . $this->request->param("id") . ".*");
 
         if($arq){
             foreach($arq as $ar){
